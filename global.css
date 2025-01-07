@@ -1,0 +1,157 @@
+@font-face {
+  font-family: Source Code Pro;
+  src: url("./assets/fonts/source-code-pro-variable.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Code Pro;
+  src: url("./assets/fonts/source-code-pro-variable-italic.ttf")
+    format("truetype");
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --color-a: #3d56a0;
+  --color-b: #7fff00;
+  --color-b-darker: #6bd600;
+  --color-c: #ffbdff;
+  --container-width: 1280px;
+}
+
+* {
+  font-family: Source Code Pro, "Courier New", Courier, monospace;
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-a);
+  min-height: 100dvh;
+}
+
+header {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-a);
+  gap: 2rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-b);
+  color: var(--color-b);
+  cursor: pointer;
+}
+
+button:active {
+  color: var(--color-b-darker);
+  border-color: var(--color-b-darker);
+}
+
+a {
+  color: var(--color-b);
+}
+
+a:visited {
+  color: var(--color-c);
+}
+
+a:active {
+  color: var(--color-b-darker);
+}
+
+:focus-visible {
+  outline-color: var(--color-c);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: 0.25rem;
+}
+
+::selection {
+  background-color: var(--color-c);
+  color: black;
+}
+
+#wordmark {
+  text-decoration: none;
+}
+
+#wordmark:visited {
+  color: var(--color-b);
+}
+
+#wordmark:active {
+  color: var(--color-b-darker);
+}
+
+#container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+#site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-container li {
+  display: flex;
+}
+
+.hidden {
+  display: none !important;
+}
+
+[role="menu"] {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 10rem;
+  margin-top: 0.5rem;
+  background-color: var(--color-a);
+  border: 1px solid var(--color-b);
+}
+
+[role="menuitem"] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #site-nav {
+    display: none;
+  }
+
+  #mobile-menu {
+    display: block;
+  }
+}
