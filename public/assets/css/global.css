@@ -16,9 +16,9 @@
 :root {
   --color-a: #3d56a0;
   --color-b: #bffb4f;
-  --color-b-darker: #6bd600;
+  --color-b-darker: #6fdd00;
   --color-c: #ffbdff;
-  --container-width: 1280px;
+  --container-width: 1024px;
 }
 
 * {
@@ -76,6 +76,13 @@ a:active {
   color: var(--color-b-darker);
 }
 
+p,
+h1,
+h2,
+h3 {
+  margin: 0.75rem 0;
+}
+
 :focus-visible {
   outline-color: var(--color-c);
   outline-width: 1px;
@@ -117,7 +124,7 @@ a:active {
 }
 
 #content {
-  padding: 1rem;
+  padding: 2.5rem 1rem;
 }
 
 .menu-container {
