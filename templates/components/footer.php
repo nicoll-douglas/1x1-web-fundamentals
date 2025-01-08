@@ -1,7 +1,7 @@
 <footer>
-  <section aria-labelledby="links-heading">
+  <section>
     <h3 id="links-heading">Links</h3>
-    <ul>
+    <ul aria-labelledby="links-heading">
       <li>
         <a href="/course/index.php" class="link-alt">The Course</a>
       </li>
@@ -16,9 +16,9 @@
       </li>
     </ul>
   </section>
-  <section aria-labelledby="course-modules-heading">
+  <section>
     <h3 id="course-modules-heading">Course Modules</h3>
-    <ul>
+    <ul aria-labelledby="course-modules-heading">
       <li>
         <a href="/course/the-web/index.php">The Web</a>
       </li>
@@ -44,8 +44,8 @@
       </li>
     </ul>
   </section>
-  <section aria-labelledby="contact-heading">
-    <h3 id="contact-heading">Contact</h3>
+  <section>
+    <h3>Contact</h3>
     <div>
       <h4>Email</h4>
       <a href="mailto:dev.nicoll.douglas@gmail.com">
