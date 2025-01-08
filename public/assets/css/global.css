@@ -52,6 +52,7 @@ img {
 body {
   background-color: var(--color-a);
   min-height: 100dvh;
+  overflow-y: scroll !important;
 }
 
 header {
@@ -97,6 +98,22 @@ a:visited {
 
 a:active {
   color: var(--color-b-darker);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p,
@@ -179,7 +196,7 @@ main section {
 
 #footer-message-form div {
   display: flex;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
 }
 
 #leave-a-message-heading {
