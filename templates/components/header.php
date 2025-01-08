@@ -12,7 +12,7 @@
         <a href="/contact.php">Contact</a>
       </li>
       <li>
-        <a href="/auth/sign-in.php">Sign In</a>
+        <a href="/sign-in.php">Sign In</a>
       </li>
     </ul>
   </nav>

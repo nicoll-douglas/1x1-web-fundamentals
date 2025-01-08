@@ -6,9 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/global.css">
   <title><?php echo $title; ?></title>
-  <?php if (!empty($custom_css_href)): ?>
-    <link rel="stylesheet" href="<?php echo $custom_css_href; ?>">
-  <?php endif; ?>
+  <?php
+  if (isset($css_hrefs)):
+    foreach ($css_hrefs as $css_href):
+  ?>
+      <link rel="stylesheet" href="<?php echo $css_href; ?>">
+  <?php endforeach;
+  endif; ?>
+
+  <?php
+  if (isset($script_srcs)):
+    foreach ($script_srcs as $script_src):
+  ?>
+      <script src="<?php echo $script_src ?>" type="module"></script>
+  <?php endforeach;
+  endif; ?>
 </head>
 
 <body>

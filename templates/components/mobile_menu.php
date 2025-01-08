@@ -36,7 +36,7 @@
     </li>
     <li role="presentation">
       <a
-        href="/auth/sign-in.php"
+        href="/sign-in.php"
         role="menuitem"
         id="mobile-menu-last-focus">
         Sign In
