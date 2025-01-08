@@ -27,12 +27,12 @@ ______               _                            _        _
   </section>
   <section aria-labelledby="overview-heading">
     <h2 id="overview-heading">Overview</h2>
-    <p>These tutorials are organised with a 3-level hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/course/html/index.php">HTML</a>), chapters cover core subtopics (e.g <a href="/course/html/forms/index.php">Forms</a>) and tutorials cover key aspects of each subtopic (e.g <a href="/course/html/the-input-element.php">The &lt;input /&gt; element</a>).</p>
+    <p>These tutorials are organised with a 3-level hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/course/html/index.php">HTML</a>), chapters cover core subtopics (e.g <a href="/course/html/forms/index.php">Forms</a>), and tutorials cover key aspects of each subtopic (e.g <a href="/course/html/the-input-element.php">The &lt;input /&gt; element</a>).</p>
     <p>If you wish to get the full picture of what is covered, check out the course index <a href="/course/index.php">here</a>.</p>
     <p>
       If you wish to get started, check out the first tutorial
       <a href="/course/the-web/how-it-works/clients-and-servers.php">here</a>.
     </p>
-    <p>Happy Learning!</p>
+    <p>Otherwise, happy learning!</p>
   </section>
 </main>
