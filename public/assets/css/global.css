@@ -14,12 +14,13 @@
 }
 
 :root {
-  --color-a: #3d56a0;
-  --color-b: #bffb4f;
-  --color-b-darker: #6fdd00;
-  --color-c: #ffbdff;
-  --color-d: #70ffff;
-  --color-d-darker: #2adddd;
+  --color-bg: #3d56a0;
+  --color-accent-1-light: #bffb4f;
+  --color-accent-1-dark: #6fdd00;
+  --color-accent-2-light: #70ffff;
+  --color-accent-2-dark: #2adddd;
+  --color-highlight: #ffbdff;
+  --color-error: #ff6c6c;
 
   --container-width: 1024px;
 
@@ -50,7 +51,7 @@ img {
 }
 
 body {
-  background-color: var(--color-a);
+  background-color: var(--color-bg);
   min-height: 100dvh;
   overflow-y: scroll !important;
 }
@@ -62,42 +63,42 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: var(--color-a);
+  background-color: var(--color-bg);
   gap: 2rem;
 }
 
 button {
   padding: var(--space-xs) var(--space-sm);
   font-size: var(--font-sm);
-  border: 1px solid var(--color-b);
-  color: var(--color-b);
+  border: 1px solid var(--color-accent-1-light);
+  color: var(--color-accent-1-light);
   display: flex;
   background-color: transparent;
   cursor: pointer;
 }
 
 button:active {
-  color: var(--color-b-darker);
-  border-color: var(--color-b-darker);
+  color: var(--color-accent-1-dark);
+  border-color: var(--color-accent-1-dark);
 }
 
 input {
   background-color: transparent;
-  border: 1px solid var(--color-b);
+  border: 1px solid var(--color-accent-1-light);
   padding: var(--space-xs);
   font-size: var(--font-sm);
 }
 
 a {
-  color: var(--color-b);
+  color: var(--color-accent-1-light);
 }
 
 a:visited {
-  color: var(--color-c);
+  color: var(--color-highlight);
 }
 
 a:active {
-  color: var(--color-b-darker);
+  color: var(--color-accent-1-dark);
 }
 
 h1 {
@@ -130,10 +131,9 @@ label {
 }
 
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4xl);
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 footer ul {
@@ -148,14 +148,14 @@ main section {
 }
 
 :focus-visible {
-  outline-color: var(--color-c);
+  outline-color: var(--color-highlight);
   outline-width: 1px;
   outline-style: solid;
   outline-offset: var(--space-xs);
 }
 
 ::selection {
-  background-color: var(--color-c);
+  background-color: var(--color-highlight);
   color: black;
 }
 
@@ -164,11 +164,11 @@ main section {
 }
 
 #wordmark:visited {
-  color: var(--color-b);
+  color: var(--color-accent-1-light);
 }
 
 #wordmark:active {
-  color: var(--color-b-darker);
+  color: var(--color-accent-1-dark);
 }
 
 #container {
@@ -187,16 +187,20 @@ main section {
   display: none;
 }
 
-#footer-message-form {
+#message-form {
   display: block;
   flex-direction: column;
   gap: var(--space-md);
   align-items: start;
 }
 
-#footer-message-form div {
+#message-form div {
   display: flex;
   gap: var(--space-sm);
+}
+
+#message-form-error {
+  color: #ff6c6c;
 }
 
 #leave-a-message-heading {
@@ -210,11 +214,11 @@ footer {
 }
 
 .link-alt {
-  color: var(--color-d);
+  color: var(--color-accent-2-light);
 }
 
 .link-alt:active {
-  color: var(--color-d-darker);
+  color: var(--color-accent-2-dark);
 }
 
 .menu-container {
@@ -230,7 +234,7 @@ footer {
 }
 
 .icon {
-  fill: var(--color-b);
+  fill: var(--color-accent-1-light);
   width: 33px;
   height: 33px;
 }
@@ -245,8 +249,8 @@ footer {
   right: 0;
   min-width: 10rem;
   margin-top: var(--space-sm);
-  background-color: var(--color-a);
-  border: 1px solid var(--color-b);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-accent-1-light);
 }
 
 [role="menuitem"] {
@@ -255,6 +259,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
   #site-nav {
     display: none;
   }

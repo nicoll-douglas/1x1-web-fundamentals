@@ -44,21 +44,19 @@
       </li>
     </ul>
   </section>
-  <section>
-    <h3>Contact</h3>
-    <div>
-      <h4>Email</h4>
-      <a href="mailto:dev.nicoll.douglas@gmail.com">
-        dev.nicoll.douglas@gmail.com
-      </a>
-      <h4 id="leave-a-message-heading">Leave a message</h4>
-      <form id="footer-message-form" aria-labelledby="leave-a-message-heading">
-        <label for="message-input" id="message-label">Message:</label>
-        <div>
-          <input id="message-input">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
-  </section>
+  <?php
+  if (!isset($footer_contact) || $footer_contact === true):
+  ?>
+    <section>
+      <h3>Contact</h3>
+      <div>
+        <h4>Email</h4>
+        <a href="mailto:dev.nicoll.douglas@gmail.com">
+          dev.nicoll.douglas@gmail.com
+        </a>
+        <h4 id="leave-a-message-heading">Leave a Message</h4>
+        <?php require_once __DIR__ . "/message_form.php"; ?>
+      </div>
+    </section>
+  <?php endif; ?>
 </footer>

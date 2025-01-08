@@ -1,5 +1,5 @@
 #ascii-heading {
-  color: var(--color-b);
+  color: var(--color-accent-1-light);
 }
 
 @media screen and (max-width: 768px) {

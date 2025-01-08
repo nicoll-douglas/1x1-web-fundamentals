@@ -15,8 +15,8 @@ ______               _                            _        _
 | | | |_| | | | | (_| | (_| | | | | | |  __/ | | | || (_| | \__ \
 \_|  \__,_|_| |_|\__,_|\__,_|_| |_| |_|\___|_| |_|\__\__,_|_|___/
   </pre>
-  <h1>Hello world.</h1>
   <section>
+    <h1>Hello world.</h1>
     <p>Welcome to Jiggy&apos;s Web Fundamentals: the no-nonsense one-stop shop for learning the fundamentals of how to build websites and web applications. </p>
     <p>
       Backed by an independent, self-taught developer, Jiggy's Web Fundamentals is a series of tutorials where you learn to build on the web from the ground up using HTML, CSS, JavaScript, PHP and MySQL. If those terms don&apos;t mean anything to you now but you are curious, why not check it out! It&apos;s free!
