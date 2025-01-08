@@ -13,9 +13,17 @@
     class="hidden">
     <li role="presentation">
       <a
-        href="/about.php"
+        href="/course/index.php"
         role="menuitem"
-        id="mobile-menu-first-focus">
+        id="mobile-menu-first-focus"
+        class="link-alt">
+        The Course
+      </a>
+    </li>
+    <li role="presentation">
+      <a
+        href="/about.php"
+        role="menuitem">
         About
       </a>
     </li>
@@ -28,17 +36,10 @@
     </li>
     <li role="presentation">
       <a
-        href="/auth/register.php"
-        role="menuitem">
-        Register
-      </a>
-    </li>
-    <li role="presentation">
-      <a
-        href="/auth/login.php"
+        href="/auth/sign-in.php"
         role="menuitem"
         id="mobile-menu-last-focus">
-        Login
+        Sign In
       </a>
     </li>
   </ul>

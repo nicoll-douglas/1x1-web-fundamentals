@@ -3,16 +3,16 @@
   <nav id="site-nav" aria-label="Site">
     <ul>
       <li>
+        <a class="link-alt" href="/course/index.php">The Course</a>
+      </li>
+      <li>
         <a href="/about.php">About</a>
       </li>
       <li>
         <a href="/contact.php">Contact</a>
       </li>
       <li>
-        <a href="/auth/register.php">Register</a>
-      </li>
-      <li>
-        <a href="/auth/login.php">Login</a>
+        <a href="/auth/sign-in.php">Sign In</a>
       </li>
     </ul>
   </nav>
