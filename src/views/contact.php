@@ -9,13 +9,13 @@
   <section>
     <h2 id="leave-a-message-heading">Leave a Message</h2>
     <p>If you wish to leave an anonymous message!</p>
-    <?php require_once __DIR__ . "/../components/message_form.php"; ?>
+    <?php require_once __DIR__ . "/../templates/components/message_form.php"; ?>
   </section>
   <section>
     <h2>Contributing</h2>
     <p>If you wish to contribute to this project I&apos;ll leave a link to the GitHub repo down below.</p>
     <a href="https://github.com/nicoll-douglas/jiggys-web-fundamentals" target="_blank">
-      https://github.com/nicoll-douglas/jiggys-web-fundamentals
+      The GitHub Repo
     </a>
   </section>
 </main>

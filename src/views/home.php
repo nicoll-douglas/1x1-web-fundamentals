@@ -24,6 +24,7 @@ ______               _                            _        _
     <p>
       Here the goal is take the large and complicated scope of web development, and transform it into the simple thing it really is under the surface. If you&apos;re looking for a solid foundation for a career in web development, are just a hobbyist, or want the insights of your average web developer, this is the place for you!
     </p>
+    <p>New tutorials are added regularly so if you find something missing, stay tuned, we&apos;re working on it!</p>
   </section>
   <section>
     <h2>Overview</h2>
