@@ -28,11 +28,11 @@ ______               _                            _        _
   </section>
   <section>
     <h2>Overview</h2>
-    <p>These tutorials are organised with a 3-level hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/course/html/index.php">HTML</a>), chapters cover core subtopics (e.g <a href="/course/html/forms/index.php">Forms</a>), and tutorials cover key aspects of each subtopic (e.g <a href="/course/html/the-input-element.php">The &lt;input /&gt; element</a>). You can also sign in to keep track of complete and incomplete tutorials.</p>
-    <p>If you wish to get the full picture of what is covered, check out the course index <a href="/course/index.php">here</a>.</p>
+    <p>These tutorials are organised with a 3-level hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/tutorials/html/index.php">HTML</a>), chapters cover core subtopics (e.g <a href="/tutorials/html/forms/index.php">Forms</a>), and tutorials cover key aspects of each subtopic (e.g <a href="/tutorials/html/the-input-element.php">The &lt;input /&gt; element</a>). You can also sign in to keep track of complete and incomplete tutorials.</p>
+    <p>If you wish to get the full picture of what is covered, check out the tutorial index <a href="/tutorials/index.php">here</a>.</p>
     <p>
       If you wish to get started, check out the first tutorial
-      <a href="/course/the-web/how-it-works/clients-and-servers.php">here</a>.
+      <a href="/tutorials/the-web/how-it-works/clients-and-servers.php">here</a>.
     </p>
     <p>Otherwise, happy learning!</p>
   </section>

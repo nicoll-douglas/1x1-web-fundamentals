@@ -3,7 +3,7 @@
     <h3 id="links-heading">Links</h3>
     <ul aria-labelledby="links-heading">
       <li>
-        <a href="/course/index.php" class="link-alt">The Course</a>
+        <a href="/tutorials/index.php" class="link-alt">Tutorials</a>
       </li>
       <li>
         <a href="/about.php">About</a>
@@ -17,30 +17,30 @@
     </ul>
   </section>
   <section>
-    <h3 id="course-modules-heading">Course Modules</h3>
-    <ul aria-labelledby="course-modules-heading">
+    <h3 id="tutorial-modules-heading">Tutorial Modules</h3>
+    <ul aria-labelledby="tutorial-modules-heading">
       <li>
-        <a href="/course/the-web/index.php">The Web</a>
+        <a href="/tutorials/the-web/index.php">The Web</a>
       </li>
       <li>
-        <a href="/course/html/index.php">HTML</a>
+        <a href="/tutorials/html/index.php">HTML</a>
       </li>
       <li>
-        <a href="/course/css/index.php">CSS</a>
+        <a href="/tutorials/css/index.php">CSS</a>
       </li>
       <li>
-        <a href="/course/git/index.php">Git</a>
+        <a href="/tutorials/git/index.php">Git</a>
       </li>
       <li>
-        <a href="/course/javascript/index.php">
+        <a href="/tutorials/javascript/index.php">
           JavaScript
         </a>
       </li>
       <li>
-        <a href="/course/php/index.php">PHP</a>
+        <a href="/tutorials/php/index.php">PHP</a>
       </li>
       <li>
-        <a href="/course/mysql/index.php">MySQL</a>
+        <a href="/tutorials/mysql/index.php">MySQL</a>
       </li>
     </ul>
   </section>

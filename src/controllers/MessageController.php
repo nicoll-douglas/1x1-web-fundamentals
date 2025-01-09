@@ -44,7 +44,7 @@ class MessageController
 
     if (!$pdo) {
       http_response_code(500);
-      return "Server Error. Something went wrong :(.";
+      return "Server Error. Something went wrong.";
     }
 
     Message::insertOne($pdo, $msg);

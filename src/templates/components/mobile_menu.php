@@ -13,11 +13,11 @@
     class="hidden">
     <li role="presentation">
       <a
-        href="/course/index.php"
+        href="/tutorials/index.php"
         role="menuitem"
         id="mobile-menu-first-focus"
         class="link-alt">
-        The Course
+        Tutorials
       </a>
     </li>
     <li role="presentation">

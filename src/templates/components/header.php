@@ -3,7 +3,7 @@
   <nav id="site-nav" aria-label="Site">
     <ul>
       <li>
-        <a class="link-alt" href="/course/index.php">The Course</a>
+        <a class="link-alt" href="/tutorials/index.php">Tutorials</a>
       </li>
       <li>
         <a href="/about.php">About</a>
