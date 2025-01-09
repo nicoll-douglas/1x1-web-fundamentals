@@ -35,18 +35,6 @@ input {
   font-size: var(--font-sm);
 }
 
-a {
-  color: var(--color-accent-1-light);
-}
-
-a:visited {
-  color: var(--color-highlight);
-}
-
-a:active {
-  color: var(--color-accent-1-dark);
-}
-
 h1 {
   font-size: 2rem;
 }
@@ -61,14 +49,6 @@ h3 {
 
 h4 {
   font-size: 1rem;
-}
-
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: var(--space-md) 0;
 }
 
 label {

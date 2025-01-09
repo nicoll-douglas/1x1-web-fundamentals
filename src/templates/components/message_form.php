@@ -1,11 +1,11 @@
-<form id="message-form" aria-labelledby="leave-a-message-heading">
+<form
+  id="message-form"
+  aria-labelledby="leave-a-message-heading"
+  action="/api/messages.php"
+  method="POST">
   <label for="message-input" id="message-label">Message:</label>
   <div>
-    <input id="message-input">
+    <input id="message-input" name="message" required maxlength="255">
     <button type="submit">Submit</button>
   </div>
-  <!-- style property value depends on whether the submission was successful -->
-  <p id="message-form-error" style="display: none;">
-    <!-- error message goes here -->
-  </p>
 </form>

@@ -37,3 +37,23 @@ body {
   min-height: 100dvh;
   overflow-y: scroll !important;
 }
+
+a {
+  color: var(--color-accent-1-light);
+}
+
+a:visited {
+  color: var(--color-highlight);
+}
+
+a:active {
+  color: var(--color-accent-1-dark);
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: var(--space-md) 0;
+}

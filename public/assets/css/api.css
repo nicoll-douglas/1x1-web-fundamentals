@@ -1,0 +1,12 @@
+body {
+  padding: 0 1rem;
+  overflow-y: hidden !important;
+}
+
+.message-success {
+  color: var(--color-accent-1-light);
+}
+
+.message-error {
+  color: var(--color-error);
+}
