@@ -73,18 +73,6 @@ main section {
   margin: var(--space-xl) 0;
 }
 
-:focus-visible {
-  outline-color: var(--color-highlight);
-  outline-width: 1px;
-  outline-style: solid;
-  outline-offset: var(--space-xs);
-}
-
-::selection {
-  background-color: var(--color-highlight);
-  color: black;
-}
-
 #wordmark {
   text-decoration: none;
 }

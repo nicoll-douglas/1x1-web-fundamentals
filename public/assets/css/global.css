@@ -57,3 +57,15 @@ h3,
 h4 {
   margin: var(--space-md) 0;
 }
+
+:focus-visible {
+  outline-color: var(--color-highlight);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: var(--space-xs);
+}
+
+::selection {
+  background-color: var(--color-highlight);
+  color: black;
+}
