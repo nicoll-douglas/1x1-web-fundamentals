@@ -10,27 +10,11 @@ require_once __DIR__ . "/../config/db.php";
  */
 class MessageController
 {
-
-  /**
-   * Handles the current request and returns a view.
-   * @return string The view to be displayed to the user.
-   */
-  public static function handleRequest(): string
-  {
-    switch ($_SERVER["REQUEST_METHOD"]) {
-      case "POST":
-        return self::post();
-      default:
-        http_response_code(405);
-        return "Method not allowed.";
-    }
-  }
-
   /**
    * Handles posting/creation of a message and returns a view.
    * @return string The view to be displayed to the user.
    */
-  private static function post(): string
+  public static function handleNewMessage(): string
   {
     $msg = $_POST["message"];
     ["error" => $error, "success" => $msg] = self::validateMessage($msg);
@@ -44,7 +28,7 @@ class MessageController
 
     if (!$pdo) {
       http_response_code(500);
-      return "Server Error. Something went wrong.";
+      return "Server error. Something went wrong.";
     }
 
     Message::insertOne($pdo, $msg);
