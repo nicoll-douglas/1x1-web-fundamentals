@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Model that represents the refresh_tokens table.
+ */
 class RefreshToken
 {
   /**
@@ -25,9 +28,9 @@ class RefreshToken
    * Finds a row in the refresh_tokens table from the associated user id.
    * @param PDO $pdo The database connection.
    * @param string $user_id The associated user id of the token.
-   * @return array|null null if the row is not found, the user's row otherwise.
+   * @return array|false false if the row is not found, the user's row otherwise.
    */
-  public static function find(PDO $pdo, string $user_id): array
+  public static function find(PDO $pdo, string $user_id): array|false
   {
     $stmt = $pdo->prepare(
       "SELECT * FROM refresh_tokens WHERE user_id = :id"

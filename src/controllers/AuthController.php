@@ -5,6 +5,7 @@ declare(strict_types=1);
 require __DIR__ . "/../../vendor/autoload.php";
 require_once __DIR__ . "/../models/RefreshToken.php";
 require_once __DIR__ . "/../config/db.php";
+require_once __DIR__ . "/../middleware/session.php";
 
 /**
  * Controller that handles requests pertaining to authentication.
@@ -17,7 +18,6 @@ class AuthController
    */
   public static function handleUserConsent()
   {
-    require_once __DIR__ . "/../middleware/session.php";
 
     if (isset($_GET["code"])) {
       require __DIR__ . "/../services/google_api/client.php";
@@ -30,21 +30,27 @@ class AuthController
 
       $_SESSION["user"] = [
         "id" => $user_id,
-        "access_token" => $token["access_token"]
+        "access_token" => $client->getAccessToken()
       ];
 
-      $pdo = connectDB();
+      $refresh_token = $client->getRefreshToken();
+      if ($refresh_token) {
+        $pdo = connectDB();
 
-      if ($pdo) {
-        $row = RefreshToken::find($pdo, $user_id);
-        $refresh_token = $token["refresh_token"];
+        if ($pdo) {
+          $row = RefreshToken::find($pdo, $user_id);
 
-        if ($row) {
-          RefreshToken::update($pdo, $user_id, $refresh_token);
-        } else {
-          RefreshToken::insert($pdo, $user_id, $refresh_token);
+          if ($row) {
+            if ($row["token"] !== $refresh_token) {
+              $client->revokeToken($row["token"]);
+              RefreshToken::update($pdo, $user_id, $refresh_token);
+            }
+          } else {
+            RefreshToken::insert($pdo, $user_id, $refresh_token);
+          }
         }
       }
+
 
       header("Location: /tutorials/index.php");
       exit;
@@ -65,8 +71,6 @@ class AuthController
    */
   public static function handleLogout()
   {
-    require_once __DIR__ . "/../middleware/session.php";
-
     $user = $_SESSION["user"];
 
     if (!isset($user)) {
@@ -81,7 +85,7 @@ class AuthController
     if ($pdo) {
       $row = RefreshToken::find($pdo, $user["id"]);
       if ($row) {
-        $client->revokeToken($row["refresh_token"]);
+        $client->revokeToken($row["token"]);
       }
       RefreshToken::clear($pdo, $user["id"]);
     }

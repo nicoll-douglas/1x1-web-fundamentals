@@ -3,12 +3,14 @@
 require_once __DIR__ . "/../config/env.php";
 
 $domain = getenv("DOMAIN") ?: $_SERVER["HTTP_HOST"];
+$lifetime = 60 * 60 * 24 * 7;
 
 ini_set("session.use_only_cookies", 1);
 ini_set("session.use_strict_mode", 1);
+ini_set("session.gc_maxlifetime", $lifetime);
 
 session_set_cookie_params([
-  "lifetime" => 60 * 60 * 24 * 28,
+  "lifetime" => $lifetime,
   "domain" => $domain,
   "path" => "/",
   "secure" => true,
