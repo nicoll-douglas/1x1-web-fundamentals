@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . "/../../vendor/autoload.php";
 require_once __DIR__ . "/../models/RefreshToken.php";
-require_once __DIR__ . "/../config/db.php";
-require_once __DIR__ . "/../middleware/session.php";
+require_once __DIR__ . "/../db.php";
+require_once __DIR__ . "/../middleware/Session.php";
+require_once __DIR__ . "/../middleware/Authentication.php";
+require __DIR__ . "/../services/google_api/client.php";
 
 /**
  * Controller that handles requests pertaining to authentication.
@@ -18,9 +20,10 @@ class AuthController
    */
   public static function handleUserConsent()
   {
-
     if (isset($_GET["code"])) {
-      require __DIR__ . "/../services/google_api/client.php";
+      global $client;
+      Session::start();
+
       $token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
       $client->setAccessToken($token);
 
@@ -30,27 +33,33 @@ class AuthController
 
       $_SESSION["user"] = [
         "id" => $user_id,
-        "access_token" => $client->getAccessToken()
+        "access_token" => $client->getAccessToken(),
+        "ip" => $_SERVER["REMOTE_ADDR"]
       ];
 
       $refresh_token = $client->getRefreshToken();
+
       if ($refresh_token) {
         $pdo = connectDB();
 
-        if ($pdo) {
-          $row = RefreshToken::find($pdo, $user_id);
+        if (!$pdo) {
+          Authentication::revoke(true);
+          Session::destroy();
+          http_response_code(500);
+          return "Server Error. Something went wrong.";
+        }
 
-          if ($row) {
-            if ($row["token"] !== $refresh_token) {
-              $client->revokeToken($row["token"]);
-              RefreshToken::update($pdo, $user_id, $refresh_token);
-            }
-          } else {
-            RefreshToken::insert($pdo, $user_id, $refresh_token);
+        $row = RefreshToken::find($pdo, $user_id);
+
+        if ($row) {
+          if ($row["token"] !== $refresh_token) {
+            $client->revokeToken($row["token"]);
+            RefreshToken::update($pdo, $user_id, $refresh_token);
           }
+        } else {
+          RefreshToken::insert($pdo, $user_id, $refresh_token);
         }
       }
-
 
       header("Location: /tutorials/index.php");
       exit;
@@ -62,8 +71,8 @@ class AuthController
       return "OAuth Error: $error";
     }
 
-    http_response_code(500);
-    return "Something went wrong.";
+    http_response_code(400);
+    return "Bad request.";
   }
 
   /**
@@ -71,29 +80,9 @@ class AuthController
    */
   public static function handleLogout()
   {
-    $user = $_SESSION["user"];
-
-    if (!isset($user)) {
-      session_unset();
-      session_destroy();
-      header("Location: /");
-      exit;
-    }
-    require __DIR__ . "/../services/google_api/client.php";
-
-    $client->revokeToken($user["access_token"]);
-    $pdo = connectDB();
-
-    if ($pdo) {
-      $row = RefreshToken::find($pdo, $user["id"]);
-      if ($row) {
-        $client->revokeToken($row["token"]);
-      }
-      RefreshToken::clear($pdo, $user["id"]);
-    }
-
-    session_unset();
-    session_destroy();
+    Session::start();
+    Authentication::revoke();
+    Session::destroy();
     header("Location: /");
     exit;
   }

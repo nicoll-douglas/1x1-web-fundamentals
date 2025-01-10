@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../src/middleware/authentication.php";
+require_once __DIR__ . "/../src/middleware/Authentication.php";
 
-if (checkAuth()) {
+if (Authentication::check()) {
   header("Location: /tutorials/index.php");
   exit;
 }
