@@ -34,7 +34,8 @@ class AuthController
       $_SESSION["user"] = [
         "id" => $user_id,
         "access_token" => $client->getAccessToken(),
-        "ip" => $_SERVER["REMOTE_ADDR"]
+        "ip" => $_SERVER["REMOTE_ADDR"],
+        "name" => $user_info["name"]
       ];
 
       $refresh_token = $client->getRefreshToken();

@@ -59,4 +59,17 @@
       </div>
     </section>
   <?php endif; ?>
+  <?php
+  require_once __DIR__ . "/../../middleware/Authentication.php";
+  require_once __DIR__ . "/../../middleware/Session.php";
+
+  Session::start();
+  if (Authentication::check()):
+  ?>
+    <section>
+      <h3>Auth</h3>
+      <p>You are signed in as <?php echo $_SESSION["user"]["name"]; ?></p>
+      <a href="/api/auth/delete.php">Delete my data</a>
+    </section>
+  <?php endif; ?>
 </footer>

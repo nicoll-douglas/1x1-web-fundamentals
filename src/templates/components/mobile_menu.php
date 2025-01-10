@@ -35,6 +35,13 @@
       </a>
     </li>
     <li role="presentation">
+      <a
+        href="/privacy.php"
+        role="menuitem">
+        Privacy
+      </a>
+    </li>
+    <li role="presentation">
       <?php
       require_once __DIR__ . "/../../middleware/Authentication.php";
       if (Authentication::check()):

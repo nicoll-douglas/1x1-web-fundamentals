@@ -12,6 +12,9 @@
         <a href="/contact.php">Contact</a>
       </li>
       <li>
+        <a href="/privacy.php">Privacy</a>
+      </li>
+      <li>
         <?php
         require_once __DIR__ . "/../../middleware/Authentication.php";
         if (Authentication::check()):
