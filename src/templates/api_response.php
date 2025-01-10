@@ -14,7 +14,13 @@
   <p class="<?php echo $error ? "message-error" : "message-success"; ?>">
     <?php echo $view; ?>
   </p>
-  <a href="/">Back to home</a>
+  <?php if (isset($link)): ?>
+    <a href="<?php echo $link["href"]; ?>">
+      <?php echo $link["text"] ?>
+    </a>
+  <?php else: ?>
+    <a href="/">Back to home</a>
+  <?php endif; ?>
 </body>
 
 </html>

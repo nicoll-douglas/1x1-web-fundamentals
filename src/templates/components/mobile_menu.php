@@ -35,13 +35,25 @@
       </a>
     </li>
     <li role="presentation">
-      <a
-        href="/sign-in.php"
-        role="menuitem"
-        id="mobile-menu-last-focus">
-        Sign In
-      </a>
+      <?php
+      require_once __DIR__ . "/../../middleware/authorization.php";
+      if (checkAuthorization()):
+      ?>
+        <a
+          href="/api/logout.php"
+          role="menuitem"
+          id="mobile-menu-last-focus">
+          Logout
+        </a>
+      <?php else: ?>
+        <a
+          href="/sign-in.php"
+          role="menuitem"
+          id="mobile-menu-last-focus">
+          Sign In
+        </a>
+      <?php endif; ?>
     </li>
+    <script type="module" src="/assets/js/features/mobileMenu.js"></script>
   </ul>
-  <script type="module" src="/assets/js/features/mobileMenu.js"></script>
 </div>
