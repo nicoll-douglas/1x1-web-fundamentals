@@ -7,8 +7,8 @@ require_once __DIR__ . "/session.php";
 require_once __DIR__ . "/../services/google_api_client.php";
 
 /**
- * Checks whether the user has elevated authorizatio.
- * @return Googl\Client|null A Google API client instance loaded with the access token if authorized, null otherwise.
+ * Checks whether the user is authenticated.
+ * @return Googl\Client|null A Google API client instance loaded with the access token if authenticated, null otherwise.
  */
 function checkAuth(): Google\Client | null
 {

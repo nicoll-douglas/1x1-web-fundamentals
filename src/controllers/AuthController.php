@@ -6,8 +6,15 @@ require __DIR__ . "/../../vendor/autoload.php";
 require_once __DIR__ . "/../models/RefreshToken.php";
 require_once __DIR__ . "/../config/db.php";
 
+/**
+ * Controller that handles requests pertaining to authentication.
+ */
 class AuthController
 {
+  /**
+   * Handles the redirect request upon authentication with Google.
+   * @return string An error view if not redirected once authenticated.
+   */
   public static function handleUserConsent()
   {
     require_once __DIR__ . "/../middleware/session.php";
@@ -53,6 +60,9 @@ class AuthController
     return "Something went wrong.";
   }
 
+  /**
+   * Handles a logout request and redirects to the home page.
+   */
   public static function handleLogout()
   {
     require_once __DIR__ . "/../middleware/session.php";
