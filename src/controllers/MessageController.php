@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . "/../models/Message.php";
-require_once __DIR__ . "/../config/db.php";
+require_once __DIR__ . "/../db.php";
 
 /**
  * Controller that handles requests and operations pertaining to the message model.

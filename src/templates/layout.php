@@ -12,6 +12,7 @@
   <?php require_once __DIR__ . "/components/csp.php"; ?>
 
   <?php
+
   if (isset($css_hrefs)):
     foreach ($css_hrefs as $css_href):
   ?>
