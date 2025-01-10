@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../config/env.php";
 
-$domain = getenv("DOMAIN") ?: $_SERVER["HTTP_HOST"];
+$domain = getenv("APP_ENV") === "development" ? "localhost" : $_SERVER["HTTP_HOST"];
 $lifetime = 60 * 60 * 24 * 7;
 
 ini_set("session.use_only_cookies", 1);
