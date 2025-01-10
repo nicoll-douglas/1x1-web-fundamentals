@@ -24,11 +24,11 @@ ______               _                            _        _
     <p>
       Here the goal is take the large and complicated scope of web development, and transform it into the simple thing it really is under the surface. If you&apos;re looking for a solid foundation for a career in web development, are just a hobbyist, or want the insights of your average web developer, this is the place for you!
     </p>
-    <p>New tutorials are added regularly so if you find something missing, stay tuned, we&apos;re working on it!</p>
+    <p>New tutorials are added regularly so if you find something missing, stay tuned, I&apos;m working on it!</p>
   </section>
   <section>
     <h2>Overview</h2>
-    <p>These tutorials are organised with a 3-level hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/tutorials/html/index.php">HTML</a>), chapters cover core subtopics (e.g <a href="/tutorials/html/forms/index.php">Forms</a>), and tutorials cover key aspects of each subtopic (e.g <a href="/tutorials/html/the-input-element.php">The &lt;input /&gt; element</a>). You can also sign in to keep track of complete and incomplete tutorials.</p>
+    <p>These tutorials are organised in a hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/tutorials/html/index.php">HTML</a>), chapters group related tutorials into a subtopic (e.g <a href="/tutorials/html/forms/index.php">Forms</a>), and tutorials cover key aspects of each chapter or module (e.g <a href="/tutorials/html/the-input-element.php">The &lt;input /&gt; element</a>). You can also sign in to keep track of complete and incomplete tutorials.</p>
     <p>If you wish to get the full picture of what is covered, check out the tutorial index <a href="/tutorials/index.php">here</a>.</p>
     <p>
       If you wish to get started, check out the first tutorial
