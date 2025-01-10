@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../services/google_api_client.php";
+require __DIR__ . "/../services/google_api/client.php";
 ?>
 
 <main>

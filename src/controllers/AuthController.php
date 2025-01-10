@@ -20,7 +20,7 @@ class AuthController
     require_once __DIR__ . "/../middleware/session.php";
 
     if (isset($_GET["code"])) {
-      require_once __DIR__ . "/../services/google_api_client.php";
+      require __DIR__ . "/../services/google_api/client.php";
       $token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
       $client->setAccessToken($token);
 
@@ -73,7 +73,7 @@ class AuthController
       header("Location: /");
       exit;
     }
-    require_once __DIR__ . "/../services/google_api_client.php";
+    require __DIR__ . "/../services/google_api/client.php";
 
     $client->revokeToken($user["access_token"]);
     $pdo = connectDB();
