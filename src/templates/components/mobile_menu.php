@@ -36,8 +36,8 @@
     </li>
     <li role="presentation">
       <?php
-      require_once __DIR__ . "/../../middleware/authorization.php";
-      if (checkAuthorization()):
+      require_once __DIR__ . "/../../middleware/authentication.php";
+      if (checkAuth()):
       ?>
         <a
           href="/api/logout.php"

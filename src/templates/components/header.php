@@ -13,8 +13,8 @@
       </li>
       <li>
         <?php
-        require_once __DIR__ . "/../../middleware/authorization.php";
-        if (checkAuthorization()):
+        require_once __DIR__ . "/../../middleware/authentication.php";
+        if (checkAuth()):
         ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>

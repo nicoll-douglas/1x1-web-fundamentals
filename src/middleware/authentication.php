@@ -6,7 +6,11 @@ require_once __DIR__ . "/../models/RefreshToken.php";
 require_once __DIR__ . "/session.php";
 require_once __DIR__ . "/../services/google_api_client.php";
 
-function checkAuthorization(): Google\Client | null
+/**
+ * Checks whether the user has elevated authorizatio.
+ * @return Googl\Client|null A Google API client instance loaded with the access token if authorized, null otherwise.
+ */
+function checkAuth(): Google\Client | null
 {
   global $client;
   $user = $_SESSION["user"];
