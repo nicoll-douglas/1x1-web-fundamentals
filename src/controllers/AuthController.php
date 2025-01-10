@@ -74,6 +74,8 @@ class AuthController
     $user = $_SESSION["user"];
 
     if (!isset($user)) {
+      session_unset();
+      session_destroy();
       header("Location: /");
       exit;
     }
@@ -92,7 +94,6 @@ class AuthController
 
     session_unset();
     session_destroy();
-
     header("Location: /");
     exit;
   }
