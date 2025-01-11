@@ -129,8 +129,16 @@ main section {
 
 #content,
 footer {
-  margin: var(--space-2xl) 0;
   padding: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+footer {
+  margin-bottom: var(--space-4xl);
+}
+
+#content {
+  margin-bottom: var(--space-2xl);
 }
 
 .link-alt {
