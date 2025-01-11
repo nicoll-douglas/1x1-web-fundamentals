@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . "/../../middleware/Authentication.php";
+require_once __DIR__ . "/../../middleware/Session.php";
+Session::start();
+?>
+
 <footer>
   <section>
     <h3 id="links-heading">Links</h3>
@@ -12,7 +18,14 @@
         <a href="/contact.php">Contact</a>
       </li>
       <li>
-        <a href="/sign-in.php">Sign In</a>
+        <a href="/privacy.php">Privacy</a>
+      </li>
+      <li>
+        <?php if (Authentication::check()): ?>
+          <a href="/api/auth/logout.php">Logout</a>
+        <?php else: ?>
+          <a href="/sign-in.php">Sign In</a>
+        <?php endif; ?>
       </li>
     </ul>
   </section>
@@ -60,16 +73,20 @@
     </section>
   <?php endif; ?>
   <?php
-  require_once __DIR__ . "/../../middleware/Authentication.php";
-  require_once __DIR__ . "/../../middleware/Session.php";
-
-  Session::start();
   if (Authentication::check()):
   ?>
     <section>
       <h3>Auth</h3>
-      <p>You are signed in as <?php echo $_SESSION["user"]["name"]; ?></p>
-      <a href="/api/auth/delete.php">Delete my data</a>
+      <p>You are signed in as <?php echo $_SESSION["user"]["name"]; ?>.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>
+          <a href="/api/auth/logout.php">Logout</a>
+        </li>
+        <li>
+          <a href="/api/auth/delete.php">Delete my data</a>
+        </li>
+      </ul>
     </section>
   <?php endif; ?>
 </footer>
