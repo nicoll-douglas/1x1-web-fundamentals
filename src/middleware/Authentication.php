@@ -96,8 +96,8 @@ class Authentication
       $row = RefreshToken::find($pdo, $user["id"]);
       if ($row) {
         $client->revokeToken($row["token"]);
+        RefreshToken::clear($pdo, $user["id"]);
       }
-      RefreshToken::clear($pdo, $user["id"]);
     }
   }
 }
