@@ -34,19 +34,22 @@
 
 body {
   background-color: var(--color-bg);
-  min-height: 100dvh;
+  height: auto;
   overflow-y: scroll !important;
 }
 
-a {
+a,
+a * {
   color: var(--color-accent-1-light);
 }
 
-a:visited {
+a:visited,
+a:visited * {
   color: var(--color-highlight);
 }
 
-a:active {
+a:active,
+a:active * {
   color: var(--color-accent-1-dark);
 }
 
