@@ -7,6 +7,7 @@ require_once __DIR__ . "/../db.php";
 require_once __DIR__ . "/../models/RefreshToken.php";
 require_once __DIR__ . "/Session.php";
 require __DIR__ . "/../services/google_api/client.php";
+require_once __DIR__ . "/../utils/hashIP.php";
 
 /**
  * Class that contains middleware functions pertaining to authentication.
@@ -28,7 +29,7 @@ class Authentication
     if (!isset($user)) return null;
 
     // if request ip doesn't match current session ip, revoke auth and destroy session, not auth'd
-    if ($user["ip"] !== $_SERVER["REMOTE_ADDR"]) {
+    if (!self::verifyIP()) {
       self::revoke();
       Session::destroy();
       return null;
@@ -99,5 +100,15 @@ class Authentication
         RefreshToken::clear($pdo, $user["id"]);
       }
     }
+  }
+
+  private static function verifyIP(): bool
+  {
+    $request_ip_hash = hashIP(
+      $_SERVER["REMOTE_ADDR"],
+      $_SESSION["user"]["ip_salt"]
+    );
+    $stored_ip_hash = $_SESSION["user"]["ip"];
+    return hash_equals($request_ip_hash, $stored_ip_hash);
   }
 }
