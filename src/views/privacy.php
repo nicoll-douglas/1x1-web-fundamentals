@@ -21,6 +21,6 @@
   <section>
     <h2>Your Control</h2>
     <p>You can revoke access to your information any time by managing app permissions in your Google account settings and clicking the link below to purge your data and your session.</p>
-    <a href="/api/auth/delete.php">Delete my data</a>
+    <a href="/delete.php">Delete my data</a>
   </section>
 </main>

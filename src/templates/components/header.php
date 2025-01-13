@@ -17,7 +17,7 @@
       <li>
         <?php
         require_once __DIR__ . "/../../middleware/Authentication.php";
-        if (Authentication::check()):
+        if (AUTH_CLIENT):
         ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>

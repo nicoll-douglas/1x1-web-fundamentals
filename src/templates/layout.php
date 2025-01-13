@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__ . "/../middleware/Session.php";
+require_once __DIR__ . "/../middleware/Authentication.php";
+Session::start();
+define("AUTH_CLIENT", Authentication::check());
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -21,7 +21,7 @@ Session::start();
         <a href="/privacy.php">Privacy</a>
       </li>
       <li>
-        <?php if (Authentication::check()): ?>
+        <?php if (AUTH_CLIENT): ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>
           <a href="/sign-in.php">Sign In</a>
@@ -29,34 +29,23 @@ Session::start();
       </li>
     </ul>
   </section>
-  <section>
-    <h3 id="tutorial-modules-heading">Tutorial Modules</h3>
-    <ul aria-labelledby="tutorial-modules-heading">
-      <li>
-        <a href="/tutorials/the-web/index.php">The Web</a>
-      </li>
-      <li>
-        <a href="/tutorials/html/index.php">HTML</a>
-      </li>
-      <li>
-        <a href="/tutorials/css/index.php">CSS</a>
-      </li>
-      <li>
-        <a href="/tutorials/git/index.php">Git</a>
-      </li>
-      <li>
-        <a href="/tutorials/javascript/index.php">
-          JavaScript
-        </a>
-      </li>
-      <li>
-        <a href="/tutorials/php/index.php">PHP</a>
-      </li>
-      <li>
-        <a href="/tutorials/mysql/index.php">MySQL</a>
-      </li>
-    </ul>
-  </section>
+  <?php
+  if (AUTH_CLIENT):
+  ?>
+    <section>
+      <h3>Auth</h3>
+      <p>You are signed in as <?php echo $_SESSION["user"]["name"]; ?>.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>
+          <a href="/api/auth/logout.php">Logout</a>
+        </li>
+        <li>
+          <a href="/delete.php">Delete my data</a>
+        </li>
+      </ul>
+    </section>
+  <?php endif; ?>
   <?php
   if (!isset($footer_contact) || $footer_contact === true):
   ?>
@@ -70,23 +59,6 @@ Session::start();
         <h4 id="leave-a-message-heading">Leave a Message</h4>
         <?php require_once __DIR__ . "/message_form.php"; ?>
       </div>
-    </section>
-  <?php endif; ?>
-  <?php
-  if (Authentication::check()):
-  ?>
-    <section>
-      <h3>Auth</h3>
-      <p>You are signed in as <?php echo $_SESSION["user"]["name"]; ?>.</p>
-      <h4>Actions</h4>
-      <ul>
-        <li>
-          <a href="/api/auth/logout.php">Logout</a>
-        </li>
-        <li>
-          <a href="/api/auth/delete.php">Delete my data</a>
-        </li>
-      </ul>
     </section>
   <?php endif; ?>
 </footer>
