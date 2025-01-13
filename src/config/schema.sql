@@ -1,3 +1,7 @@
+CREATE DATABASE jiggys_web_fundamentals;
+
+USE jiggys_web_fundamentals;
+
 CREATE TABLE messages (
   id INT AUTO_INCREMENT PRIMARY KEY,
   message VARCHAR(255) NOT NULL,
