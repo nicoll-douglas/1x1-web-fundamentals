@@ -4,7 +4,7 @@
     ["name" => "Tutorials", "href" => "/tutorials/index.php"],
     "The Web"
   ];
-  require_once __DIR__ . "/../../../templates/components/breadcrumb.php";
+  require_once __DIR__ . "/../../../templates/breadcrumb.php";
   ?>
   <h1>The Web</h1>
   <ol class="indent-list">

@@ -6,7 +6,7 @@ require_once __DIR__ . "/config/env.php";
  * Establishes a connection to the database.
  * @return PDO|false A PDO instance if successfully connected, false otherwise.
  */
-function connectDB()
+function connectDB(): PDO|false
 {
   $db_host = getenv("DB_HOST");
   $db_name = getenv("DB_NAME");

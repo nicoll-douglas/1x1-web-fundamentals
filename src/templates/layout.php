@@ -1,8 +1,7 @@
 <?php
-require_once __DIR__ . "/../middleware/Session.php";
+
 require_once __DIR__ . "/../middleware/Authentication.php";
-Session::start();
-define("AUTH_CLIENT", Authentication::check());
+define("AUTH", Authentication::verify());
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +32,18 @@ define("AUTH_CLIENT", Authentication::check());
   ?>
       <script src="<?php echo $script_src ?>" type="module"></script>
   <?php endforeach;
-  endif; ?>
+  endif;
+  ?>
+
+
 </head>
 
 <body>
   <div id="container">
+
     <?php require_once __DIR__ . "/components/header.php"; ?>
     <div id="content">
+
       <?php require_once $view; ?>
     </div>
     <?php require_once __DIR__ . "/components/footer.php"; ?>

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require __DIR__ . "/../../vendor/autoload.php";
 require_once __DIR__ . "/../db.php";
-require_once __DIR__ . "/../models/RefreshToken.php";
+require_once __DIR__ . "/../models/User.php";
 require_once __DIR__ . "/Session.php";
-require __DIR__ . "/../services/google_api/client.php";
+require_once __DIR__ . "/../services/google_api/client.php";
 require_once __DIR__ . "/../utils/hashIP.php";
 
 /**
@@ -15,65 +15,59 @@ require_once __DIR__ . "/../utils/hashIP.php";
 class Authentication
 {
   /**
-   * Checks whether the user is authenticated and refreshes tokens.
-   * @return Google\Client|null A Google API client instance loaded with the access token if authenticated, null otherwise.
+   * Checks whether the user is authenticated and refreshes their tokens.
+   * @return bool True if authenticated, false otherwise.
    */
-  public static function check(): Google\Client | null
+  public static function verify(): bool
   {
+    // check for session
     Session::start();
-
-    global $client;
     $user = $_SESSION["user"];
+    if (!isset($user)) return false;
 
-    // if no user, not auth'd
-    if (!isset($user)) return null;
-
-    // if request ip doesn't match current session ip, revoke auth and destroy session, not auth'd
+    // check for ip
     if (!self::verifyIP()) {
       self::revoke();
       Session::destroy();
-      return null;
+      return false;
     };
 
-    // if user's token is valid then they are auth'd
-    $client->setAccessToken($user["access_token"]);
-    if (!$client->isAccessTokenExpired()) return $client;
+    // check for good access token
+    $current_access_token = $user["access_token"];
+    $client = getAPIClient();
+    $client->setAccessToken($current_access_token);
+    if (!$client->isAccessTokenExpired()) return true;
 
-    // resort to refresh token
-    $pdo = connectDB();
-    if (!$pdo) {
+    // try to get refresh token from database
+    $user_instance = new User($user["id"]);
+    $row = $user_instance->find();
+    if (!$row || !$row["refresh_token"]) {
       Session::destroy();
-      return null;
+      return false;
     };
-    $row = RefreshToken::find($pdo, $user["id"]);
 
-    // if no refresh token, reset session, not auth'd
-    if (!$row) {
+    // try to get access token with refresh token
+    $client->fetchAccessTokenWithRefreshToken($row["refresh_token"]);
+    $new_access_token = $client->getAccessToken();
+    if (!$new_access_token) {
       Session::destroy();
-      return null;
+      return false;
     };
-    if (!isset($row["token"]) || is_null($row["token"])) {
+    if ($new_access_token === $current_access_token) {
       Session::destroy();
-      return null;
-    };
-
-    // attempt to refresh access token
-    $client->fetchAccessTokenWithRefreshToken($row["token"]);
-    $new_access_token = $client->getAccessToken() !== $user["access_token"];
-
-    // if succeeded update token in the session
-    if ($new_access_token) {
-      $_SESSION["user"]["access_token"] = $client->getAccessToken();
-
-      // if there's a new refresh token, revoke the old and store the new
-      $new_refresh_token = $client->getRefreshToken();
-      if ($new_refresh_token && $new_refresh_token !== $row["token"]) {
-        $client->revokeToken($row["token"]);
-        RefreshToken::update($pdo, $user["id"], $new_refresh_token);
-      }
+      return false;
     }
+    $_SESSION["user"]["access_token"] = $new_access_token;
 
-    return $client;
+    // check for new refresh token
+    $new_refresh_token = $client->getRefreshToken();
+    if (!$new_refresh_token) return true;
+    $current_refresh_token = $row["refresh_token"];
+    if ($new_refresh_token === $current_refresh_token) return true;
+    $client->revokeToken($current_refresh_token);
+    $user_instance->update(["refresh_token" => $new_refresh_token]);
+
+    return true;
   }
 
   /**
@@ -82,33 +76,35 @@ class Authentication
    */
   public static function revoke(bool $access_only = false)
   {
+    // check for session
     Session::start();
     $user = $_SESSION["user"];
     if (!isset($user)) return;
 
-    global $client;
-
+    // revoke access token
+    $client = getAPIClient();
     $client->revokeToken($user["access_token"]);
     if ($access_only) return;
 
-    $pdo = connectDB();
-
-    if ($pdo) {
-      $row = RefreshToken::find($pdo, $user["id"]);
-      if ($row) {
-        $client->revokeToken($row["token"]);
-        RefreshToken::clear($pdo, $user["id"]);
-      }
+    // revoke refresh token
+    $user_instance = new User($user["id"]);
+    $row = $user_instance->find();
+    if ($row) {
+      $client->revokeToken($row["refresh_token"]);
+      $user_instance->update(["refresh_token" => "NULL"]);
     }
   }
 
+  /**
+   * Verifies that the current IP matches the session's IP.
+   */
   private static function verifyIP(): bool
   {
     $request_ip_hash = hashIP(
       $_SERVER["REMOTE_ADDR"],
       $_SESSION["user"]["ip_salt"]
     );
-    $stored_ip_hash = $_SESSION["user"]["ip"];
+    $stored_ip_hash = $_SESSION["user"]["ip_hash"];
     return hash_equals($request_ip_hash, $stored_ip_hash);
   }
 }

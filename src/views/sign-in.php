@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/../services/google_api/client.php";
+require_once __DIR__ . "/../services/google_api/client.php";
 ?>
 
 <main>
@@ -7,7 +7,7 @@ require __DIR__ . "/../services/google_api/client.php";
   <p>Authorize with one of the services below to sign in and save your progress:</p>
   <ul id="oauth-providers-list">
     <li>
-      <a href="<?php echo $client->createAuthUrl(); ?>">
+      <a href="<?php echo getAPIClient()->createAuthUrl(); ?>">
         Sign in with Google
       </a>
     </li>

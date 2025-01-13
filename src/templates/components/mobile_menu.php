@@ -44,7 +44,7 @@
     <li role="presentation">
       <?php
       require_once __DIR__ . "/../../middleware/Authentication.php";
-      if (Authentication::check()):
+      if (Authentication::verify()):
       ?>
         <a
           href="/api/logout.php"

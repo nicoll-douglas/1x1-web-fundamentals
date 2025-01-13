@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . "/../../middleware/Authentication.php";
 require_once __DIR__ . "/../../middleware/Session.php";
-Session::start();
+require_once __DIR__ . "/../../models/User.php";
 ?>
 
 <footer>
@@ -21,7 +20,7 @@ Session::start();
         <a href="/privacy.php">Privacy</a>
       </li>
       <li>
-        <?php if (AUTH_CLIENT): ?>
+        <?php if (AUTH): ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>
           <a href="/sign-in.php">Sign In</a>
@@ -30,11 +29,10 @@ Session::start();
     </ul>
   </section>
   <?php
-  if (AUTH_CLIENT):
+  if (AUTH):
   ?>
     <section>
       <h3>Auth</h3>
-      <p>You are signed in as <?php echo $_SESSION["user"]["name"]; ?>.</p>
       <h4>Actions</h4>
       <ul>
         <li>

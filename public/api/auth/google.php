@@ -1,11 +1,12 @@
 <?php
 
+
 $view = "Method not allowed.";
 $title = &$view;
 
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
-  require_once __DIR__ . "/../../../src/controllers/AuthController.php";
-  $view = AuthController::handleUserConsent();
+  require_once __DIR__ . "/../../../src/controllers/UserController.php";
+  $view = UserController::handleLogin();
 } else {
   http_response_code(405);
 }

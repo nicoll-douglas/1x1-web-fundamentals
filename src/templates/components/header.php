@@ -16,8 +16,7 @@
       </li>
       <li>
         <?php
-        require_once __DIR__ . "/../../middleware/Authentication.php";
-        if (AUTH_CLIENT):
+        if (AUTH):
         ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>

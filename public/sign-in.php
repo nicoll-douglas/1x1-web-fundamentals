@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../src/middleware/Authentication.php";
 
-if (Authentication::check()) {
+if (Authentication::verify()) {
   header("Location: /tutorials/index.php");
   exit;
 }
