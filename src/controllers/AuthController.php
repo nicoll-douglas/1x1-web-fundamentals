@@ -90,4 +90,24 @@ class AuthController
     header("Location: /");
     exit;
   }
+
+  /**
+   * Handles the deletion of a user's account/data
+   */
+  public static function handleAccountDeletion(): string
+  {
+    Session::start();
+
+    if (!isset($_SESSION["user"])) {
+      http_response_code(400);
+      return "Bad Request. Please login to delete your account.";
+    }
+
+    Authentication::revoke();
+    Session::destroy();
+
+    // delete tutorial progress data here
+
+    return "Data successfully deleted.";
+  }
 }
