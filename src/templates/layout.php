@@ -1,7 +1,9 @@
 <?php
 
 require_once __DIR__ . "/../middleware/Authentication.php";
-define("USER", Authentication::verify());
+if (!defined("USER")) {
+  define("USER", Authentication::verify());
+}
 ?>
 
 <!DOCTYPE html>
