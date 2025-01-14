@@ -50,7 +50,7 @@ class TutorialController
     }
 
     $pdo = connectDB();
-    $tutorials = Tutorial::getAll();
+    $tutorials = Tutorial::getAll($pdo);
     $data = json_encode($tutorials, JSON_PRETTY_PRINT);
     file_put_contents($cache_file, $data);
 
