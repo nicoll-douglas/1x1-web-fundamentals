@@ -1,5 +1,10 @@
 {
   "require": {
     "google/apiclient": "^2.18"
+  },
+  "scripts": {
+    "flush-cache": [
+      "php scripts/flush_cache.php"
+    ]
   }
 }
