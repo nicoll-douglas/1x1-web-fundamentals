@@ -5,6 +5,9 @@
   "scripts": {
     "flush-cache": [
       "php scripts/flush_cache.php"
+    ],
+    "whoami": [
+      "php scripts/whoami.php"
     ]
   }
 }
