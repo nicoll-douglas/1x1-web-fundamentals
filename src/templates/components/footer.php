@@ -30,9 +30,14 @@ require_once __DIR__ . "/../../models/User.php";
   </section>
   <?php
   if (AUTH):
+    Session::start();
+    $user_instance = new User($_SESSION["user"]["id"]);
+    $row = $user_instance->find();
+    $name = $row["name"];
   ?>
     <section>
       <h3>Auth</h3>
+      <p>You are signed in as <?php echo $name; ?>.</p>
       <h4>Actions</h4>
       <ul>
         <li>
