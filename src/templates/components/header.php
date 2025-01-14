@@ -16,7 +16,7 @@
       </li>
       <li>
         <?php
-        if (AUTH):
+        if (USER):
         ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>

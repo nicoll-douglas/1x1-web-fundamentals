@@ -41,6 +41,17 @@ class UserController
         return "Server Error. Something went wrong";
       }
 
+      // set up user and db connection
+      $user_instance = null;
+      try {
+        $user_instance = new User($user_info["id"]);
+      } catch (PDOException $e) {
+        $client->revokeToken($client->getAccessToken());
+        $client->revokeToken($client->getRefreshToken());
+        http_response_code(500);
+        return "Server Error. Something went wrong, please try again later.";
+      }
+
       // store user data in the session
       $ip_salt = bin2hex(random_bytes(16));
       Session::start();
@@ -61,7 +72,6 @@ class UserController
       }
 
       // retrieve user information
-      $user_instance = new User($user_info["id"]);
       $row = $user_instance->find();
 
       // if user doesn't exist, insert fields
@@ -100,7 +110,36 @@ class UserController
   public static function handleLogout()
   {
     Session::start();
-    Authentication::revoke();
+
+    // check session
+    $user = $_SESSION["user"];
+    if (!isset($user)) {
+      Session::destroy();
+      header("Location: /");
+      exit;
+    };
+
+    // try to instantiate user
+    $user_instance = null;
+    try {
+      $user_instance = new User($user["id"]);
+    } catch (PDOException $e) {
+      http_response_code(500);
+      return "Server Error. Something went wrong, please try again later.";
+    }
+
+    // revoke access token
+    $client = getAPIClient();
+    $client->revokeToken($user["access_token"]);
+
+    // revoke refresh token
+    $row = $user_instance->find();
+    if ($row) {
+      $client->revokeToken($row["refresh_token"]);
+      $user_instance->update(["refresh_token" => "NULL"]);
+    }
+
+    // cleanup
     Session::destroy();
     header("Location: /");
     exit;
@@ -120,9 +159,26 @@ class UserController
       return "Bad Request. Please login to delete your account.";
     }
 
-    // revoke tokens, delete user and session
-    Authentication::revoke();
-    $user_instance = new User($user["id"]);
+    // try to instantiate user
+    $user_instance = null;
+    try {
+      $user_instance = new User($user["id"]);
+    } catch (PDOException $e) {
+      http_response_code(500);
+      return "Server Error. Something went wrong, please try again later.";
+    }
+
+    // revoke access token
+    $client = getAPIClient();
+    $client->revokeToken($user["access_token"]);
+
+    // revoke refresh token
+    $row = $user_instance->find();
+    if ($row) {
+      $client->revokeToken($row["refresh_token"]);
+    }
+
+    // delete user and session
     $user_instance->delete();
     Session::destroy();
 

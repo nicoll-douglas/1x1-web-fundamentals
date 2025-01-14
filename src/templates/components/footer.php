@@ -20,7 +20,7 @@ require_once __DIR__ . "/../../models/User.php";
         <a href="/privacy.php">Privacy</a>
       </li>
       <li>
-        <?php if (AUTH): ?>
+        <?php if (USER): ?>
           <a href="/api/auth/logout.php">Logout</a>
         <?php else: ?>
           <a href="/sign-in.php">Sign In</a>
@@ -29,11 +29,8 @@ require_once __DIR__ . "/../../models/User.php";
     </ul>
   </section>
   <?php
-  if (AUTH):
-    Session::start();
-    $user_instance = new User($_SESSION["user"]["id"]);
-    $row = $user_instance->find();
-    $name = $row["name"];
+  if (USER):
+    $name = USER["name"];
   ?>
     <section>
       <h3>Auth</h3>
