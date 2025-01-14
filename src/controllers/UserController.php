@@ -25,15 +25,21 @@ class UserController
       // attempt to exchange for access token
       $client = getAPIClient();
       $token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
-      if (!$token) {
-        http_response_code(500);
-        return "Server Error. Something went wrong.";
+      if (!$token || $token["error"]) {
+        http_response_code(400);
+        return "Bad Request.";
       }
 
       // get user information
       $client->setAccessToken($token);
       $oauth2 = new Google\Service\Oauth2($client);
-      $user_info = $oauth2->userinfo->get();
+      $user_info = null;
+      try {
+        $user_info = $oauth2->userinfo->get();
+      } catch (Google\Service\Exception $e) {
+        http_response_code(500);
+        return "Server Error. Something went wrong";
+      }
 
       // store user data in the session
       $ip_salt = bin2hex(random_bytes(16));
@@ -114,10 +120,10 @@ class UserController
       return "Bad Request. Please login to delete your account.";
     }
 
-    // delete user and session
+    // revoke tokens, delete user and session
+    Authentication::revoke();
     $user_instance = new User($user["id"]);
     $user_instance->delete();
-    Authentication::revoke();
     Session::destroy();
 
     return "Data successfully deleted.";
