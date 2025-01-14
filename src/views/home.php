@@ -29,7 +29,7 @@ ______               _                            _        _
   <section>
     <h2>Overview</h2>
     <p>These tutorials are organised in a hierarchy: Modules > Chapters > Tutorials. Modules cover a broad topic (e.g <a href="/tutorials/html/index.php">HTML</a>), chapters group related tutorials into a subtopic (e.g <a href="/tutorials/html/forms/index.php">Forms</a>), and tutorials cover key aspects of each chapter or module (e.g <a href="/tutorials/html/the-input-element.php">The &lt;input /&gt; element</a>). You can also sign in to keep track of complete and incomplete tutorials.</p>
-    <p>If you wish to get the full picture of what is covered, check out the tutorial index <a href="/tutorials/index.php">here</a>.</p>
+    <p>If you wish to see a list of all the current available tutorials, check out the tutorial index <a href="/tutorials/index.php">here</a>.</p>
     <p>
       If you wish to get started, check out the first tutorial
       <a href="/tutorials/the-web/how-it-works/clients-and-servers.php">here</a>.

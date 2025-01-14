@@ -13,7 +13,7 @@
       <h2>The State of the Web</h2>
       <p>Any other web developer out there knows that the web dev practice and ecosystem has become overwhelmingly complex over the last decade. The kinds of things that we can and want to do on the web have demanded more complexity. As a result, the ecosystem and community is flooded with a million and one technologies, abstractions, attitudes, content creators, and overall just general noise that newbies don&apos;t need to hear.</p>
       <p>
-        What this means is that if you are someone trying to get into web dev, you will find a lot of conflicting and opinionated views about how to get into web dev, or whether you should get into it at all. The aim here is not to dispute those views with my own take, but rather provide some basic sense for those that want a start in web dev.
+        What this means is that if you are someone trying to get into web dev, you will find a lot of conflicting and opinionated views about how to do so, or whether you should get into it at all. The aim here is not to dispute those views with my own take, but rather provide some basic sense for those that want a start in web dev.
       </p>
       <p>
         A strong understanding of these fundamentals and building with basic web tools means you will have a core understanding of how any complex website or web app works under the hood and be able to build whatever you wish. One of the goals of Jiggy&apos;s Web Fundamentals is to simplify the daunting scope of modern web development and help you realise, the scope is not that scary, and under the hood it&apos;s not as complicated as the echoes from the community will have you think.
@@ -26,9 +26,9 @@
       <h2>Final Note</h2>
       <p>I believe that one of the joys of web dev and programming as a whole, is that you have an incredible amount of creative freedom to build whatever you can think up. If you&apos;re someone pragmatic, you can solve that problem you wish you had a solution for. If you&apos;re someone more artsy, the web is your perfect canvas.</p>
       <p>
-        Back in the old days of the web, this potential was one of the web&apos;s wonders that has been lost today and replaced with homogenous, uninspiring, web services and products.
+        Back in the old days of the web, this potential was one of the web&apos;s wonders that has been lost today and replaced with homogenous, uninspiring, corporate web services and products.
       </p>
-      <p>One of the best skills and qualities you can have is a curiosity and motivation to learn and build. Web dev and programming in general facilitates that and its a quality that will always be needed. So if you are interested in learning web dev, get inspired, take a look around, and happy learning!</p>
+      <p>One of the best skills and qualities you can have is a curiosity and motivation to learn and build regardless if its been done. Web dev and programming in general facilitates that and its a quality that will always be needed. So if you are interested in learning web dev, get inspired, take a look around, and happy learning!</p>
     </section>
   </article>
 </main>
