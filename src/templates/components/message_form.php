@@ -5,7 +5,7 @@
   method="POST">
   <label for="message-input" id="message-label">Message:</label>
   <div>
-    <input id="message-input" name="message" required maxlength="255">
+    <input id="message-input" name="message" type="text" required maxlength="255">
     <button type="submit">Submit</button>
   </div>
 </form>
