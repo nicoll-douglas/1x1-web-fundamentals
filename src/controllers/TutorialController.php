@@ -18,7 +18,8 @@ class TutorialController
     $dirname = dirname($cache_file);
 
     if (!is_dir($dirname)) {
-      mkdir($dirname, 0760, true);
+      mkdir($dirname);
+      self::givePerms($dirname);
     }
 
     if (file_exists($cache_file)) {
@@ -30,6 +31,7 @@ class TutorialController
     $completions = Tutorial::getAllCompletions($user_id, $pdo);
     $data = json_encode($completions, JSON_PRETTY_PRINT);
     file_put_contents($cache_file, $data);
+    self::givePerms($cache_file);
 
     return $completions;
   }
@@ -41,7 +43,8 @@ class TutorialController
     $dirname = dirname($cache_file);
 
     if (!is_dir($dirname)) {
-      mkdir($dirname, 0760, true);
+      mkdir($dirname);
+      self::givePerms($dirname);
     }
 
     if (file_exists($cache_file)) {
@@ -53,7 +56,14 @@ class TutorialController
     $tutorials = Tutorial::getAll($pdo);
     $data = json_encode($tutorials, JSON_PRETTY_PRINT);
     file_put_contents($cache_file, $data);
+    self::givePerms($cache_file);
 
     return $tutorials;
+  }
+
+  private static function givePerms(string $file_or_dir)
+  {
+    chgrp($file_or_dir, "www-data");
+    chmod($file_or_dir, 0770);
   }
 }
