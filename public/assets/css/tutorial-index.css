@@ -1,6 +1,6 @@
 .tutorial-list li {
   display: flex;
-  align-items: end;
+  align-items: center;
   position: relative;
 }
 
@@ -14,10 +14,9 @@
 
 .tutorial-with-check {
   display: flex;
-  align-items: end;
+  align-items: center;
   gap: var(--space-sm);
   max-width: fit-content;
-  margin-top: -4px !important;
 }
 
 label {
