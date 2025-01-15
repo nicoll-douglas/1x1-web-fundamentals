@@ -4,7 +4,7 @@ require_once __DIR__ . "/config/env.php";
 
 /**
  * Establishes a connection to the database.
- * @return PDO A PDO instance if successfully connected, false otherwise.
+ * @return PDO A PDO instance if successfully connected.
  * @throws PDOException If the function failed to connect to the database.
  */
 function connectDB(): PDO

@@ -18,9 +18,9 @@ class Tutorial
    */
   private PDO $pdo;
 
-  public function __construct(int $id)
+  public function __construct(int $id, PDO $pdo)
   {
-    $this->pdo = connectDB();
+    $this->pdo = $pdo;
     $this->id = $id;
   }
 
@@ -88,7 +88,7 @@ class Tutorial
   /**
    * Retrieves and orders tutorial completions for a user along with tutorial information.
    * @param string $user_id The user's id.
-   * @param PDO|null $pdo An optional pre-existing database connection.
+   * @param PDO $pdo A pre-existing database connection.
    * @return array<array{
    *  module_name: string,
    *  module_number: int,
@@ -99,7 +99,7 @@ class Tutorial
    *  is_completed: 1|0
    * }> The rows from the query.
    */
-  public static function getAllCompletions(string $user_id, PDO $pdo = null): array
+  public static function getAllCompletions(string $user_id, PDO $pdo): array
   {
     $sql = "
 SELECT 
@@ -127,8 +127,7 @@ ON
 ORDER BY 
     tm.number, t.number";
 
-    $conn = $pdo ?: connectDB();
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute([
       ":user_id" => $user_id
     ]);
@@ -137,7 +136,7 @@ ORDER BY
 
   /**
    * Retrieves and orders tutorial information.
-   * @param PDO|null $pdo An optional pre-existing database connection.
+   * @param PDO $pdo A pre-existing database connection.
    * @return array<array{
    *  module_name: string,
    *  module_number: int,
@@ -147,7 +146,7 @@ ORDER BY
    *  tutorial_number: int,
    * }> The rows from the query.
    */
-  public static function getAll(PDO $pdo = null): array
+  public static function getAll(PDO $pdo): array
   {
     $sql = "
 SELECT
@@ -165,8 +164,7 @@ ON
   tm.id = t.module_id
 ORDER BY
   tm.number, t.number";
-    $conn = $pdo ?: connectDB();
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
