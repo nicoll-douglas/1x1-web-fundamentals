@@ -1,3 +1,5 @@
+import Alert from "./classes/Alert.js";
+
 const form = document.querySelector("#tutorial-completions");
 
 form.addEventListener("submit", async (e) => {
@@ -17,6 +19,16 @@ form.addEventListener("submit", async (e) => {
     });
     const json = await response.json();
     console.log(json);
+
+    switch (response.status) {
+      case 200:
+        Alert.show("Successfully saved!");
+        break;
+      default:
+        Alert.show(
+          "Failed to save. Something went wrong, please try again later."
+        );
+    }
   } catch (error) {
     console.log(error);
   }

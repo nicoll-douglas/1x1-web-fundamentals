@@ -58,6 +58,7 @@
     <?php endfor; ?>
 
     <?php if (USER): ?>
+      <?php require_once __DIR__ . "/../../templates/alert.php"; ?>
       <button type="submit">Save</button>
     </form>
   <?php endif; ?>
