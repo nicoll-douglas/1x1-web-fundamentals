@@ -24,9 +24,10 @@ class MessageController
       return $error;
     };
 
-    $pdo = connectDB();
-
-    if (!$pdo) {
+    $pdo = null;
+    try {
+      $pdo = connectDB();
+    } catch (PDOException $e) {
       http_response_code(500);
       return "Server error. Something went wrong.";
     }
