@@ -2,6 +2,10 @@
 require __DIR__ . "/../../../vendor/autoload.php";
 require_once __DIR__ . "/../../config/env.php";
 
+/**
+ * Instatiates the Google API client with the necessary configuration.
+ * @return Google\Client The Google API client.
+ */
 function getAPIClient()
 {
   $client = new Google\Client();
