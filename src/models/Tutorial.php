@@ -55,6 +55,9 @@ class Tutorial
    */
   public function markIncomplete(string $user_id): bool
   {
+    $exists = $this->existsCompletion($user_id);
+    if (!$exists) return false;
+
     $stmt = $this->pdo->prepare(
       "DELETE FROM tutorial_completions WHERE user_id = :user_id AND tutorial_id = :tut_id"
     );
