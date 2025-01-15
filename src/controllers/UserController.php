@@ -7,6 +7,7 @@ require_once __DIR__ . "/../models/User.php";
 require_once __DIR__ . "/../db.php";
 require_once __DIR__ . "/../middleware/Session.php";
 require_once __DIR__ . "/../middleware/Authentication.php";
+require_once __DIR__ . "/../middleware/Cache.php";
 require_once __DIR__ . "/../services/google_api/client.php";
 require_once __DIR__ . "/../utils/hashIP.php";
 
@@ -181,6 +182,7 @@ class UserController
     // delete user and session
     $user_instance->delete();
     Session::destroy();
+    Cache::deleteTutorialCompletions($user["id"]);
 
     return "Data successfully deleted.";
   }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 require_once __DIR__ . "/../models/Tutorial.php";
 require_once __DIR__ . "/../middleware/Authentication.php";
 require_once __DIR__ . "/../middleware/Session.php";
+require_once __DIR__ . "/../middleware/Cache.php";
 require_once __DIR__ . "/../db.php";
 
 class TutorialController
@@ -17,25 +18,12 @@ class TutorialController
    */
   public static function handleGetCompletions(string $user_id): array
   {
-    $cache_file = __DIR__ . "/../../cache/tutorial_completions_$user_id.json";
-
-    $dirname = dirname($cache_file);
-
-    if (!is_dir($dirname)) {
-      mkdir($dirname);
-      self::givePerms($dirname);
-    }
-
-    if (file_exists($cache_file)) {
-      $data = file_get_contents($cache_file);
-      if ($data) return json_decode($data, true);
-    }
+    $cache = Cache::getTutorialCompletions($user_id);
+    if ($cache) return $cache;
 
     $pdo = connectDB();
     $completions = Tutorial::getAllCompletions($user_id, $pdo);
-    $data = json_encode($completions, JSON_PRETTY_PRINT);
-    file_put_contents($cache_file, $data);
-    self::givePerms($cache_file);
+    Cache::setTutorialCompletions($user_id, $completions);
 
     return $completions;
   }
@@ -47,25 +35,12 @@ class TutorialController
    */
   public static function handleGetAll(): array
   {
-    $cache_file = __DIR__ . "/../../cache/tutorials.json";
-
-    $dirname = dirname($cache_file);
-
-    if (!is_dir($dirname)) {
-      mkdir($dirname);
-      self::givePerms($dirname);
-    }
-
-    if (file_exists($cache_file)) {
-      $data = file_get_contents($cache_file);
-      if ($data) return json_decode($data, true);
-    }
+    $cache = Cache::getTutorials();
+    if ($cache) return $cache;
 
     $pdo = connectDB();
     $tutorials = Tutorial::getAll($pdo);
-    $data = json_encode($tutorials, JSON_PRETTY_PRINT);
-    file_put_contents($cache_file, $data);
-    self::givePerms($cache_file);
+    Cache::setTutorials($tutorials);
 
     return $tutorials;
   }
@@ -138,15 +113,7 @@ class TutorialController
     }
 
     // invalidate the cache
-    $user_id = $user["id"];
-    $cache_file = __DIR__ . "/../../cache/tutorial_completions_$user_id.json";
-    $dirname = dirname($cache_file);
-
-    if (is_dir($dirname)) {
-      if (file_exists($cache_file)) {
-        unlink($cache_file);
-      }
-    }
+    Cache::deleteTutorialCompletions($user["id"]);
 
     echo json_encode($success_response);
     exit;

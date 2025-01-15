@@ -32,7 +32,7 @@ class Tutorial
   public function markComplete(string $user_id): bool
   {
     $exists = $this->existsCompletion($user_id);
-    if ($exists) return true;
+    if ($exists) return false;
 
     $stmt = $this->pdo->prepare(
       "INSERT INTO tutorial_completions (tutorial_id, user_id) VALUES (:tut_id, :user_id)"
