@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   position: relative;
+  counter-increment: item 1;
 }
 
 .tutorial-list li::before {
   content: counter(item) ". ";
-  counter-increment: item;
   position: relative;
+  list-style: none;
   left: 0;
   margin-right: var(--space-sm);
 }
