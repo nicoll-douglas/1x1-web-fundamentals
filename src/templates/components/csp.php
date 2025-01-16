@@ -14,7 +14,7 @@ define("NONCE", bin2hex(random_bytes(16)));
                 echo "'self' 'nonce-" . NONCE . "'";
               }
               ?>;
-  style-src 'self' https://fonts.googleapis.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com;
   img-src 'self' https:;
   connect-src 'self';

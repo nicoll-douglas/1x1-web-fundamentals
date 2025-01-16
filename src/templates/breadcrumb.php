@@ -1,18 +1,8 @@
-<div class="breadcrumb">
+<p>
+  <a href="/tutorials/index.php">Tutorials</a> &gt;
   <?php
-  for ($i = 0; $i < count($breadcrumb); $i++):
-    if ($i === array_key_last($breadcrumb)):
+  if (isset($breadcrumb)) {
+    echo $breadcrumb[0] . " > " . $breadcrumb[1];
+  }
   ?>
-      <p><?php echo $breadcrumb[$i] ?></p>
-
-    <?php else: ?>
-
-      <a href="<?php echo $breadcrumb[$i]["href"] ?>">
-        <?php echo $breadcrumb[$i]["name"] ?>
-      </a>
-
-      &gt;
-
-  <?php endif;
-  endfor; ?>
-</div>
+</p>
