@@ -81,12 +81,14 @@
       <p>Firstly, you have what is known as a <strong>client</strong>. A client is something or someone that is able to <strong>request</strong> and interpret data from a web server. Typically this is a <strong>web browser</strong> on someone's personal computer (e.g Google Chrome, Microsoft Edge etc), which is specifically designed for the job and ease of use.</p>
 
       <p>Secondly, you have what are known as <strong>servers</strong> or web servers. Servers are a special kind of computer (remember the internet is just computers talking to other computers). The main job of a web server is to make available, and <strong>provide</strong> the data that a client is requesting (e.g a webpage).</p>
+
+      <p>So when clients and servers on the web are communicating, typically a client will request some data from a web server and the web server will send the data back if it is available. This is called the <em>request-response cycle</em> and we will look at it more in depth in a future tutorial.</p>
     </section>
     <section>
       <h2 id="accessing-the-web">Accessing The Web</h2>
-      <p>Ok so on the web we have clients and web servers, but if I'm sitting here with my web browser (client) open, how do I access data from a web server?</p>
+      <p>Ok so on the web we have clients and web servers, but if I'm sitting here with my web browser (client) open, how do I request data from a web server?</p>
 
-      <p>Well, every computer on the internet has a unique address that identifies it called an <em>Internet Protocol address</em> (IP Address), kind of like a house address. It is an address typically made of four numbers separated by dots, for example: "142.250.190.78". We can type these addresses into our web browser and press enter, and if the address corresponds to a <em>web server</em>, it will send the data back that it has for the browser to intrepret. So imagine, this process is kind of like opening Google Maps and navigating to a house address we want to go to and then knocking on the door to see who opens up.</p>
+      <p>Well, every computer on the internet has a unique address that identifies it called an <em>Internet Protocol address</em> (IP Address), kind of like a house address. It is an address typically made of four numbers separated by dots, for example: "142.250.190.78". We can type these addresses into our web browser and press enter, and if the address corresponds to a <em>web server</em>, it may send some data back that it has for the browser to interpret. So imagine, this process is kind of like opening Google Maps and navigating to a house address we want to visit, and then knocking on the door to see who opens up.</p>
 
       <p>But speaking of Google, for example, if we type the example IP address into our web browser's address bar:</p>
 
@@ -96,10 +98,10 @@
           style="max-width: 185px;"
           loading="lazy"
           alt="An IP address typed into a web browser" />
-        <figcaption>Figure 4 - An IP address typed into a web browser</figcaption>
+        <figcaption>Figure 4 - The IP address typed into a web browser</figcaption>
       </figure>
 
-      <p>The data that gets returned is Google's home webpage (at the time of writing; IP addresses can change) because that IP address corresponds to Google's web server, and it has made a homepage for itself available on the web. Not only that, but they are able to respond to our request since we are making it through a web browser:</p>
+      <p>The data that gets returned is Google's home webpage (at the time of writing; IP addresses can change) because that IP address corresponds to Google's web server, and they have made a homepage for themselves available on the web. Not only that, but they are able to respond to our request since we are making it through a web browser and the web browser follows protocols necessary for web communication:</p>
 
       <figure>
         <img
@@ -110,17 +112,17 @@
         <figcaption>Figure 5 - Google's home webpage</figcaption>
       </figure>
 
-      <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the web instead of these random numbers. Well, understanding IP addresses is the first step to getting there. We'll get to domain names in one of the upcoming tutorials.</p>
+      <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the web instead of these random numbers. Well, understanding IP addresses is the first step to getting there. We'll look at domain names in the next tutorial.</p>
 
     </section>
 
     <section>
       <h3>Key Concepts Learnt</h3>
       <ul>
-        <li>The internet is an architecture that allows computers to communicate with each other.</li>
-        <li>Every computer on the internet has a unique identifier called an IP address.</li>
-        <li>The web is a service built on top of the internet that allows a web browser to get data from web servers.</li>
-        <li>The web consists of clients (request makers) and web servers (request answerers).</li>
+        <li>The <em>internet</em> is an architecture that allows computers to communicate with each other.</li>
+        <li>Every computer on the internet has a unique identifier called an <strong>IP address</strong>.</li>
+        <li>The <em>web</em> is a service built on top of the internet that allows a web browser to request and interpret data from web servers.</li>
+        <li>The web consists of <strong>clients</strong> (responsible for making data requests) and <strong>web servers</strong> (reponsible for responding to data requests).</li>
       </ul>
     </section>
   </article>

@@ -84,9 +84,9 @@
       <ul>
         <li>Domain names provide a human-readable address that corresponds to a web server.</li>
         <li>Domains names consists of several parts to identify the content on a web server in a basic manner.</li>
-        <li>"Ownership" of a domain can be checked and changed through a registrar.</li>
-        <li>The internet contains DNS servers which hold DNS records.</li>
-        <li>DNS servers allow clients on the web to look up the IP associated with a domain in the DNS record.</li>
+        <li>"Ownership" of a domain can be checked and changed through a <strong>registrar</strong>.</li>
+        <li>The internet contains <strong>DNS servers</strong> which hold <strong>DNS records</strong>.</li>
+        <li>DNS servers allow clients on the web to look up the IP address associated with a domain in the DNS record.</li>
         <li>DNS servers regularly refresh their records from authoritative name servers to keep the web up to date.</li>
       </ul>
     </section>
