@@ -99,7 +99,7 @@
         <figcaption>Figure 4 - An IP address typed into a web browser</figcaption>
       </figure>
 
-      <p>The data that gets returned is Google's home webpage (at the time of writing; IP addresses can change) because that IP address corresponds to Google's web server. And they are able to respond to our request since we are making it through a web browser:</p>
+      <p>The data that gets returned is Google's home webpage (at the time of writing; IP addresses can change) because that IP address corresponds to Google's web server, and it has made a homepage for itself available on the web. Not only that, but they are able to respond to our request since we are making it through a web browser:</p>
 
       <figure>
         <img
@@ -112,6 +112,16 @@
 
       <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the web instead of these random numbers. Well, understanding IP addresses is the first step to getting there. We'll get to domain names in one of the upcoming tutorials.</p>
 
+    </section>
+
+    <section>
+      <h3>Key Concepts Learnt</h3>
+      <ul>
+        <li>The internet is an architecture that allows computers to communicate with each other.</li>
+        <li>Every computer on the internet has a unique identifier called an IP address.</li>
+        <li>The web is a service built on top of the internet that allows a web browser to get data from web servers.</li>
+        <li>The web consists of clients (request makers) and web servers (request answerers).</li>
+      </ul>
     </section>
   </article>
   <?php
