@@ -1,4 +1,4 @@
-import Alert from "./classes/Alert.js";
+import Alert from "../classes/Alert.js";
 
 const form = document.querySelector("#tutorial-completions");
 

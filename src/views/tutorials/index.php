@@ -1,7 +1,7 @@
 <main>
   <h1>Tutorial Index</h1>
   <?php if (USER): ?>
-    <script src="/assets/js/handleTutorialComplete.js" defer type="module"></script>
+    <script src="/assets/js/features/updateAllCompletions.js" defer type="module"></script>
     <form id="tutorial-completions">
     <?php endif; ?>
 
