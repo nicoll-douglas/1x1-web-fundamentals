@@ -9,6 +9,12 @@
       <li>
         <a href="#what-is-a-domain">What is a Domain?</a>
       </li>
+      <li>
+        <a href="#who-owns-a-domain">Who Owns a Domain?</a>
+      </li>
+      <li>
+        <a href="#what-is-dns">What is DNS?</a>
+      </li>
     </nav>
     <section>
       <h2 id="what-is-a-domain">What is a Domain?</h2>
@@ -43,7 +49,7 @@
     </section>
 
     <section>
-      <h2>Who Owns a Domain?</h2>
+      <h2 id="who-owns-a-domain">Who Owns a Domain?</h2>
 
       <p>Domain names cannot be strictly <em>owned</em> because otherwise you would quickly end up with a few big companies buying up and hoarding all the domains. Instead, you pay for the <em>right</em> to use a domain name for a set period of time (usually 1 or more years), and can renew your right (which has priority over other people's applications for a domain). But you never <em>own</em> it, this is so in time the domain may become available again for other people to use.</p>
 
@@ -56,7 +62,7 @@
 
     <section>
 
-      <h2>What is DNS?</h2>
+      <h2 id="what-is-dns">What is DNS?</h2>
       <p><strong>DNS</strong> stands for <em>Domain Name System</em> and is essentially what we've been talking about up until now in this tutorial. But domain names and registering them form part of a much larger ecosystem.</p>
 
       <p>On the internet you have <strong>DNS servers</strong>, which are special servers around the world that contain a large database of domain names and associated information about them, also known as a <strong>DNS record</strong>. These records are held for a certain amount of time before they are automatically invalidated and then refreshed from top-level DNS servers, also known as authorative name servers (essentially big boss servers that manage the system). This process is also called <em>DNS refreshing</em> and is what allows a domain name registration to get out there on the web as previously mentioned.</p>
@@ -67,7 +73,7 @@
 
       <figure>
         <img src="/assets/images/the-web/domains/dns.png" style="max-width: 768px;" loading="lazy" alt="An overview of a network request with DNS" />
-        <figcaption>Figure 2 - An overview of a network request with DNS</figcaption>
+        <figcaption>Figure 2 - An overview of a network request with DNS to google.com</figcaption>
       </figure>
 
       <p>This process of registering domains, them being sent out to DNS servers via DNS refreshing, your web browser being able to query those servers and then cache those values, is what allows the web to work with domain names as seamlessly as it does; and provide us with easy to remember names for lots of different websites.</p>
