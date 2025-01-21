@@ -13,4 +13,4 @@ if ($signature !== $hash) {
   exit;
 }
 
-exec('cd /var/www/jwf.nicolldouglas.dev && git pull origin main');
+exec('cd /var/www/jwf.nicolldouglas.dev && git pull origin main && composer install');
