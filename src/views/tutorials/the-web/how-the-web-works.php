@@ -24,6 +24,8 @@
     <section>
       <h2 id="what-is-the-internet">What is the Internet?</h2>
 
+      <p>Welcome to the first tutorial. Before we can start building on the web, we must first understand what exactly is the internet.</p>
+
       <p>The internet is essentially a big infrastructure of computers across the world that are able to communicate with each other and <strong>transfer data</strong>. But how did we get here?</p>
 
       <p>In order for computers to communicate they need to have a link between them, either physical (e.g Ethernet) or wireless (e.g Wi-Fi, Bluetooth, etc). Before the days of the internet, this would have typically been a series of network cables between computers which would establish a small local network. Think a local library that needs to transfer files from the users' computers to the librarian's computer to print like the figure below.</p>
@@ -67,11 +69,11 @@
     <section>
       <h2 id="what-is-the-web">What is The Web?</h2>
 
-      <p>Although used interchangeably, the web and the internet are slightly different. The <em>internet</em> is the infrastructure that enables communication between computers. But the <em>web</em> is a special service built on top of the internet that uses a certain protocol where some computers (web servers) can send special kinds of data to be requested and understood by web browsers. These specials kinds of data are often webpages. Keep this distinction in your mind from now on; when I say "internet" I will refer to the infrastructure, when I say "web" I will refer to the service.</p>
+      <p>Although used interchangeably, the web and the internet are slightly different. The <em>internet</em> is the infrastructure that enables communication between computers. But the <em>web</em> is a special service built on top of the internet that uses a certain protocol where some computers (web servers) can send special kinds of data to be requested and understood by web browsers. These specials kinds of data are often webpages. Keep this distinction in your mind from now on; when I say "internet" I will refer to the physical infrastructure, when I say "web" I will refer to the service.</p>
 
       <p>Anyway, other internet services like the web also exist, for example email. A computer on the internet designed to receive emails may not be able to receive data from a <em>web</em> server on the internet, but both the web and email are services that use <em>internet</em> infrastructure to facilitate their communications.</p>
 
-      <p>So when we access the web through a web browser, we are communicating with a web server and this dynamic is what forms the web.</p>
+      <p>So when we access a webpage or a resource through a web browser, we are communicating with a web server and this dynamic is what forms the web.</p>
     </section>
     <section>
       <h2 id="clients-and-servers">Clients and Servers</h2>
@@ -82,7 +84,7 @@
 
       <p>Secondly, you have what are known as <strong>servers</strong> or web servers. Servers are a special kind of computer (remember the internet is just computers talking to other computers). The main job of a web server is to make available, and <strong>provide</strong> the data that a client is requesting (e.g a webpage).</p>
 
-      <p>So when clients and servers on the web are communicating, typically a client will request some data from a web server and the web server will send the data back if it is available. This is called the <em>request-response cycle</em> and we will look at it more in depth in a future tutorial.</p>
+      <p>So when clients and servers on the web are communicating, typically a client will request some data from a web server and the web server will send the data back if it is available. This is part of what's called the <em>request-response cycle</em> and we will look at it more in depth in a future tutorial.</p>
     </section>
     <section>
       <h2 id="accessing-the-web">Accessing The Web</h2>
@@ -112,7 +114,7 @@
         <figcaption>Figure 5 - Google's home webpage</figcaption>
       </figure>
 
-      <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the web instead of these random numbers. Well, understanding IP addresses is the first step to getting there. We'll look at domain names in the next tutorial.</p>
+      <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the web instead of these random numbers. Well, understanding the internet, the web and IP addresses is the first step to getting there. We'll look at domain names in the next tutorial.</p>
 
     </section>
 
