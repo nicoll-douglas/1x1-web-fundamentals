@@ -6,15 +6,17 @@
     ?>
     <h1>Domains</h1>
     <nav>
-      <li>
-        <a href="#what-is-a-domain">What is a Domain?</a>
-      </li>
-      <li>
-        <a href="#who-owns-a-domain">Who Owns a Domain?</a>
-      </li>
-      <li>
-        <a href="#what-is-dns">What is DNS?</a>
-      </li>
+      <ul>
+        <li>
+          <a href="#what-is-a-domain">What is a Domain?</a>
+        </li>
+        <li>
+          <a href="#who-owns-a-domain">Who Owns a Domain?</a>
+        </li>
+        <li>
+          <a href="#what-is-dns">What is DNS?</a>
+        </li>
+      </ul>
     </nav>
     <section>
       <h2 id="what-is-a-domain">What is a Domain?</h2>
