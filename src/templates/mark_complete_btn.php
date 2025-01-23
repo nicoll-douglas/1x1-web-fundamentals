@@ -12,12 +12,15 @@ if (USER) {
 
     foreach (
       $completions as [
+        "tutorial_number" => $tnum,
+        "module_number" => $mnum,
         "tutorial_id" => $tid,
         "is_completed" => $compl
       ]
     ) {
-      if ($tid === $tutorial_id) {
+      if ($tnum === $tutorial_number && $mnum === $module_number) {
         $is_completed = $compl;
+        $tutorial_id = $tid;
         break;
       }
     }

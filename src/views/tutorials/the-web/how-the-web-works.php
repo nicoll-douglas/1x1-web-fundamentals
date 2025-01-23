@@ -34,8 +34,7 @@
         <img
           src="/assets/images/the-web/how-the-web-works/library-network.png"
           alt="An example of what a library network could look like"
-          style="max-width: 350px;"
-          loading="lazy" />
+          style="max-width: 350px;" />
         <figcaption>Figure 1 - An example of what a library network could look like</figcaption>
       </figure>
 
@@ -69,7 +68,7 @@
     <section>
       <h2 id="what-is-the-web">What is The Web?</h2>
 
-      <p>Although used interchangeably, the web and the internet are slightly different. The <em>internet</em> is the infrastructure that enables communication between computers. But the <em>web</em> is a special service built on top of the internet that uses a certain protocol where some computers (web servers) can send special kinds of data to be requested and understood by web browsers. These specials kinds of data are often webpages. Keep this distinction in your mind from now on; when I say "internet" I will refer to the physical infrastructure, when I say "web" I will refer to the service.</p>
+      <p>Although used interchangeably, the web and the internet are slightly different. The <em>internet</em> is the infrastructure that enables communication between computers. But the <em>web</em> is a special service built on top of the internet that uses a certain protocol where some computers (web servers; I'll explain these in the next section) can send special kinds of data to be requested and understood by web browsers. These specials kinds of data are often webpages. Keep this distinction in your mind from now on; when I say "internet" I will refer to the physical infrastructure, when I say "web" I will refer to the service.</p>
 
       <p>Anyway, other internet services like the web also exist, for example email. A computer on the internet designed to receive emails may not be able to receive data from a <em>web</em> server on the internet, but both the web and email are services that use <em>internet</em> infrastructure to facilitate their communications.</p>
 
@@ -80,7 +79,7 @@
 
       <p>Computers and entities that form the web follow a very basic pattern.</p>
 
-      <p>Firstly, you have what is known as a <strong>client</strong>. A client is something or someone that is able to <strong>request</strong> and interpret data from a web server. Typically this is a <strong>web browser</strong> on someone's personal computer (e.g Google Chrome, Microsoft Edge etc), which is specifically designed for the job and ease of use.</p>
+      <p>Firstly, you have what is known as a <strong>client</strong>. A client is something or someone that is able to <strong>request and interpret</strong> data from a web server. Typically this is a <strong>web browser</strong> on someone's personal computer (e.g Google Chrome, Microsoft Edge etc), which is specifically designed for the job and ease of use.</p>
 
       <p>Secondly, you have what are known as <strong>servers</strong> or web servers. Servers are a special kind of computer (remember the internet is just computers talking to other computers). The main job of a web server is to make available, and <strong>provide</strong> the data that a client is requesting (e.g a webpage).</p>
 
@@ -129,8 +128,8 @@
     </section>
   </article>
   <?php
-
-  $tutorial_id = 1;
+  $tutorial_number = 1;
+  $module_number = 1;
   require_once __DIR__ . "/../../../templates/mark_complete_btn.php";
 
   $hot_links = [null, "/tutorials/the-web/domains.php"];
