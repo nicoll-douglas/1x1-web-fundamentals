@@ -1,11 +1,15 @@
 <main>
   <h1>Tutorial Index</h1>
-  <?php if (USER): ?>
+  <?php
+  // If authenticated, initiate form and handlers
+  if (USER): ?>
     <script src="/assets/js/features/updateAllCompletions.js" defer type="module"></script>
     <form id="tutorial-completions">
+
     <?php endif; ?>
 
     <?php
+    // Loop over the tutorials fetched from the DB or cache
     for ($i = 0; $i < count($tutorials); $i++):
       [
         "tutorial_name" => $tname,
@@ -17,14 +21,18 @@
         "is_completed" => $compl,
       ] = $tutorials[$i];
     ?>
-      <?php if ($tnum === 1): ?>
+      <?php
+      // If tutorial number is first in the module, initiate section, heading and list 
+      if ($tnum === 1): ?>
         <section>
           <h2><?php echo $mname; ?></h2>
           <ol class="indent-list tutorial-list">
           <?php endif; ?>
 
           <li>
-            <?php if (isset($compl)): ?>
+            <?php
+            // If the user is authenticated, completion status will be set so add checkboxes 
+            if (isset($compl)): ?>
               <div class="tutorial-with-check">
 
                 <?php if ($compl === 1): ?>
@@ -40,7 +48,10 @@
                 </label>
 
               </div>
-            <?php else: ?>
+
+            <?php
+            // Else if the user is not authenticated, just add the tutorial link
+            else: ?>
 
               <a href="<?php echo $thref; ?>"><?php echo $tname; ?></a>
 
@@ -48,6 +59,7 @@
           </li>
 
           <?php
+          // If there are no more tutorials in the array or the module number has changed, close section and list tags
           $next_tut = $tutorials[$i + 1];
           if (!isset($next_tut) || $next_tut["module_number"] > $mnum):
           ?>
@@ -57,7 +69,9 @@
 
     <?php endfor; ?>
 
-    <?php if (USER): ?>
+    <?php
+    // If authenticated, close the form
+    if (USER): ?>
       <?php require_once __DIR__ . "/../../templates/alert.php"; ?>
       <button type="submit">Save</button>
     </form>
