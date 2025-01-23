@@ -20,6 +20,6 @@
   max-width: fit-content;
 }
 
-label {
+.tutorial-with-check label {
   margin: 0;
 }
