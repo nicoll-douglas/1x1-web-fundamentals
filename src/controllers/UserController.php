@@ -8,6 +8,7 @@ require_once __DIR__ . "/../db.php";
 require_once __DIR__ . "/../middleware/Session.php";
 require_once __DIR__ . "/../middleware/Authentication.php";
 require_once __DIR__ . "/../middleware/Cache.php";
+require_once __DIR__ . "/../middleware/CsrfProtection.php";
 require_once __DIR__ . "/../services/google_api/client.php";
 require_once __DIR__ . "/../utils/hashIP.php";
 
@@ -158,6 +159,12 @@ class UserController
     if (!isset($user)) {
       http_response_code(400);
       return "Bad Request. Please login to delete your account.";
+    }
+
+    // compare CSRF tokens
+    if (!CsrfProtection::compareTokensDirectly()) {
+      http_response_code(401);
+      return "Unauthorized. Bad CSRF token.";
     }
 
     // try to instantiate user
