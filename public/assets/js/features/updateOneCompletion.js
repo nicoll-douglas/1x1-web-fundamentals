@@ -5,10 +5,15 @@ const button = document.querySelector("#mark-complete-btn");
 button.addEventListener("click", async (e) => {
   e.preventDefault();
   const formData = new FormData();
+
   const id = button.dataset.id;
   const newValue = button.dataset.newValue;
-
   formData.set(id, newValue);
+
+  const csrfToken = document
+    .querySelector('input[name="csrf_token"]')
+    .getAttribute("value");
+  formData.set("csrf_token", csrfToken);
 
   try {
     const response = await fetch("/api/completions.php", {

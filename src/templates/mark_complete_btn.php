@@ -27,7 +27,12 @@ if (USER) {
 ?>
 
 <?php if (isset($is_completed)): ?>
-  <?php require_once __DIR__ . "/alert.php"; ?>
+  <?php
+  require_once __DIR__ . "/alert.php";
+  require_once __DIR__ . "/../middleware/CsrfProtection.php";
+  $csrf_token = CsrfProtection::initiate();
+  ?>
+  <input name="csrf_token" value="<?php echo $csrf_token; ?>" style="display: none;" />
   <button
     id="mark-complete-btn"
     data-id="<?php echo $tutorial_id; ?>"

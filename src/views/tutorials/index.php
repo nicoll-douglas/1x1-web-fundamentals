@@ -5,7 +5,11 @@
   if (USER): ?>
     <script src="/assets/js/features/updateAllCompletions.js" defer type="module"></script>
     <form id="tutorial-completions">
-
+      <?php
+      require_once __DIR__ . "/../../middleware/CsrfProtection.php";
+      $csrf_token = CsrfProtection::initiate();
+      ?>
+      <input value="<?php echo $csrf_token; ?>" name="csrf_token" style="display: none;" />
     <?php endif; ?>
 
     <?php

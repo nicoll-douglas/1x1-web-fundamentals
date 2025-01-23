@@ -12,6 +12,11 @@ form.addEventListener("submit", async (e) => {
     formData.set(name, value);
   });
 
+  const csrfToken = form
+    .querySelector('[name="csrf_token"]')
+    .getAttribute("value");
+  formData.set("csrf_token", csrfToken);
+
   try {
     const response = await fetch("/api/completions.php", {
       method: "POST",

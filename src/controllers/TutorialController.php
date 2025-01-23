@@ -6,6 +6,7 @@ require_once __DIR__ . "/../models/Tutorial.php";
 require_once __DIR__ . "/../middleware/Authentication.php";
 require_once __DIR__ . "/../middleware/Session.php";
 require_once __DIR__ . "/../middleware/Cache.php";
+require_once __DIR__ . "/../middleware/CsrfProtection.php";
 require_once __DIR__ . "/../db.php";
 
 class TutorialController
@@ -52,9 +53,9 @@ class TutorialController
    */
   public static function handleSetCompletions()
   {
-    // check auth
+    // check auth and csrf token
     $user = Authentication::verify();
-    if (!$user) {
+    if (!$user || !CsrfProtection::compareTokensDirectly()) {
       http_response_code(401);
       echo json_encode([
         "status" => "error",
@@ -83,8 +84,12 @@ class TutorialController
       "tutorials_not_updated" => []
     ];
 
+    // get the completions
+    $completions = $_POST;
+    unset($completions["csrf_token"]);
+
     // try to update for each
-    foreach ($_POST as $tid => $value) {
+    foreach ($completions as $tid => $value) {
       $error_msg = self::validateTutorialCompletionUpdate($tid, $value);
 
       if ($error_msg) {
