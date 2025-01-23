@@ -94,9 +94,6 @@
   <?php
   $tutorial_number = 2;
   $module_number = 1;
-  require_once __DIR__ . "/../../../templates/mark_complete_btn.php";
-
-  $hot_links = ["/tutorials/the-web/how-the-web-works.php", null];
-  require_once __DIR__ . "/../../../templates/hot_links.php"
+  require_once __DIR__ . "/../../../templates/tutorial_footer.php";
   ?>
 </main>

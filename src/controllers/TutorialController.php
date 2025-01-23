@@ -146,12 +146,41 @@ class TutorialController
   }
 
   /**
-   * Changes the group of a file or directory to the www-data group and sets 0770 perms.
-   * @param string $file_or_dir A file or directory.
+   * Gets a tutorial's id, completion status, previous tutorial link and next tutorial link.
+   * @param int $tutorial_number The number of the tutorial in the module.
+   * @param int $module_number The module number of the tutorial.
+   * @param ?bool $completions Whether to get the completion status for the current user.
+   * @return array An array containing the data.
+   * @throws PDOException If a database connection failed.
    */
-  private static function givePerms(string $file_or_dir)
+  public static function getFragment(int $tutorial_number, int $module_number, bool $completions = false): array
   {
-    chgrp($file_or_dir, "www-data");
-    chmod($file_or_dir, 0770);
+    $tutorials =
+      $completions
+      ? self::handleGetCompletions(USER["id"])
+      : self::handleGetAll();
+
+    for ($i = 0; $i < count($tutorials); $i++) {
+      [
+        "tutorial_number" => $tnum,
+        "module_number" => $mnum,
+        "tutorial_id" => $tid,
+        "is_completed" => $compl
+      ] = $tutorials[$i];
+
+      if ($tnum === $tutorial_number && $mnum === $module_number) {
+        $fragment = ["id" => $tid];
+        if (isset($compl)) {
+          $fragment["completed"] = $compl;
+        }
+        if (isset($tutorials[$i - 1])) {
+          $fragment["previous"] = $tutorials[$i - 1]["tutorial_href"];
+        }
+        if (isset($tutorials[$i + 1])) {
+          $fragment["next"] = $tutorials[$i + 1]["tutorial_href"];
+        }
+        return $fragment;
+      }
+    }
   }
 }

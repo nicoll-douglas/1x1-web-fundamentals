@@ -130,9 +130,6 @@
   <?php
   $tutorial_number = 1;
   $module_number = 1;
-  require_once __DIR__ . "/../../../templates/mark_complete_btn.php";
-
-  $hot_links = [null, "/tutorials/the-web/domains.php"];
-  require_once __DIR__ . "/../../../templates/hot_links.php"
+  require_once __DIR__ . "/../../../templates/tutorial_footer.php";
   ?>
 </main>
