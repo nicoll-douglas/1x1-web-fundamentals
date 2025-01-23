@@ -38,7 +38,7 @@ class Tutorial
       "INSERT INTO tutorial_completions (tutorial_id, user_id) VALUES (:tut_id, :user_id)"
     );
     $stmt->bindParam(":tut_id", $this->id, PDO::PARAM_INT);
-    $stmt->bindParam("user_id", $user_id);
+    $stmt->bindParam(":user_id", $user_id);
 
     try {
       $stmt->execute();
@@ -83,7 +83,7 @@ class Tutorial
       "SELECT * FROM tutorial_completions WHERE user_id = :user_id AND tutorial_id = :tut_id"
     );
     $stmt->bindParam(":tut_id", $this->id, PDO::PARAM_INT);
-    $stmt->bindParam("user_id", $user_id);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
     return $stmt->rowCount() > 0;
   }
