@@ -66,7 +66,7 @@
 
       <p>We <em>can</em> go to a search engine's website in order to use it but nowadays, we can access a search engine's functionality directly through a web browser's address bar and search the web. Our web browser essentially shortens the process and redirects us to a webpage that contains search results for our query on the given search engine's website.</p>
 
-      <p>So to make the distinction clear, a <em>web browser</em> is software lets you access the web (websites). A <em>search engine</em> is a website that lets you search for other websites and webpages on the web. But for convenience, web browsers will typically provide you an easy means to access a search engine through the address bar or on their homepage</p>
+      <p>So to make the distinction clear, a <em>web browser</em> is software lets you access the web (websites). A <em>search engine</em> is a website that lets you search for other websites and webpages on the web. But for convenience, web browsers will typically provide you an easy means to access a search engine through the address bar or on their homepage.</p>
     </section>
 
     <section>

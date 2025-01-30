@@ -53,8 +53,8 @@ require_once __DIR__ . "/../../models/User.php";
       <h3>Contact</h3>
       <div>
         <h4>Email</h4>
-        <a href="mailto:dev.nicoll.douglas@gmail.com">
-          dev.nicoll.douglas@gmail.com
+        <a href="mailto:me@nicolldouglas.dev">
+          me@nicolldouglas.dev
         </a>
         <h4 id="leave-a-message-heading">Leave a Message</h4>
         <?php require_once __DIR__ . "/message_form.php"; ?>

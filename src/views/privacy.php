@@ -1,10 +1,10 @@
 <main>
   <h1>Privacy</h1>
-  <p>I do not sell your data or collect analytics. Below is a quick rundown of how your data is used for the site to function:</p>
+  <p>I do not sell your data or collect analytics. Below is a quick rundown of how your data is used for the site to function.</p>
   <section>
     <h2>What&apos;s Collected</h2>
     <p>
-      When you sign in using OAuth, your name and account ID are used to help you set up your account.
+      When you sign in using OAuth (Google, etc.), your name and account ID are used to help you set up your account.
     </p>
     <p>Your IP address is also hashed and stored to maintain the security of your session.</p>
   </section>
@@ -21,8 +21,14 @@
   </section>
   <section>
     <h2>Your Control</h2>
-    <p>You can revoke access to your information any time by managing app permissions in your Google account settings.</p>
-    <p>You can also click the link below to purge all your data and delete your session.</p>
-    <a href="/delete.php">Delete my data</a>
+    <p>You can revoke access to your information any time by managing app permissions in your Google account settings<?php
+                                                                                                                      if (!USER) {
+                                                                                                                        echo " or by logging in to purge all your data";
+                                                                                                                      }
+                                                                                                                      ?>.</p>
+    <?php if (USER): ?>
+      <p>You can also click the link below to purge all your data.</p>
+      <a href="/delete.php">Delete my data</a>
+    <?php endif; ?>
   </section>
 </main>
