@@ -5,22 +5,15 @@
     require_once __DIR__ . "/../../../partials/breadcrumb.php";
     ?>
     <h1>How The Web Works</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="#what-is-the-internet">What is the Internet?</a>
-        </li>
-        <li>
-          <a href="#what-is-the-web">What is The Web?</a>
-        </li>
-        <li>
-          <a href="#clients-and-servers">Clients and Servers</a>
-        </li>
-        <li>
-          <a href="#accessing-the-web">Accessing The Web</a>
-        </li>
-      </ul>
-    </nav>
+    <?php
+    $tutorialNav = [
+      ["What is the Internet?", "#what-is-the-internet"],
+      ["What is the Web?", "#what-is-the-web"],
+      ["Clients and Servers", "#clients-and-servers"],
+      ["Accessing the Web", "#accessing-the-web"]
+    ];
+    require_once __DIR__ . "/../../../partials/tutorialNav.php";
+    ?>
     <section>
       <h2 id="what-is-the-internet">What is the Internet?</h2>
 

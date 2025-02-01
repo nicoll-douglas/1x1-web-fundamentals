@@ -5,28 +5,17 @@
     require_once __DIR__ . "/../../../partials/breadcrumb.php";
     ?>
     <h1>Common Terms On The Web</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="#a-quick-recap">A Quick Recap</a>
-        </li>
-        <li>
-          <a href="#what-is-a-webpage">What is a Webpage?</a>
-        </li>
-        <li>
-          <a href="#what-is-a-website">What is a Website?</a>
-        </li>
-        <li>
-          <a href="#what-is-a-web-server">What is a Web Server?</a>
-        </li>
-        <li>
-          <a href="#what-is-a-web-browser">What is a Web Browser?</a>
-        </li>
-        <li>
-          <a href="#what-is-a-search-engine">What is a Search Engine?</a>
-        </li>
-      </ul>
-    </nav>
+    <?php
+    $tutorialNav = [
+      ["A Quick Recap", "#a-quick-recap"],
+      ["What is a Webpage?", "#what-is-a-webpage"],
+      ["What is a Website?", "#what-is-a-website"],
+      ["What is a Web Server?", "#what-is-a-web-server"],
+      ["What is a Web Browser?", "#what-is-a-web-browser"],
+      ["What is a Search Engine?", "#what-is-a-search-engine"]
+    ];
+    require_once __DIR__ . "/../../../partials/tutorialNav.php";
+    ?>
     <section>
       <h2 id="a-quick-recap">A Quick Recap</h2>
       <p>In the first tutorial I <a href="/tutorials/the-web/how-the-web-works.php#accessing-the-web">showed</a> how you can type out an IP address into your web browser's address bar and that if it corresponds to a web server, the web server might send back some data, typically a webpage. The same can also be done for a domain name if it has a DNS record with an associated IP address of a web server. We've also learnt that the <a href="/tutorials/the-web/how-the-web-works.php#what-is-the-web">web</a> is a service built on top of the <a href="/tutorials/the-web/how-the-web-works.php#what-is-the-internet">internet</a> that allows a web browser to communicate with a web server and access its content.

@@ -5,19 +5,14 @@
     require_once __DIR__ . "/../../../partials/breadcrumb.php";
     ?>
     <h1>Domains</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="#what-is-a-domain">What is a Domain?</a>
-        </li>
-        <li>
-          <a href="#who-owns-a-domain">Who Owns a Domain?</a>
-        </li>
-        <li>
-          <a href="#what-is-dns">What is DNS?</a>
-        </li>
-      </ul>
-    </nav>
+    <?php
+    $tutorialNav = [
+      ["What is a Domain?", "#what-is-a-domain"],
+      ["Who Owns a Domain?", "#who-owns-a-domain"],
+      ["What is DNS?", "#what-is-dns"]
+    ];
+    require_once __DIR__ . "/../../../partials/tutorialNav.php";
+    ?>
     <section>
       <h2 id="what-is-a-domain">What is a Domain?</h2>
 
