@@ -24,3 +24,7 @@
 .tutorial-with-check label {
   margin: 0;
 }
+
+#tutorial-completions button {
+  margin-bottom: var(--space-xl);
+}

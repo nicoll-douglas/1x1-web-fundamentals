@@ -44,7 +44,7 @@ $data = $view->getData();
     <div id="content">
       <?php $view->showContent(); ?>
     </div>
-    <hr style="margin: 0 var(--space-lg);">
+    <hr id="footer-divider">
     <?php require_once __DIR__ . "/../partials/footer.php"; ?>
   </div>
 </body>

@@ -72,6 +72,9 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4xl);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-4xl);
+  margin-top: var(--space-sm);
 }
 
 footer ul {
@@ -111,6 +114,8 @@ main section {
   max-width: var(--width-container);
   margin: 0 auto;
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 #site-nav ul {
@@ -121,6 +126,10 @@ main section {
 
 #mobile-menu {
   display: none;
+}
+
+#footer-divider {
+  margin: auto var(--space-lg) 0;
 }
 
 #message-form {
@@ -170,12 +179,6 @@ main section {
 
 .alert-container p {
   margin: 0;
-}
-
-footer {
-  padding: var(--space-lg);
-  margin-bottom: var(--space-4xl);
-  margin-top: var(--space-sm);
 }
 
 .link-alt {
