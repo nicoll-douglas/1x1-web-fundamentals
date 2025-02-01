@@ -2,7 +2,7 @@
   <article>
     <?php
     $breadcrumb = ["The Web", "Common Terms On The Web"];
-    require_once __DIR__ . "/../../../templates/breadcrumb.php";
+    require_once __DIR__ . "/../../../partials/breadcrumb.php";
     ?>
     <h1>Common Terms On The Web</h1>
     <nav>
@@ -80,9 +80,6 @@
       </ul>
     </section>
   </article>
-  <?php
-  $tutorial_number = 3;
-  $module_number = 1;
-  require_once __DIR__ . "/../../../templates/tutorial_footer.php";
-  ?>
+
+  <?php require_once __DIR__ . "/../../../partials/tutorialFooter.php"; ?>
 </main>

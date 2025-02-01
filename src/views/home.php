@@ -31,7 +31,7 @@ ______               _                            _        _
     <p>If you wish to see a list of all the current available tutorials and modules, check out the tutorial index <a href="/tutorials/index.php">here</a>.</p>
     <p>
       If you wish to get started, check out the first tutorial
-      <a href="/tutorials/the-web/how-the-web-works.php">here</a>.
+      <a href="/tutorials/the-web/how-the-web-works">here</a>.
     </p>
     <p>Otherwise, happy learning!</p>
   </section>

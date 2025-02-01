@@ -4,7 +4,12 @@
   },
   "scripts": {
     "flush-cache": [
-      "php scripts/flush_cache.php"
+      "php scripts/flushCache.php"
     ]
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
   }
 }

@@ -21,14 +21,15 @@
   </section>
   <section>
     <h2>Your Control</h2>
-    <p>You can revoke access to your information any time by managing app permissions in your Google account settings<?php
-                                                                                                                      if (!USER) {
-                                                                                                                        echo " or by logging in to purge all your data";
-                                                                                                                      }
-                                                                                                                      ?>.</p>
+    <?php
+    $p = "You can revoke access to your information any time by managing app permissions in your Google account settings";
+    ?>
     <?php if (USER): ?>
+      <p><?php echo $p . "."; ?></p>
       <p>You can also click the link below to purge all your data.</p>
-      <a href="/delete.php">Delete my data</a>
+      <a href="/auth/delete-data">Delete my data</a>
+    <?php else: ?>
+      <p><?php echo $p . " or by logging in to purge all your data"; ?></p>
     <?php endif; ?>
   </section>
 </main>

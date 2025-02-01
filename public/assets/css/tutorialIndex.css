@@ -1,0 +1,26 @@
+.tutorial-list li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  counter-increment: item 1;
+  margin-bottom: var(--space-xs);
+}
+
+.tutorial-list li::before {
+  content: counter(item) ". ";
+  position: relative;
+  list-style: none;
+  left: 0;
+  margin-right: var(--space-sm);
+}
+
+.tutorial-with-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: fit-content;
+}
+
+.tutorial-with-check label {
+  margin: 0;
+}

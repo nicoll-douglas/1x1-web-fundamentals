@@ -1,9 +1,11 @@
 <?php
 
-$env_file = __DIR__ . "/../../.env";
+declare(strict_types=1);
 
-if (file_exists($env_file)) {
-  $lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$envFile = __DIR__ . "/../../secrets/.env";
+
+if (file_exists($envFile)) {
+  $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
   foreach ($lines as $line) {
     if (strpos(trim($line), "#") === 0) {
@@ -16,6 +18,4 @@ if (file_exists($env_file)) {
 
     putenv("$key=$value");
   }
-} else {
-  throw new RuntimeException("Missing .env");
 }

@@ -1,0 +1,12 @@
+body {
+  padding: 0 1rem;
+  overflow-y: hidden !important;
+}
+
+.feedback-success {
+  color: var(--color-accent-1-light);
+}
+
+.feedback-error {
+  color: var(--color-error);
+}

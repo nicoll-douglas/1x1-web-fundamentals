@@ -6,6 +6,7 @@
   --color-accent-2-dark: #2adddd;
   --color-highlight: #ffbdff;
   --color-error: #ffcdcd;
+  --color-text: white;
 
   --width-container: 1024px;
   --width-input: 20rem;
@@ -26,7 +27,7 @@
   font-family: Source Code Pro, "Courier New", Courier, monospace, system-ui,
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: white;
+  color: var(--color-text);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -34,7 +35,6 @@
 
 body {
   background-color: var(--color-bg);
-  height: auto;
   overflow-y: scroll !important;
 }
 
@@ -59,6 +59,14 @@ h2,
 h3,
 h4 {
   margin: var(--space-md) 0;
+}
+
+hr {
+  opacity: 1;
+  border-color: var(--color-text);
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
 
 :focus-visible {
