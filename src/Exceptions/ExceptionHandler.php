@@ -17,7 +17,7 @@ class ExceptionHandler
    */
   public static function handle(\Throwable $e)
   {
-    require __DIR__ . "/../views/status/serverError.php";
+    require_once __DIR__ . "/../views/status/serverError.php";
     if (getenv("APP_ENV") === "development") {
       self::reportError($e);
     }

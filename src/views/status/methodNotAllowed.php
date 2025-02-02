@@ -18,7 +18,7 @@ $view = new View(
 <?php $view->startBuffering(); ?>
 
 <?php
-require __DIR__ . "/../../partials/feedback.php";
+require_once __DIR__ . "/../../partials/feedback.php";
 ?>
 <a href="/">
   Back to home

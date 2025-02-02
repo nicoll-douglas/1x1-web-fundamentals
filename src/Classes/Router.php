@@ -41,13 +41,13 @@ class Router
 
     $pathHandlers = $this->routes[$path];
     if (!isset($pathHandlers)) {
-      require __DIR__ . "/../views/status/notFound.php";
+      require_once __DIR__ . "/../views/status/notFound.php";
       $view->show();
     }
 
     $methodHandlers = $pathHandlers[$method];
     if (!isset($methodHandlers)) {
-      require __DIR__ . "/../views/status/methodNotAllowed.php";
+      require_once __DIR__ . "/../views/status/methodNotAllowed.php";
       $view->show();
     }
 

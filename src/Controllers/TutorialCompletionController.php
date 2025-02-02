@@ -26,7 +26,7 @@ class TutorialCompletionController
   {
     $user = $_SESSION["user"];
     if (!$user) {
-      require __DIR__ . "/../views/status/unauthorized.php";
+      require_once __DIR__ . "/../views/status/unauthorized.php";
       return $view;
     }
     $userId = $user["id"];
@@ -44,7 +44,7 @@ class TutorialCompletionController
       $completion = new TutorialCompletion(userId: $userId);
       $index = $completion->getIndex();
       if (!$index) {
-        require __DIR__ . "/../views/status/serverError.php";
+        require_once __DIR__ . "/../views/status/serverError.php";
         return $view;
       }
       $cache->set($index);
@@ -136,7 +136,7 @@ class TutorialCompletionController
   {
     $user = $_SESSION["user"];
     if (!$user) {
-      require __DIR__ . "/../views/status/unauthorized.php";
+      require_once __DIR__ . "/../views/status/unauthorized.php";
       return $view;
     }
     $tutorial = new Tutorial(moduleNumber: $moduleNumber, number: $tutorialNumber);

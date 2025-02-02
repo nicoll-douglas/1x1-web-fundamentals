@@ -34,13 +34,13 @@ $router->set(
   "/auth/delete-data",
   function () {
     if (!USER) {
-      require View::DIR . "/status/unauthorized.php";
+      require_once View::DIR . "/status/unauthorized.php";
       $view->show();
     }
   },
   [CsrfProtection::class, "setToken"],
   function () {
-    require View::DIR . "/auth/deleteData.php";
+    require_once View::DIR . "/auth/deleteData.php";
     $view->show();
   }
 );
@@ -49,7 +49,7 @@ $router->set(
   "GET",
   "/auth/goodbye",
   function () {
-    require View::DIR . "/auth/goodbye.php";
+    require_once View::DIR . "/auth/goodbye.php";
     $view->show();
   }
 );

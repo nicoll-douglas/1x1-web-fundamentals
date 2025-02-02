@@ -23,7 +23,7 @@ $view->script("/features/deleteData.js");
   <?php
   $alertId = "delete-status";
   $alertLabel = "Deletion Status";
-  require_once __DIR__ . "/../../partials/alert.php";
+  require __DIR__ . "/../../partials/alert.php";
   ?>
   <form id="delete-data-form">
     <button

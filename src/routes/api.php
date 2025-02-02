@@ -66,7 +66,7 @@ $router->set(
   "/api/me",
   function () {
     if (!USER) {
-      require __DIR__ . "/../views/status/unauthorized.php";
+      require_once __DIR__ . "/../views/status/unauthorized.php";
       $view->show();
     }
   },

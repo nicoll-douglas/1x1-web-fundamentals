@@ -25,7 +25,7 @@ class MessageController
     ["error" => $errorMsg, "success" => $msg] = $validator->validateCreate($msg);
 
     if ($errorMsg) {
-      require __DIR__ . "/../views/status/badRequest.php";
+      require_once __DIR__ . "/../views/status/badRequest.php";
       return $view;
     };
 
@@ -33,7 +33,7 @@ class MessageController
     $success = $message->insert();
 
     if ($success) {
-      require __DIR__ . "/../views/status/submitted.php";
+      require_once __DIR__ . "/../views/status/submitted.php";
       $view->setStatus(201);
       return $view;
     }

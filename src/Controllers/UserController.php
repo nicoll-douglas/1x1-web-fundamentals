@@ -36,7 +36,7 @@ class UserController
     $client->setAccessToken($accessToken);
     $userInfo = $client->getUserInfo();
     if (!$userInfo) {
-      require __DIR__ . "/../views/status/serverError.php";
+      require_once __DIR__ . "/../views/status/serverError.php";
       return $view;
     }
 
@@ -44,7 +44,7 @@ class UserController
       $user = new User(id: $userInfo["id"]);
     } catch (\PDOException $e) {
       $client->revokeAllTokens();
-      require __DIR__ . "/../views/status/serverError.php";
+      require_once __DIR__ . "/../views/status/serverError.php";
       return $view;
     }
 
@@ -110,13 +110,13 @@ class UserController
     $validator = new UserValidator();
     $valid = $validator->validateDeleteRequestBody($body);
     if (!$valid) {
-      require __DIR__ . "/../views/status/badRequest.php";
+      require_once __DIR__ . "/../views/status/badRequest.php";
       return $view;
     }
 
     $sessionUser = $_SESSION["user"];
     if (!isset($sessionUser) || !CsrfProtection::compareTokens($body["csrfToken"])) {
-      require __DIR__ . "/../views/status/unauthorized.php";
+      require_once __DIR__ . "/../views/status/unauthorized.php";
       return $view;
     }
 

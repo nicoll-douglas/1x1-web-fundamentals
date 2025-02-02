@@ -89,7 +89,7 @@ class View
     if ($this->buffer) {
       echo $this->buffer;
     } else {
-      require self::DIR . $this->filename;
+      require_once self::DIR . $this->filename;
     }
   }
 
