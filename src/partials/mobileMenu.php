@@ -19,36 +19,27 @@ $data = $view->getData();
     id="mobile-menu-content"
     aria-labelledby="mobile-menu-button"
     class="hidden">
-    <li role="presentation">
-      <a
-        href="/tutorials"
-        role="menuitem"
-        id="mobile-menu-first-focus"
-        class="link-alt">
-        Tutorials
-      </a>
-    </li>
-    <li role="presentation">
-      <a
-        href="/about"
-        role="menuitem">
-        About
-      </a>
-    </li>
-    <li role="presentation">
-      <a
-        href="/contact"
-        role="menuitem">
-        Contact
-      </a>
-    </li>
-    <li role="presentation">
-      <a
-        href="/privacy"
-        role="menuitem">
-        Privacy
-      </a>
-    </li>
+    <?php
+    require_once __DIR__ . "/../data/nav.php";
+    ?>
+
+    <?php for ($i = 0; $i < count($nav); $i++): ?>
+
+      <?php
+      [$text, $href] = $nav[$i];
+      ?>
+      <li role="presentation">
+        <a
+          href="<?php echo $href; ?>"
+          role="menuitem"
+          id="<?php echo $i === 0 ? "mobile-menu-first-focus" : ""; ?>"
+          class="<?php echo $href === "/tutorials" ? "link-highlight" : ""; ?>">
+          <?php echo $text; ?>
+        </a>
+      </li>
+
+    <?php endfor; ?>
+
     <li role="presentation">
       <?php if ($data["user"]): ?>
         <a

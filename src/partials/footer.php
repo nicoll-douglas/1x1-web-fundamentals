@@ -10,18 +10,17 @@ $data = $view->getData();
   <section>
     <h3 id="links-heading">Links</h3>
     <ul aria-labelledby="links-heading">
-      <li>
-        <a href="/tutorials" class="link-alt">Tutorials</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
-        <a href="/contact">Contact</a>
-      </li>
-      <li>
-        <a href="/privacy">Privacy</a>
-      </li>
+      <?php
+      require_once __DIR__ . "/../data/nav.php";
+      ?>
+      <?php foreach ($nav as [$text, $href]): ?>
+        <li>
+          <a
+            class="<?php echo $href === "/tutorials" ? "link-highlight" : "" ?>"
+            href="<?php echo $href; ?>"><?php echo $text; ?></a>
+        </li>
+      <?php endforeach; ?>
+
       <li>
         <?php if ($data["user"]): ?>
           <a href="/api/me/logout">Logout</a>
