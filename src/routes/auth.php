@@ -6,6 +6,8 @@ use App\Middleware\CsrfProtection;
 
 require_once __DIR__ . "/../router.php";
 
+// routes for authentication-related pages
+
 $router->set(
   "GET",
   "/auth/sign-in",

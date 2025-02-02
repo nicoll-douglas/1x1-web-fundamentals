@@ -16,6 +16,12 @@ class User extends Model
   private ?string $refreshToken;
   private ?string $name;
 
+  /**
+   * Initialises the database connection and class fields.
+   * @param string|null $id The user's ID.
+   * @param string|null $refreshToken The user's refresh token.
+   * @param string|null $name The users's name.
+   */
   public function __construct(
     ?string $id = null,
     ?string $refreshToken = null,
@@ -31,7 +37,7 @@ class User extends Model
 
   /**
    * Inserts the user into the users table.
-   * @throws NonEmptyException If the current id trying to be used is empty.
+   * @throws NonEmptyException If the current user ID trying to be used is empty.
    * @return bool True on success, false on failure.
    */
   public function insert(): bool
@@ -55,7 +61,7 @@ class User extends Model
   }
 
   /**
-   * Finds the user from their id.
+   * Finds the user from their ID.
    * @return array{ 
    *  id: string,
    *  name: string|null,
@@ -77,7 +83,7 @@ class User extends Model
    * Updates a user in the users table.
    * @param bool $refreshToken Whether to set the user's refresh token.
    * @param bool $name Whether to set the user's name.
-   * @throws NonEmptyException If the current id trying to be used is empty.
+   * @throws NonEmptyException If the current user ID trying to be used is empty.
    * @return bool True on success, false on failure.
    */
   public function update(bool $refreshToken = false, bool $name = false): bool
@@ -120,7 +126,7 @@ class User extends Model
 
   /**
    * Deletes a user from the users table.
-   * @throws NonEmptyException If the current id trying to be used is empty.
+   * @throws NonEmptyException If the current user ID trying to be used is empty.
    * @return bool True on success, false on failure.
    */
   public function delete(): bool
@@ -132,8 +138,8 @@ class User extends Model
   }
 
   /**
-   * Checks whether the current id is empty.
-   * @throws NonEmptyException If the current id is empty.
+   * Checks whether the current user ID is empty.
+   * @throws NonEmptyException If the current user ID is empty.
    */
   private function checkForId()
   {

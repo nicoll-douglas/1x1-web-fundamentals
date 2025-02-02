@@ -6,6 +6,7 @@ use App\Controllers\TutorialController;
 
 require_once __DIR__ . "/../../router.php";
 
+// tutorial index route
 $router->set(
   "GET",
   "/tutorials",

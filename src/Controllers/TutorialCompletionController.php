@@ -127,7 +127,7 @@ class TutorialCompletionController
 
   /**
    * Returns a view for the specified tutorial completion.
-   * @param string $filename The name of the view file.
+   * @param string $filename The name of the view file relative to the views directory.
    * @param int $moduleNumber The module number of the tutorial.
    * @param int $tutorialNumber The number of the tutorial in the module.
    * @return View The view to display to the user.

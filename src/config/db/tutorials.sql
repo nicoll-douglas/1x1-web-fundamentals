@@ -1,3 +1,5 @@
+-- Inserts the current tutorials into the tutorials table.
+
 USE jiggys_web_fundamentals;
 
 INSERT IGNORE INTO tutorials (href, number, name, module_number) 

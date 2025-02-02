@@ -83,6 +83,7 @@ class Auth
 
   /**
    * Verifies that the current IP matches the session's IP.
+   * @return bool True if they match, false otherwise.
    */
   private static function verifyIP(): bool
   {

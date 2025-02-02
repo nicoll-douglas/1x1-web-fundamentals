@@ -4,19 +4,32 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+/**
+ * Service class to interface with the local file cache.
+ */
 class FileCache
 {
+  /**
+   * The directory name of the cache directory.
+   */
   public const DIRNAME = __DIR__ . "/../../cache";
+  /**
+   * The filename in the cache that contains the tutorial index.
+   */
   public const TUTORIAL_INDEX = self::DIRNAME . DIRECTORY_SEPARATOR . "tutorials.json";
   private string $filename;
 
+  /**
+   * Initialises the class fields.
+   * @param string $filename The fully qualified a file in the cache.
+   */
   public function __construct(string $filename)
   {
     $this->filename = $filename;
   }
 
   /**
-   * Sets a value in the cache.
+   * Sets the value in the cache for the current filename.
    * @param mixed $value The value to write.
    * @return bool True if the file was written to, false otherwise.
    */
@@ -32,9 +45,8 @@ class FileCache
     return $bytesPut === false ? false : true;
   }
 
-
   /**
-   * Deletes a file from the cache.
+   * Deletes the current file from the cache.
    * @return bool True if the operation succeeded, false otherwise.
    */
   public function delete(): bool
@@ -45,8 +57,8 @@ class FileCache
   }
 
   /**
-   * Gets the contents of a file in the cache.
-   * @return mixed The data if it exists and could be read from the cache, null otherwise.
+   * Gets the contents of the current file in the cache.
+   * @return mixed Depends on the data, so the data if it exists and could be read from the cache, null otherwise.
    */
   public function get()
   {
@@ -95,8 +107,8 @@ class FileCache
 
   /**
    * Gets the tutorial completion index filename in the cache for a user.
-   * @param string $userId The user's id.
-   * @return string The filename.
+   * @param string $userId The user's ID.
+   * @return string The fully qualified filename.
    */
   public static function tutorialCompletionIndexFilename(string $userId): string
   {

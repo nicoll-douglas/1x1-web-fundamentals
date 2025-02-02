@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Decoded the contents of the request body if it is JSON.
+ * Decodes the contents of the request body if it is JSON.
  * @return mixed The decoded JSON.
  */
 function getJsonBody(): mixed

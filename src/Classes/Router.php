@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace App\Classes;
 
+/**
+ * Class to create a router for the application.
+ */
 class Router
 {
   /**
+   * The current routes set.
    * @var array<string, array<string, array<int, callable>>>
    */
   private array $routes;

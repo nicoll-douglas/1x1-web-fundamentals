@@ -14,6 +14,10 @@ class Message extends Model
 {
   private string $message;
 
+  /**
+   * Initialises the database connection and class fields.
+   * @param string|null $message The text value of the message.
+   */
   public function __construct(?string $message = null)
   {
     parent::__construct();
@@ -37,6 +41,10 @@ class Message extends Model
     return $stmt->execute();
   }
 
+  /**
+   * Sets the message text value.
+   * @param string $value The new value.
+   */
   public function setMessage(string $value)
   {
     $this->message = $value;

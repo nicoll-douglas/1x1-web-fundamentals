@@ -10,7 +10,7 @@ namespace App\Validation;
 class UserValidator
 {
   /**
-   * Validates a user DELETE request body.
+   * Validates a user DELETE request's body.
    * @param string $decodedJson The decoded JSON request body.
    * @return bool True if valid, false otherwise.
    */

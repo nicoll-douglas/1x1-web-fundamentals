@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// super basic script to load .env variables
+
 $envFile = __DIR__ . "/../../secrets/.env";
 
 if (file_exists($envFile)) {

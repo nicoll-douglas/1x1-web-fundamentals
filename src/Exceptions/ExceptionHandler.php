@@ -5,10 +5,16 @@ declare(strict_types=1);
 namespace App\Exceptions;
 
 /**
- * Class that contains the global exception handler method.
+ * Contains the global exception handler method.
  */
 class ExceptionHandler
 {
+  /**
+   * Shows a server error view.
+   * 
+   * In development it echoes information about the exception.
+   * @param \Throwable $e The exception thrown.
+   */
   public static function handle(\Throwable $e)
   {
     include __DIR__ . "/../views/status/serverError.php";
@@ -18,6 +24,10 @@ class ExceptionHandler
     $view->show();
   }
 
+  /**
+   * Echoes an error report for the exception.
+   * @param \Throwable $e The exception thrown.
+   */
   private static function reportError(\Throwable $e)
   {
     echo "<pre>";

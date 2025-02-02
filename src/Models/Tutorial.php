@@ -15,6 +15,11 @@ class Tutorial extends Model
   private int $number;
   private int $moduleNumber;
 
+  /**
+   * Initialises the database connection and class fields.
+   * @param int|null $number The number of the tutorial within its module.
+   * @param int|null $moduleNumber The module number of the tutorial.
+   */
   public function __construct(
     ?int $number = null,
     ?int $moduleNumber = null

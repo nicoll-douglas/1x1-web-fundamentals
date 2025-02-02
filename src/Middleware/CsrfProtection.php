@@ -13,7 +13,7 @@ class CsrfProtection
 {
   /**
    * Creates a CSRF token and stores it in the session for future use.
-   * @return string The CSRF token.
+   * @return string The CSRF token for convenience.
    */
   public static function setToken(): string
   {

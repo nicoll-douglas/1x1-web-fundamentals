@@ -1,3 +1,5 @@
+-- The database schema
+
 CREATE DATABASE IF NOT EXISTS jiggys_web_fundamentals;
 
 USE jiggys_web_fundamentals;

@@ -16,6 +16,12 @@ class TutorialCompletion extends Model
   private int $tutorialNumber;
   private int $moduleNumber;
 
+  /**
+   * Initialises the database connection and class fields.
+   * @param string|null $useId The user ID for the tutorial completion.
+   * @param string|null $tutorialNumber The tutorial's number for the tutorial completion.
+   * @param string|null $moduleNumber The tutorial's module number for the tutorial completion.
+   */
   public function __construct(
     ?string $userId = null,
     ?int $tutorialNumber = null,
@@ -34,8 +40,8 @@ class TutorialCompletion extends Model
   }
 
   /**
-   * Checks whether the current user id is empty.
-   * @throws NonEmptyException If the current user id is empty.
+   * Checks whether the current user ID is empty.
+   * @throws NonEmptyException If the current user ID is empty.
    */
   private function checkForUserId()
   {
@@ -45,10 +51,10 @@ class TutorialCompletion extends Model
   }
 
   /**
-   * Checks whether the current tutorial id is empty.
-   * @throws NonEmptyException If the current tutorial id is empty.
+   * Checks whether the current tutorial ID is empty.
+   * @throws NonEmptyException If the current tutorial ID is empty.
    */
-  private function checkForTutorialId()
+  private function checkForTutorialNumber()
   {
     if (empty($this->tutorialNumber)) {
       throw new NonEmptyException('$tutorialNumber');
@@ -56,10 +62,10 @@ class TutorialCompletion extends Model
   }
 
   /**
-   * Checks whether the current module id is empty.
-   * @throws NonEmptyException If the current module id is empty.
+   * Checks whether the current module number is empty.
+   * @throws NonEmptyException If the current module number is empty.
    */
-  private function checkForModuleId()
+  private function checkForModuleNumber()
   {
     if (empty($this->moduleNumber)) {
       throw new NonEmptyException('$moduleNumber');
@@ -67,14 +73,14 @@ class TutorialCompletion extends Model
   }
 
   /**
-   * Checks whether the the current user id, tutorial number or module number is empty.
+   * Checks whether the the current user ID, tutorial number or module number is empty.
    * @throws NonEmptyException If any of them is empty.
    */
   private function checkForAll()
   {
     $this->checkForUserId();
-    $this->checkForTutorialId();
-    $this->checkForModuleId();
+    $this->checkForTutorialNumber();
+    $this->checkForModuleNumber();
   }
 
   public function setUserId(string $value)
@@ -96,7 +102,7 @@ class TutorialCompletion extends Model
 
   /**
    * Inserts a tutorial completion into the tutorial_completions table.
-   * @throws NonEmptyException If any of the current user id, tutorial number or module number is empty.
+   * @throws NonEmptyException If any of the current user ID, tutorial number or module number is empty.
    * @return bool True if a row was inserted, false otherwise.
    */
   public function insert(): bool
@@ -134,7 +140,7 @@ class TutorialCompletion extends Model
 
   /**
    * Checks for a tutorial completion.
-   * @throws NonEmptyException If any of the current user id, tutorial number or module number is empty.
+   * @throws NonEmptyException If any of the current user ID, tutorial number or module number is empty.
    * @return bool False on failure or if a row is not found, true otherwise.
    */
   public function find(): bool

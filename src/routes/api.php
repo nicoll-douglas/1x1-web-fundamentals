@@ -7,6 +7,8 @@ use App\Controllers\TutorialCompletionController;
 
 require_once __DIR__ . "/../router.php";
 
+// routes for the API
+
 $router->set(
   "POST",
   "/api/messages",

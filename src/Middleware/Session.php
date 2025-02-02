@@ -6,12 +6,12 @@ namespace App\Middleware;
 
 
 /**
- * Class that contains middleware functions pertaining to sessions.
+ * Middleware class to handle sessions.
  */
 class Session
 {
   /**
-   * Completely destroys the current session.
+   * Frees all session variables and completely destroys the current session.
    */
   public static function destroy()
   {

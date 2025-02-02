@@ -12,22 +12,33 @@ use App\Classes\RequestGlobals;
  */
 class View
 {
+  /**
+   * The directory containing views for the application.
+   */
   public const DIR = __DIR__ . "/../views";
   private readonly string $filename;
   private Layout $layout;
   private array $data;
   private int $status;
+  /**
+   * Stores a string buffer of HTML representing the view.
+   */
   private string $buffer;
 
+  /**
+   * Initialises the view and creates a reference to it in the custom request globals.
+   * @param string $filename The filename of the view relative to the views directory.
+   * @param array $data The data to be used for the view.
+   * @param Layout $layout The filename of the layout to be used with the view.
+   * @param int $status The HTTP response code to be set for the view when shown.
+   */
   public function __construct(
     string $filename = "",
     array $data = [],
     Layout $layout = Layout::Main,
     int $status = 200
   ) {
-    if ($filename) {
-      $this->filename = $filename;
-    }
+    $this->filename = $filename;
     $this->data = $data;
     $this->layout = $layout;
     $this->status = $status;
@@ -44,7 +55,7 @@ class View
   }
 
   /**
-   * Stops output buffering and stores the result.
+   * Stops output buffering and stores the result of the buffer whichs represents the view.
    */
   public function stopBuffering()
   {
@@ -53,7 +64,7 @@ class View
   }
 
   /**
-   * Shows the currently configured view.
+   * Shows the currently configured view and exits the script.
    */
   public function show()
   {
@@ -69,7 +80,9 @@ class View
   }
 
   /**
-   * Shows the contents of the current view; either echoes the buffer or includes the filename.
+   * Shows the contents of the current view; either echoes the current buffer or requires the filename.
+   * 
+   * Assumes either is set and prioritises the buffer.
    */
   public function showContent()
   {
@@ -85,6 +98,9 @@ class View
     $this->layout = $layout;
   }
 
+  /**
+   * Gets the fully qualified filename of the layout.
+   */
   public function getLayout(): string
   {
     return __DIR__ . "/../templates" . $this->layout->value;
@@ -111,8 +127,8 @@ class View
   }
 
   /**
-   * Append new data to the view data array.
-   * @param array $data The key-value pairs to append, overrides existing keys.
+   * Append new data to the view data array (merges them).
+   * @param array $data The key-value pairs to append; overrides existing keys.
    */
   public function appendData(array $data)
   {
@@ -120,7 +136,8 @@ class View
   }
 
   /**
-   * Sets the page title metadata.
+   * Sets the page title data.
+   * @param string $title The new title.
    */
   public function setTitle(string $title)
   {
@@ -135,11 +152,19 @@ class View
     }
   }
 
+  /**
+   * Sets a script to be used with the view.
+   * @param string $filename The filename of the script relative to the script asset directory.
+   */
   public function script(string $filename)
   {
     $this->data["meta"]["js"][] = "/assets/js" . $filename;
   }
 
+  /**
+   * Sets a stylesheet to be used with the view.
+   * @param string $filename The filename of the stylesheet relative to the CSS asset directory.
+   */
   public function style(string $filename)
   {
     $this->data["meta"]["css"][] = "/assets/css" . $filename;

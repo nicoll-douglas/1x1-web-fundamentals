@@ -10,7 +10,7 @@ namespace App\Controllers;
 class WebhookController
 {
   /**
-   * Handles a webhook request for GitHub push event on the remote repo.
+   * Handles a webhook request for the GitHub push event on the remote repo.
    */
   public function githubSync()
   {

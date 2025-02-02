@@ -14,6 +14,9 @@ class Dbh
   private string $dbUser;
   private string $dbPass;
 
+  /**
+   * Loads database environment variables into the class.
+   */
   protected function __construct()
   {
     $this->dbHost = getenv("DB_HOST");

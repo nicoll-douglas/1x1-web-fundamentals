@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Services\Google;
 
 /**
- * Extends the Google API client with more app specific methods.
+ * Service class that extends the Google API client with more app specific methods.
  */
 class AppClient extends \Google\Client
 {
