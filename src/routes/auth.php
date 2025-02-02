@@ -34,7 +34,7 @@ $router->set(
   "/auth/delete-data",
   function () {
     if (!USER) {
-      include View::DIR . "/status/unauthorized.php";
+      require View::DIR . "/status/unauthorized.php";
       $view->show();
     }
   },

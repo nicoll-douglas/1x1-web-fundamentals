@@ -33,7 +33,7 @@ class MessageController
     $success = $message->insert();
 
     if ($success) {
-      include __DIR__ . "/../views/status/submitted.php";
+      require __DIR__ . "/../views/status/submitted.php";
       $view->setStatus(201);
       return $view;
     }

@@ -36,7 +36,7 @@ class UserController
     $client->setAccessToken($accessToken);
     $userInfo = $client->getUserInfo();
     if (!$userInfo) {
-      include __DIR__ . "/../views/status/serverError.php";
+      require __DIR__ . "/../views/status/serverError.php";
       return $view;
     }
 
@@ -44,7 +44,7 @@ class UserController
       $user = new User(id: $userInfo["id"]);
     } catch (\PDOException $e) {
       $client->revokeAllTokens();
-      include __DIR__ . "/../views/status/serverError.php";
+      require __DIR__ . "/../views/status/serverError.php";
       return $view;
     }
 
@@ -116,7 +116,7 @@ class UserController
 
     $sessionUser = $_SESSION["user"];
     if (!isset($sessionUser) || !CsrfProtection::compareTokens($body["csrfToken"])) {
-      include __DIR__ . "/../views/status/unauthorized.php";
+      require __DIR__ . "/../views/status/unauthorized.php";
       return $view;
     }
 

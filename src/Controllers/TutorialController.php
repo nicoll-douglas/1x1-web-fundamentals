@@ -30,7 +30,7 @@ class TutorialController
     } else {
       $index = $tutorial->getIndex();
       if (!$index) {
-        include __DIR__ . "/../views/status/serverError.php";
+        require __DIR__ . "/../views/status/serverError.php";
         return $view;
       }
       $cache->set($index);
