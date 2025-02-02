@@ -40,9 +40,7 @@ $router->set(
   },
   [CsrfProtection::class, "setToken"],
   function () {
-    $view = new View("/auth/deleteData.php");
-    $view->setTitle("Delete Data");
-    $view->script("/features/deleteData.js");
+    require View::DIR . "/auth/deleteData.php";
     $view->show();
   }
 );

@@ -1,3 +1,14 @@
+<?php
+
+use App\Classes\View;
+
+$view = new View();
+$view->setTitle("Delete Data");
+$view->script("/features/deleteData.js");
+?>
+
+<?php $view->startBuffering(); ?>
+
 <main>
   <h1>
     Delete My Data
@@ -20,3 +31,5 @@
       data-csrf-token="<?php echo $_SESSION["csrfToken"]; ?>">Confirm</button>
   </form>
 </main>
+
+<?php $view->stopBuffering(); ?>
