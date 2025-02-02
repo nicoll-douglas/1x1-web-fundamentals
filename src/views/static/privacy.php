@@ -39,7 +39,7 @@ $view->setTitle("Privacy");
       <p>You can also click the link below to purge all your data.</p>
       <a href="/auth/delete-data">Delete my data</a>
     <?php else: ?>
-      <p><?php echo $p . " or by logging in to purge all your data"; ?></p>
+      <p><?php echo $p . " or by logging in to purge all your data."; ?></p>
     <?php endif; ?>
   </section>
 </main>
