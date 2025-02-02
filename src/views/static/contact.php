@@ -1,3 +1,13 @@
+<?php
+
+use App\Classes\View;
+
+$view = new View();
+$view->setTitle("Contact");
+?>
+
+<?php $view->startBuffering(); ?>
+
 <main>
   <h1>Contact</h1>
   <section>
@@ -9,7 +19,7 @@
   <section>
     <h2 id="leave-a-message-heading">Leave a Message</h2>
     <p>If you wish to leave a quick anonymous message.</p>
-    <?php require_once __DIR__ . "/../partials/messageForm.php"; ?>
+    <?php require_once __DIR__ . "/../../partials/messageForm.php"; ?>
   </section>
   <section>
     <h2>Contributing</h2>
@@ -19,3 +29,5 @@
     </a>
   </section>
 </main>
+
+<?php $view->stopBuffering(); ?>

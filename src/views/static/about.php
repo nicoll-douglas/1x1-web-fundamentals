@@ -1,3 +1,13 @@
+<?php
+
+use App\Classes\View;
+
+$view = new View();
+$view->setTitle("About");
+?>
+
+<?php $view->startBuffering(); ?>
+
 <main>
   <article>
     <h1>About Jiggy&apos;s Web Fundamentals</h1>
@@ -30,3 +40,5 @@
     </section>
   </article>
 </main>
+
+<?php $view->stopBuffering(); ?>

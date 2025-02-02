@@ -69,7 +69,7 @@ class View
   }
 
   /**
-   * Shows the contents of the current view, either echoes the buffer or includes the filename.
+   * Shows the contents of the current view; either echoes the buffer or includes the filename.
    */
   public function showContent()
   {
@@ -125,6 +125,14 @@ class View
   public function setTitle(string $title)
   {
     $this->data["meta"]["title"] = $title;
+  }
+
+  public function getTitle(): string|null
+  {
+    $meta = $this->data["meta"];
+    if (isset($meta)) {
+      return $meta["title"];
+    }
   }
 
   public function script(string $filename)

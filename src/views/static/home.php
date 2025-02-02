@@ -1,3 +1,14 @@
+<?php
+
+use App\Classes\View;
+
+$view = new View();
+$view->setTitle("Jiggy's Web Fundamentals");
+$view->style("/home.css");
+?>
+
+<?php $view->startBuffering(); ?>
+
 <main>
   <pre id="ascii-heading" aria-hidden="true">
    ___ _                   _       _    _      _                 
@@ -36,3 +47,5 @@ ______               _                            _        _
     <p>Otherwise, happy learning!</p>
   </section>
 </main>
+
+<?php $view->stopBuffering(); ?>

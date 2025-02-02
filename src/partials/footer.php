@@ -46,7 +46,7 @@ $data = $view->getData();
       </ul>
     </section>
   <?php endif; ?>
-  <?php if (strpos($view->getFilename(), "contact") === false): ?>
+  <?php if ($view->getTitle() !== "Contact"): ?>
     <section>
       <h3>Contact</h3>
       <div>

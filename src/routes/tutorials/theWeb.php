@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/../helpers/tutorialRouteHandler.php";
-require_once __DIR__ . "/../router.php";
+require_once __DIR__ . "/../../helpers/tutorialRouteHandler.php";
+require_once __DIR__ . "/../../router.php";
 
 $router->set(
   "GET",
