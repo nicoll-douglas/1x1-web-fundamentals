@@ -191,6 +191,10 @@ input[type="text"] {
   color: var(--color-accent-2-dark);
 }
 
+.tutorial-nav ul ul {
+  margin-top: var(--space-xs);
+}
+
 #wordmark {
   text-decoration: none;
 }

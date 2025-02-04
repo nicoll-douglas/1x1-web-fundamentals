@@ -7,9 +7,9 @@
     <h1>Domains</h1>
     <?php
     $tutorialNav = [
-      ["What is a Domain?", "#what-is-a-domain"],
-      ["Who Owns a Domain?", "#who-owns-a-domain"],
-      ["What is DNS?", "#what-is-dns"]
+      ["text" => "What is a Domain?", "href" =>  "#what-is-a-domain"],
+      ["text" => "Who Owns a Domain?", "href" => "#who-owns-a-domain"],
+      ["text" => "What is DNS?", "href" => "#what-is-dns"]
     ];
     require_once __DIR__ . "/../../../partials/tutorialNav.php";
     ?>

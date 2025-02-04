@@ -7,10 +7,10 @@
     <h1>How The Web Works</h1>
     <?php
     $tutorialNav = [
-      ["What is the Internet?", "#what-is-the-internet"],
-      ["What is the Web?", "#what-is-the-web"],
-      ["Clients and Servers", "#clients-and-servers"],
-      ["Accessing the Web", "#accessing-the-web"]
+      ["text" => "What is the Internet?", "href" => "#what-is-the-internet"],
+      ["text" => "What is the Web?", "href" => "#what-is-the-web"],
+      ["text" => "Clients and Servers", "href" => "#clients-and-servers"],
+      ["text" => "Accessing the Web", "href" => "#accessing-the-web"]
     ];
     require_once __DIR__ . "/../../../partials/tutorialNav.php";
     ?>
