@@ -12,4 +12,4 @@ INSERT IGNORE INTO tutorials (href, number, name, module_number)
 VALUES ("/tutorials/the-web/common-terms-on-the-web", 3, "Common Terms On The Web", 1);
 
 INSERT IGNORE INTO tutorials (href, number, name, module_number)
-VALUES ("/tutorials/the-web/links-and-urls", 4, "Links & URLs", 1);
+VALUES ("/tutorials/the-web/urls", 4, "URLs", 1);
