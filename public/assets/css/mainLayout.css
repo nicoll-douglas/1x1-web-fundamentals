@@ -47,11 +47,15 @@ label {
 ul,
 ol {
   list-style: outside;
+}
+
+ul {
   margin-left: var(--space-xl);
 }
 
 ol {
   list-style-type: decimal;
+  margin-left: var(--space-3xl);
 }
 
 footer {
