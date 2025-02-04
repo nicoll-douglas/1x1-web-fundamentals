@@ -58,9 +58,9 @@ GOOGLE_AUTH_REDIRECT_URI= # your Google OAuth redirect URI
 GITHUB_WEBHOOK_SECRET= # something secure
 ```
 
-### 3. Services
-
 In the secrets folder you will also be needing a Google OAuth client secret to put there once you set up your OAuth credentials. Name it `google_oauth_client_secret.json`.
+
+### 3. Services
 
 You will also need to set up the database. In `src/config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
 
@@ -70,7 +70,7 @@ Log in to MySQL, and for each of the files run the following command using their
 source <filename>;
 ```
 
-Finally, make sure the repository is accessible to your web server in order to serve the content, enjoy 👍.
+Finally, make sure the repository is accessible to your web server in order to serve the content. Enjoy 👍.
 
 ## License
 
