@@ -31,7 +31,7 @@ Coming soon
 
 If for whatever reason you wish to run this project locally, basic instructions are below. This project runs best on a LAMP setup with composer installed.
 
-### 1. Installation
+### 1. Installation 📦
 
 Run Installation script:
 
@@ -41,7 +41,7 @@ Run Installation script:
   composer install
 ```
 
-### 2. Environment
+### 2. Environment 🛠️
 
 You will also be needing some environment variables; there is a `.env.example` in the `secrets` directory. Instructions also below:
 
@@ -60,7 +60,7 @@ GITHUB_WEBHOOK_SECRET= # something secure
 
 In the secrets folder you will also be needing a Google OAuth client secret to put there once you set up your OAuth credentials. Name it `google_oauth_client_secret.json`.
 
-### 3. Services
+### 3. Services 📡
 
 You will also need to set up the database. In `src/config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
 
