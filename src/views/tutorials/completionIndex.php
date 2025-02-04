@@ -30,7 +30,7 @@ $completionsIndex = $data["completionsIndex"];
       if ($tnum === 1): ?>
         <section>
           <h2><?php echo $mname; ?></h2>
-          <ol class="indent-list tutorial-list">
+          <ol class="tutorial-list">
           <?php endif; ?>
 
           <li>

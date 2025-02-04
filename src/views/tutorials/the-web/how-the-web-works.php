@@ -21,30 +21,34 @@
 
       <p>The internet is essentially a big infrastructure of computers across the world that are able to communicate with each other and <strong>transfer data</strong>. But how did we get here?</p>
 
-      <p>In order for computers to communicate they need to have a link between them, either physical (e.g Ethernet) or wireless (e.g Wi-Fi, Bluetooth, etc). Before the days of the internet, this would have typically been a series of network cables between computers which would establish a small local network. Think a local library that needs to transfer files from the users' computers to the librarian's computer to print like the figure below.</p>
+      <p>In order for computers to communicate they need to have a link between them, either physical (e.g Ethernet) or wireless (e.g Wi-Fi, Bluetooth, etc). Before the days of the internet, this would have typically been a series of network cables between computers which would establish a small local network. Perhaps a small network that needs to be able to transfer files from any one computer to another.</p>
 
       <figure>
         <img
-          src="/assets/images/the-web/how-the-web-works/library-network.png"
-          alt="An example of what a library network could look like"
-          style="max-width: 350px;" />
-        <figcaption>Figure 1 - An example of what a library network could look like</figcaption>
+          src="/assets/images/the-web/how-the-web-works/local-network.png"
+          alt="An example of what a small local network could look like"
+          style="max-width: 350px;"
+          width="350"
+          height="173" />
+        <figcaption>Figure 1 - An example of what a small local network could look like</figcaption>
       </figure>
 
-      <p> Then we developed the <em>router</em>, a small computer for "routing" other computer communications between each other. Routers meant that computers can connect to and send their communications to a centralised computer rather than each other. It would then act as a traffic controller to relay a communication to the target computer, making the network more efficient. Think, if you have 10 computers in a network, connecting each to 1 router is more efficient than connecting each to 9 other computers if need be.</p>
+      <p> Then we developed the <em>router</em>, a small computer for "routing" other computer communications between each other. Routers meant that computers can connect to, and send their communications to a centralised computer rather than each other. It would then act as a traffic controller to relay a communication to the target computer, making the network more efficient. Think, if you have 4 computers in a network like the previous figure, connecting each to 1 router is more efficient than connecting each to the other 3 computers!</p>
 
       <figure>
         <img
           src="/assets/images/the-web/how-the-web-works/network-with-router.png"
           style="max-width: 350px;"
-          alt="An example of a network with a routers"
-          loading="lazy" />
-        <figcaption>Figure 2 - An example of a network with a router</figcaption>
+          alt="An example of a network communication with a router"
+          loading="lazy"
+          width="350"
+          height="173" />
+        <figcaption>Figure 2 - An example of a network communication with a router</figcaption>
       </figure>
 
       <p>Ok so we can have lots of these small computer networks with a router around the place but how do we connect these networks together?</p>
 
-      <p>Since routers are also computers, we <em>could</em> connect two routers together to join networks together. But typically this is where an Internet Service Provider (ISP) comes in. An ISP manages several special routers in different locations that are all linked together and can access other ISPs' routers. Once we connect our network's router to an ISP, and other networks do the same, we can communicate with computers on those networks. In the 90s this was established in dial-up internet which used telephone lines to transfer information from network to ISP and ISP to ISP. But nowadays the standard is subterranean fibre-optic cables which allow for high-speed, low-latency internet communication across the world.</p>
+      <p>Since routers are also computers, we <em>could</em> connect two routers together to join networks together. But typically this is where an Internet Service Provider (ISP) comes in. An ISP manages several special routers in different locations that are all linked together and can access other ISPs' routers. Once we connect our network's router to an ISP, and other networks do the same, we can communicate with computers on those networks. In the 90s this was established in dial-up internet which used the already-established telephone line infrastructure to transfer information. But nowadays the standard is a large series of subterranean fibre-optic cables which allow for high-speed, low-latency internet communication across the world.</p>
 
       <p>This infrastructure is essentially what the internet is.</p>
 
@@ -53,7 +57,9 @@
           src="/assets/images/the-web/how-the-web-works/modern-internet.png"
           alt="Modern Internet Infrastructure"
           style="max-width: 768px;"
-          loading="lazy" />
+          loading="lazy"
+          width="768"
+          height="236" />
         <figcaption>Figure 3 - Modern Internet Infrastructure</figcaption>
       </figure>
 
@@ -91,7 +97,9 @@
           src="/assets/images/the-web/how-the-web-works/ip-address.png"
           style="max-width: 185px;"
           loading="lazy"
-          alt="An IP address typed into a web browser" />
+          alt="An IP address typed into a web browser"
+          height="72"
+          width="185" />
         <figcaption>Figure 4 - The IP address typed into a web browser</figcaption>
       </figure>
 
@@ -102,7 +110,9 @@
           src="/assets/images/the-web/how-the-web-works/google-page.png"
           style="max-width: 768px;"
           alt="Google's home webpage"
-          loading="lazy" />
+          loading="lazy"
+          height="399"
+          width="768" />
         <figcaption>Figure 5 - Google's home webpage</figcaption>
       </figure>
 
@@ -110,15 +120,15 @@
 
     </section>
 
-    <section>
-      <h3>Key Concepts Learnt</h3>
-      <ul>
-        <li>The <em>internet</em> is an architecture that allows computers to communicate with each other.</li>
-        <li>Every computer on the internet has a unique identifier called an <strong>IP address</strong>.</li>
-        <li>The <em>web</em> is a service built on top of the internet that allows a web browser to request and interpret data from web servers.</li>
-        <li>The web consists of <strong>clients</strong> (responsible for making data requests) and <strong>web servers</strong> (reponsible for responding to data requests).</li>
-      </ul>
-    </section>
+    <?php
+    $keyConcepts = [
+      "The <em>internet</em> is an architecture that allows computers to communicate with each other.",
+      "Every computer on the internet has a unique identifier called an <strong>IP address</strong>.",
+      "The <em>web</em> is a service built on top of the internet that allows a web browser to request and interpret data from web servers.",
+      "The web consists of <strong>clients</strong> (responsible for making data requests) and <strong>web servers</strong> (reponsible for responding to data requests)."
+    ];
+    require_once __DIR__ . "/../../../partials/keyConcepts.php";
+    ?>
   </article>
   <?php require_once __DIR__ . "/../../../partials/tutorialFooter.php"; ?>
 </main>

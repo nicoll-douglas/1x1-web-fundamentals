@@ -18,7 +18,7 @@
     ?>
     <section>
       <h2 id="a-quick-recap">A Quick Recap</h2>
-      <p>In the first tutorial I <a href="/tutorials/the-web/how-the-web-works.php#accessing-the-web">showed</a> how you can type out an IP address into your web browser's address bar and that if it corresponds to a web server, the web server might send back some data, typically a webpage. The same can also be done for a domain name if it has a DNS record with an associated IP address of a web server. We've also learnt that the <a href="/tutorials/the-web/how-the-web-works.php#what-is-the-web">web</a> is a service built on top of the <a href="/tutorials/the-web/how-the-web-works.php#what-is-the-internet">internet</a> that allows a web browser to communicate with a web server and access its content.
+      <p>In the first tutorial I <a href="/tutorials/the-web/how-the-web-works#accessing-the-web">showed</a> how you can type out an IP address into your web browser's address bar and that if it corresponds to a web server, the web server might send back some data, typically a webpage. The same can also be done for a domain name if it has a DNS record with an associated IP address of a web server. We've also learnt that the <a href="/tutorials/the-web/how-the-web-works#what-is-the-web">web</a> is a service built on top of the <a href="/tutorials/the-web/how-the-web-works#what-is-the-internet">internet</a> that allows a web browser to communicate with a web server and access its content.
       </p>
       <p>So I think now is an appropriate time to make clear some common technical jargon about those concepts and related ones when it comes to the web.</p>
     </section>
@@ -32,12 +32,12 @@
       <h2 id="what-is-a-website">What is a Website?</h2>
       <p>A website is a collection of webapges grouped into a single resource/entity (as well as the pages' associated resources like images and videos). A website is usually named after its domain name. So something like "youtube.com" is a website. The webpages that are part of a website often contain <strong>links</strong> connecting to each other that allow you to easily browse the site.</p>
 
-      <p>When you type out a domain name or IP address into your web browser and press enter, typically if there is an associated web server, it will send back the home page of the website which provides you a starting point for your browsing. This is what we did with the <a href="/tutorials/the-web/how-the-web-works.php#accessing-the-web">Google example</a> in the first tutorial.</p>
+      <p>When you type out a domain name or IP address into your web browser and press enter, typically if there is an associated web server, it will send back the home page of the website which provides you a starting point for your browsing. This is what we did with the <a href="/tutorials/the-web/how-the-web-works#accessing-the-web">Google example</a> in the first tutorial.</p>
     </section>
 
     <section>
       <h2 id="what-is-a-web-server">What is a Web Server?</h2>
-      <p>We've already talked about what a <a href="/tutorials/the-web/how-the-web-works.php#clients-and-servers">web server</a> is but to reiterate, a web server is a computer on the internet who's job is to make available and provide the data that a <a href="/tutorials/the-web/how-the-web-works.php#clients-and-servers">client</a>/web browser is requesting. This data is often a web page. But more specifically, someone who runs a web server typically wants to make available lots of webpages or data and so a web server is a computer that <strong>hosts a website</strong> (makes available the pages of that site on the web). Web servers for that matter, can also host multiple websites.</p>
+      <p>We've already talked about what a <a href="/tutorials/the-web/how-the-web-works#clients-and-servers">web server</a> is but to reiterate, a web server is a computer on the internet who's job is to make available and provide the data that a <a href="/tutorials/the-web/how-the-web-works#clients-and-servers">client</a>/web browser is requesting. This data is often a web page. But more specifically, someone who runs a web server typically wants to make available lots of webpages or data and so a web server is a computer that <strong>hosts a website</strong> (makes available the pages of that site on the web). Web servers for that matter, can also host multiple websites.</p>
 
       <p>Two domain names can point to the same IP address of a web server which would indicate two websites, but if you've been noticing my language so far in these tutorials, it is the <strong>job of the server</strong> to make their resources available, and this can be done however the server chooses. Web servers being computers means they are complex machines and so hosting multiple distinct websites on one web server is a possibility as well hosting one website for multiple domain names.</p>
 
@@ -58,16 +58,16 @@
       <p>So to make the distinction clear, a <em>web browser</em> is software lets you access the web (websites). A <em>search engine</em> is a website that lets you search for other websites and webpages on the web. But for convenience, web browsers will typically provide you an easy means to access a search engine through the address bar or on their homepage.</p>
     </section>
 
-    <section>
-      <h3>Key Concepts Learnt</h3>
-      <ul>
-        <li>A webpage is a multimedia document format served from a web server and displayed in a web browser.</li>
-        <li>A website is a collection of webpages that form a cohesive unit and are typically connected together with links.</li>
-        <li>A web server is a computer that hosts one or more websites.</li>
-        <li>A <em>web browser</em> is a piece of software on a personal computer that lets you access websites and webpages on the web.</li>
-        <li>A <em>search engine</em> is a website that lets you search for other websites on the web and is accessible via a web browser.</li>
-      </ul>
-    </section>
+    <?php
+    $keyConcepts = [
+      "A webpage is a multimedia document format served from a web server and displayed in a web browser.",
+      "A website is a collection of webpages that form a cohesive unit and are typically connected together with links.",
+      "A web server is a computer that hosts one or more websites.",
+      "A <em>web browser</em> is a piece of software on a personal computer that lets you access websites and webpages on the web.",
+      "A <em>search engine</em> is a website that lets you search for other websites on the web and is accessible via a web browser.",
+    ];
+    require_once __DIR__ . "/../../../partials/keyConcepts.php";
+    ?>
   </article>
 
   <?php require_once __DIR__ . "/../../../partials/tutorialFooter.php"; ?>

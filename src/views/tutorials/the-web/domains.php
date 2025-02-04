@@ -26,8 +26,8 @@
         <img
           src="/assets/images/the-web/domains/domain.png"
           style="max-width: 280px;"
-          alt="An example of a domain name" />
-        <figcaption>Figure 1 - An example of a domain name</figcaption>
+          alt="An example of a domain name structure" />
+        <figcaption>Figure 1 - An example of a domain name structure</figcaption>
       </figure>
 
       <p>A domain name consists of several components (like the one above) but generally these fall into one of two categories:</p>
@@ -65,27 +65,33 @@
 
       <p>Ok, so let's say there is a web server with an associated domain name that you type into your address bar. How does your web browser/computer know how to get that web server's content if you are only giving it the domain name and not the exact identifier of the server (the IP address)?</p>
 
-      <p>Well, your web browser will make a request to one or more DNS servers to see if they have the <strong>DNS record</strong>. If they do (which they usually should because of DNS refreshing), then the request can proceed to get the content from the web server with the associated IP address in the record. Your computer will then <strong>cache</strong> these values (store them locally) for a certain amount of time for future use. So instead, if you are visiting a domain in your web browser, your browser will actually first check the cache and ask your computer to see if it has the IP address. Then if it does, it will use that value otherwise it will check DNS servers as we previously described.
+      <p>Well, your web browser will first check the <strong>cache</strong> (locally stored values) on your local computer and ask it to see if the IP address is stored there from a previous time you visited the domain. If not, it will make a request to one or more DNS servers to see if they have the <strong>DNS record</strong>. If they do (which they usually should because of DNS refreshing), then the request can proceed to get the content from the web server with the associated IP address in the record. Your computer will then store these values in the cache for a certain amount of time for future use like we initially described to improve efficiency.
 
       <figure>
-        <img src="/assets/images/the-web/domains/dns.png" style="max-width: 768px;" loading="lazy" alt="An overview of a network request with DNS" />
+        <img
+          src="/assets/images/the-web/domains/dns.png"
+          style="max-width: 768px;"
+          loading="lazy"
+          alt="An overview of a network request with DNS"
+          height="436"
+          width="768" />
         <figcaption>Figure 2 - An overview of a network request to google.com</figcaption>
       </figure>
 
       <p>This process of registering domains, them being sent out to DNS servers via DNS refreshing, your web browser being able to query those servers and then cache those values, is what allows the web to work with domain names as seamlessly as it does; and provide us with easy to remember names for lots of different websites.</p>
 
     </section>
-    <section>
-      <h3>Key Concepts Learnt</h3>
-      <ul>
-        <li>Domain names provide a human-readable address that corresponds to a server.</li>
-        <li>Domains names consist of a few parts to identify the content on a web server in a basic manner.</li>
-        <li>"Ownership" of a domain can be checked and changed through a <strong>registrar</strong>.</li>
-        <li>The internet contains <strong>DNS servers</strong> which hold <strong>DNS records</strong>.</li>
-        <li>DNS servers allow clients on the web to look up the IP address associated with a domain in the DNS record.</li>
-        <li>DNS servers regularly refresh their records from authoritative name servers to keep the web up to date.</li>
-      </ul>
-    </section>
+    <?php
+    $keyConcepts = [
+      "Domain names provide a human-readable address that corresponds to a web server.",
+      "Domain names consist of a few parts to identify the content on a web server in a basic manner.",
+      '"Ownership" of a domain can be checked and changed through a <strong>registrar</strong>.',
+      "The internet contains <strong>DNS servers</strong> which hold <strong>DNS records</strong>.",
+      "DNS servers allow clients on the web to look up the IP address associated with a domain in the DNS record.",
+      "DNS servers regularly refresh their records from authoritative name servers to keep the web up to date.",
+    ];
+    require_once __DIR__ . "/../../../partials/keyConcepts.php";
+    ?>
   </article>
 
   <?php require_once __DIR__ . "/../../../partials/tutorialFooter.php"; ?>
