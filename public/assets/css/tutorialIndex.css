@@ -1,3 +1,10 @@
+.tutorial-with-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: fit-content;
+}
+
 .tutorial-list li {
   display: flex;
   align-items: center;
@@ -6,23 +13,16 @@
   margin-bottom: var(--space-xs);
 }
 
+.tutorial-with-check label {
+  margin: 0;
+}
+
 .tutorial-list li::before {
   content: counter(item) ". ";
   position: relative;
   list-style: none;
   left: 0;
   margin-right: var(--space-sm);
-}
-
-.tutorial-with-check {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  max-width: fit-content;
-}
-
-.tutorial-with-check label {
-  margin: 0;
 }
 
 #tutorial-completions button {

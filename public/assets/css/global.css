@@ -48,21 +48,6 @@ body {
   overflow-y: scroll !important;
 }
 
-a,
-a * {
-  color: var(--color-accent-1-light);
-}
-
-a:visited,
-a:visited * {
-  color: var(--color-highlight);
-}
-
-a:active,
-a:active * {
-  color: var(--color-accent-1-dark);
-}
-
 p,
 h1,
 h2,
@@ -79,6 +64,11 @@ hr {
   border-left: none;
 }
 
+::selection {
+  background-color: var(--color-highlight);
+  color: black;
+}
+
 :focus-visible {
   outline-color: var(--color-highlight);
   outline-width: 1px;
@@ -86,7 +76,17 @@ hr {
   outline-offset: var(--space-xs);
 }
 
-::selection {
-  background-color: var(--color-highlight);
-  color: black;
+a,
+a * {
+  color: var(--color-accent-1-light);
+}
+
+a:visited,
+a:visited * {
+  color: var(--color-highlight);
+}
+
+a:active,
+a:active * {
+  color: var(--color-accent-1-dark);
 }
