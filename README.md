@@ -2,7 +2,7 @@
 
 A website where I regularly post informational tutorials about web development fundamentals.
 
-[![Link](https://img.shields.io/badge/Live_At-https://jwf.nicolldouglas.dev-blue)](https://jwf.nicolldouglas.dev)
+[![Link](https://img.shields.io/badge/Live_At-https://jwf.nicolldouglas.dev-3d56a0)](https://jwf.nicolldouglas.dev)
 
 ## Features
 
@@ -69,8 +69,6 @@ Log in to MySQL, and for each of the files run the following command using their
 ```
 source <filename>;
 ```
-
-<hr>
 
 Finally, make sure the repository is accessible to your web server in order to serve the content, enjoy 👍.
 
