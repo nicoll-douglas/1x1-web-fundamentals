@@ -22,3 +22,9 @@ $router->set(
   "/tutorials/the-web/common-terms-on-the-web",
   tutorialRouteHandler("/tutorials/the-web/common-terms-on-the-web.php", 1, 3)
 );
+
+$router->set(
+  "GET",
+  "/tutorials/the-web/urls",
+  tutorialRouteHandler("/tutorials/the-web/urls.php", 1, 4)
+);
