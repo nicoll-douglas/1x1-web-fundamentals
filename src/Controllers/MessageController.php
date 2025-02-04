@@ -15,7 +15,6 @@ class MessageController
 {
   /**
    * Handles posting/creation of a message and returns a view.
-   * @throws RuntimeException If the message could not be successfully inserted.
    * @return View The view to be displayed to the user.
    */
   public function create(): View
@@ -38,6 +37,7 @@ class MessageController
       return $view;
     }
 
-    throw new \RuntimeException();
+    require_once __DIR__ . "/../views/status/serverError.php";
+    return $view;
   }
 }
