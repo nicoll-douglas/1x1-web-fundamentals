@@ -40,47 +40,14 @@ class TutorialCompletion extends Model
   }
 
   /**
-   * Checks whether the current user ID is empty.
-   * @throws NonEmptyException If the current user ID is empty.
-   */
-  private function checkForUserId()
-  {
-    if (empty($this->userId)) {
-      throw new NonEmptyException('$userId');
-    }
-  }
-
-  /**
-   * Checks whether the current tutorial ID is empty.
-   * @throws NonEmptyException If the current tutorial ID is empty.
-   */
-  private function checkForTutorialNumber()
-  {
-    if (empty($this->tutorialNumber)) {
-      throw new NonEmptyException('$tutorialNumber');
-    }
-  }
-
-  /**
-   * Checks whether the current module number is empty.
-   * @throws NonEmptyException If the current module number is empty.
-   */
-  private function checkForModuleNumber()
-  {
-    if (empty($this->moduleNumber)) {
-      throw new NonEmptyException('$moduleNumber');
-    }
-  }
-
-  /**
    * Checks whether the the current user ID, tutorial number or module number is empty.
    * @throws NonEmptyException If any of them is empty.
    */
   private function checkForAll()
   {
-    $this->checkForUserId();
-    $this->checkForTutorialNumber();
-    $this->checkForModuleNumber();
+    $this->checkForEmpty($this->userId, "userId");
+    $this->checkForEmpty($this->tutorialNumber, "tutorialNumber");
+    $this->checkForEmpty($this->moduleNumber, "moduleNumber");
   }
 
   public function setUserId(string $value)
@@ -170,7 +137,7 @@ class TutorialCompletion extends Model
    */
   public function getIndex(): array
   {
-    $this->checkForUserId();
+    $this->checkForEmpty($this->userId, "userId");
     $sql = "
 SELECT 
     tm.name AS module_name, 

@@ -39,7 +39,8 @@ class Tutorial extends Model
    */
   public function get(): array|false
   {
-    $this->checkForAll();
+    $this->checkForEmpty($this->number, "number");
+    $this->checkForEmpty($this->moduleNumber, "moduleNumber");
     $sql = "SELECT * FROM tutorials WHERE module_number = :mod_num AND number = :tut_num";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(":mod_num", $this->moduleNumber, \PDO::PARAM_INT);
@@ -76,7 +77,8 @@ class Tutorial extends Model
    */
   private function getAdjacentHref(int $offset)
   {
-    $this->checkForAll();
+    $this->checkForEmpty($this->number, "number");
+    $this->checkForEmpty($this->moduleNumber, "moduleNumber");
     $sql = "SELECT href FROM tutorials WHERE module_number = :mod_num AND number = :tut_num";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(":mod_num", $this->moduleNumber, \PDO::PARAM_INT);
@@ -87,7 +89,6 @@ class Tutorial extends Model
     return $row["href"];
   }
 
-
   public function setNumber(int $value)
   {
     $this->number = $value;
@@ -96,37 +97,6 @@ class Tutorial extends Model
   public function setModuleNumber(int $value)
   {
     $this->moduleNumber = $value;
-  }
-
-  /**
-   * Checks whether the current tutorial number is empty.
-   * @throws NonEmptyException If it is empty.
-   */
-  private function checkForNumber()
-  {
-    if (empty($this->number)) {
-      throw new NonEmptyException('$number');
-    }
-  }
-
-  /**
-   * Checks whether the current module number is empty.
-   * @throws NonEmptyException If it is empty.
-   */
-  private function checkForModuleNumber()
-  {
-    if (empty($this->moduleNumber)) {
-      throw new NonEmptyException('$moduleNumber');
-    }
-  }
-  /**
-   * Checks if either the current tutorial number or module number is empty.
-   * @throws NonEmptyException If any of them are empty.
-   */
-  private function checkForAll()
-  {
-    $this->checkForNumber();
-    $this->checkForModuleNumber();
   }
 
   /**

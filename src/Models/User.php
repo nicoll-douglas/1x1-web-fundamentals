@@ -143,9 +143,7 @@ class User extends Model
    */
   private function checkForId()
   {
-    if (empty($this->id)) {
-      throw new NonEmptyException('$id');
-    }
+    $this->checkForEmpty($this->id, "id");
   }
 
   public function setId(string $value)
