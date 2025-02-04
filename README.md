@@ -2,12 +2,14 @@
 
 A website where I regularly post informational tutorials about web development fundamentals.
 
+[![Link](https://img.shields.io/badge/Live_At-https://jwf.nicolldouglas.dev-blue)](https://jwf.nicolldouglas.dev)
+
 ## Features
 
-- Simple, informational, and easy to follow tutorials.
-- Authenticate with OAuth.
-- Save, update and keep track of tutorial progress.
-- Responsive and accessible UI.
+- Simple, informational, and easy to follow tutorials ☀️.
+- Securely authenticate with OAuth 🛡️.
+- Save, update and keep track of tutorial progress ✏️.
+- Responsive and accessible UI 📱.
 
 ## Technologies
 
@@ -15,13 +17,54 @@ This project is built with the LAMP stack and has little to no usage of packages
 
 ### Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- PHP 8
-- MySQL
-- Linux (Ubuntu)
-- Apache2
+[![Stack](https://skillicons.dev/icons?i=html,css,js,php,mysql,ubuntu)](https://skillicons.dev)
+
+## Demo
+
+Coming soon
+
+## Documentation
+
+Coming soon
+
+## Run Locally
+
+If for whatever reason you wish to run this project locally, basic instructions are below. This project runs best on a LAMP setup with composer installed.
+
+Installation script:
+
+```bash
+  git clone git@github.com:nicoll-douglas/jiggys-web-fundamentals.git
+  cd jiggys-web-fundamentals
+  composer install
+```
+
+You will also be needing some environment variables; there is a `.env.example` in the `secrets` directory. Instructions also below:
+
+```
+APP_ENV= # development or production
+DB_HOST= # your MySQL host name
+DB_USER= # your database user
+DB_PASS= # your user's password
+
+# for this you will need to set up some OAuth credentials for a Google Cloud Platform project
+GOOGLE_AUTH_REDIRECT_URI= # your Google OAuth redirect URI
+
+# this is just for me to sync my production deployment with this remote repo
+GITHUB_WEBHOOK_SECRET= # something secure
+```
+
+In the secrets folder you will also be needing a Google OAuth client secret to put there once you set up your OAuth credentials. Name it `google_oauth_client_secret.json`.
+
+You will also need to set up the database. In `src/config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
+
+Log in to MySQL, and for each of the files run the following command using their absolute filenames:
+
+```sql
+source <filename>;
+```
+
+Finally, make sure the repository is accessible to your web server in order to serve the content, enjoy 👍.
 
 ## License
 
