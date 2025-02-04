@@ -87,6 +87,10 @@ footer ul {
   gap: var(--space-lg);
 }
 
+article figure img {
+  height: auto;
+}
+
 .footer-extra-space {
   margin-top: var(--space-xl);
 }

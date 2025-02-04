@@ -50,7 +50,7 @@
 
       <p>URL stands for <strong>Uniform Resource Locator</strong> and it is what allows both us and web browsers to uniquely identify a resource on the web. When we are on a webpage, a URL is what we see in the address bar of our web browser. For example, the URL of this page is:</p>
 
-      <p style="color: var(--color-accent-1-light);">https://jwf.nicolldouglas.dev/tutorials/the-web/urls</p>
+      <p style="color: var(--color-accent-1-light); word-break: break-all;">https://jwf.nicolldouglas.dev/tutorials/the-web/urls</p>
 
       <p>This URL uniquely identifies this webpage as a resource on the web. So if you type this into the address bar of any web browser, it will know to request this webpage and it is what you will see. The structure of a URL consists of some of the components in the example URL as well as others. Let's try to unpack the structure of a URL below.</p>
     </section>
@@ -61,7 +61,9 @@
         <img
           src="/assets/images/the-web/urls/url.png"
           alt="The stucture of a URL"
-          style="max-width: 768px;">
+          style="max-width: 768px;"
+          width="768"
+          height="88">
         <figcaption>Figure 1 - The structure of a URL</figcaption>
       </figure>
 
