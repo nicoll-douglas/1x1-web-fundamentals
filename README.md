@@ -31,13 +31,17 @@ Coming soon
 
 If for whatever reason you wish to run this project locally, basic instructions are below. This project runs best on a LAMP setup with composer installed.
 
-Installation script:
+### 1. Installation
+
+Run Installation script:
 
 ```bash
   git clone git@github.com:nicoll-douglas/jiggys-web-fundamentals.git
   cd jiggys-web-fundamentals
   composer install
 ```
+
+### 2. Environment
 
 You will also be needing some environment variables; there is a `.env.example` in the `secrets` directory. Instructions also below:
 
@@ -54,15 +58,19 @@ GOOGLE_AUTH_REDIRECT_URI= # your Google OAuth redirect URI
 GITHUB_WEBHOOK_SECRET= # something secure
 ```
 
+### 3. Services
+
 In the secrets folder you will also be needing a Google OAuth client secret to put there once you set up your OAuth credentials. Name it `google_oauth_client_secret.json`.
 
 You will also need to set up the database. In `src/config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
 
 Log in to MySQL, and for each of the files run the following command using their absolute filenames:
 
-```sql
+```
 source <filename>;
 ```
+
+<hr>
 
 Finally, make sure the repository is accessible to your web server in order to serve the content, enjoy 👍.
 
