@@ -9,6 +9,9 @@
     "db:setup": [
       "php scripts/php/db/setup.php"
     ],
+    "db:seed": [
+      "php scripts/php/db/seed.php"
+    ],
     "migration:start": [
       "php scripts/php/migration/start.php"
     ],
@@ -17,6 +20,9 @@
     ],
     "migration:new": [
       "php scripts/php/migration/new.php"
+    ],
+    "tutorial:new": [
+      "php scripts/php/tutorial/new.php"
     ]
   },
   "autoload": {

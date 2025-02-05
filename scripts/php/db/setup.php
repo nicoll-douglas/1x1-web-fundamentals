@@ -21,5 +21,6 @@ $pdo->exec($sql);
 echo "Created migrations table.\n";
 
 require_once __DIR__ . "/../migration/start.php";
+require_once __DIR__ . "/seed.php";
 
 echo "Setup complete. Database and tables are ready.\n";

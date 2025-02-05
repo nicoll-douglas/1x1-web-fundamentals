@@ -29,3 +29,9 @@ echo $output;
 
 $output = shell_exec("composer run migration:start");
 echo $output;
+
+$output = shell_exec("composer run db:seed");
+echo $output;
+
+$output = shell_exec("composer run cache:clear");
+echo $output;
