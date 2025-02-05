@@ -17,7 +17,7 @@
     <section>
       <h2 id="what-is-the-internet">What is the Internet?</h2>
 
-      <p>Welcome to the first tutorial. Before we can start building on the web, we must first understand what exactly is the internet.</p>
+      <p>Welcome to the first tutorial. Before we can start building on the Web, we must first understand what exactly is the internet.</p>
 
       <p>The internet is essentially a big infrastructure of computers across the world that are able to communicate with each other and <strong>transfer data</strong>. But how did we get here?</p>
 
@@ -67,26 +67,26 @@
     <section>
       <h2 id="what-is-the-web">What is The Web?</h2>
 
-      <p>Although used interchangeably, the web and the internet are slightly different. The <em>internet</em> is the infrastructure that enables communication between computers. But the <em>web</em> is a special service built on top of the internet that uses a certain protocol where some computers (web servers; I'll explain these in the next section) can send special kinds of data to be requested and understood by web browsers. These specials kinds of data are often webpages. Keep this distinction in your mind from now on; when I say "internet" I will refer to the physical infrastructure, when I say "web" I will refer to the service.</p>
+      <p>Although used interchangeably, the Web and the internet are slightly different. The <em>internet</em> is the infrastructure that enables communication between computers. But the <em>Web</em> is a special service built on top of the internet that uses a certain protocol where some computers (web servers; I'll explain these in the next section) can send special kinds of data to be requested and understood by web browsers. These specials kinds of data are often webpages. Keep this distinction in your mind from now on; when I say "internet" I will refer to the physical infrastructure, when I say the "Web" I will refer to the service.</p>
 
-      <p>Anyway, other internet services like the web also exist, for example email. A computer on the internet designed to receive emails may not be able to receive data from a <em>web</em> server on the internet, but both the web and email are services that use <em>internet</em> infrastructure to facilitate their communications.</p>
+      <p>Anyway, other internet services like the Web also exist, for example email. A computer on the internet designed to receive emails may not be able to receive data from a <em>web</em> server on the internet, but both the Web and email are services that use <em>internet</em> infrastructure to facilitate their communications.</p>
 
-      <p>So when we access a webpage or a resource through a web browser, we are communicating with a web server and this dynamic is what forms the web.</p>
+      <p>So when we access a webpage or a resource through a web browser, we are communicating with a web server and this dynamic is what forms the Web.</p>
     </section>
     <section>
       <h2 id="clients-and-servers">Clients and Servers</h2>
 
-      <p>Computers and entities that form the web follow a very basic pattern.</p>
+      <p>Computers and entities that form the Web follow a very basic pattern.</p>
 
       <p>Firstly, you have what is known as a <strong>client</strong>. A client is something or someone that is able to <strong>request and interpret</strong> data from a web server. Typically this is a <strong>web browser</strong> on someone's personal computer (e.g Google Chrome, Microsoft Edge etc), which is specifically designed for the job and ease of use.</p>
 
       <p>Secondly, you have what are known as <strong>servers</strong> or web servers. Servers are a special kind of computer (remember the internet is just computers talking to other computers). The main job of a web server is to make available, and <strong>provide</strong> the data that a client is requesting (e.g a webpage).</p>
 
-      <p>So when clients and servers on the web are communicating, typically a client will request some data from a web server and the web server will send the data back if it is available. This is part of what's called the <em>request-response cycle</em> and we will look at it more in depth in a future tutorial.</p>
+      <p>So when clients and servers on the Web are communicating, typically a client will request some data from a web server and the web server will send the data back if it is available. This is part of what's called the <em>request-response cycle</em> and we will look at it more in depth in a future tutorial.</p>
     </section>
     <section>
       <h2 id="accessing-the-web">Accessing The Web</h2>
-      <p>Ok so on the web we have clients and web servers, but if I'm sitting here with my web browser (client) open, how do I request data from a web server?</p>
+      <p>Ok so on the Web we have clients and web servers, but if I'm sitting here with my web browser (client) open, how do I request data from a web server?</p>
 
       <p>Well, every computer on the internet has a unique address that identifies it called an <em>Internet Protocol address</em> (IP Address), kind of like a house address. It is an address typically made of four numbers separated by dots, for example: "142.250.190.78". We can type these addresses into our web browser and press enter, and if the address corresponds to a <em>web server</em>, it may send some data back that it has for the browser to interpret. So imagine, this process is kind of like opening Google Maps and navigating to a house address we want to visit, and then knocking on the door to see who opens up.</p>
 
@@ -103,7 +103,7 @@
         <figcaption>Figure 4 - The IP address typed into a web browser</figcaption>
       </figure>
 
-      <p>The data that gets returned is Google's home webpage (at the time of writing; IP addresses can change) because that IP address corresponds to Google's web server, and they have made a homepage for themselves available on the web. Not only that, but they are able to respond to our request since we are making it through a web browser and the web browser follows protocols necessary for web communication:</p>
+      <p>The data that gets returned is Google's home webpage (at the time of writing; IP addresses can change) because that IP address corresponds to Google's web server, and they have made a homepage for themselves available on the Web. Not only that, but they are able to respond to our request since we are making it through a web browser and the web browser follows protocols necessary for web communication:</p>
 
       <figure>
         <img
@@ -116,7 +116,7 @@
         <figcaption>Figure 5 - Google's home webpage</figcaption>
       </figure>
 
-      <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the web instead of these random numbers. Well, understanding the internet, the web and IP addresses is the first step to getting there. We'll look at domain names in the next tutorial.</p>
+      <p>Now, you might be thinking, but what about domain names? I usually type "google.com" to access Google or any other website on the Web instead of these random numbers. Well, understanding the internet, the Web and IP addresses is the first step to getting there. We'll look at domain names in the next tutorial.</p>
 
     </section>
 
@@ -124,8 +124,8 @@
     $keyConcepts = [
       "The <em>internet</em> is an architecture that allows computers to communicate with each other.",
       "Every computer on the internet has a unique identifier called an <strong>IP address</strong>.",
-      "The <em>web</em> is a service built on top of the internet that allows a web browser to request and interpret data from web servers.",
-      "The web consists of <strong>clients</strong> (responsible for making data requests) and <strong>web servers</strong> (reponsible for responding to data requests)."
+      "The <em>Web</em> is a service built on top of the internet that allows a web browser to request and interpret data from web servers.",
+      "The Web consists of <strong>clients</strong> (responsible for making data requests) and <strong>web servers</strong> (reponsible for responding to data requests)."
     ];
     require_once __DIR__ . "/../../../partials/keyConcepts.php";
     ?>
