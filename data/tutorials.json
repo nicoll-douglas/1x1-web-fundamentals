@@ -1,0 +1,26 @@
+[
+  {
+    "name": "How The Web Works",
+    "number": 1,
+    "href": "/tutorials/the-web/how-the-web-works",
+    "moduleNumber": 1
+  },
+  {
+    "name": "Domains",
+    "number": 2,
+    "href": "/tutorials/the-web/domains",
+    "moduleNumber": 1
+  },
+  {
+    "name": "Common Terms On The Web",
+    "number": 3,
+    "href": "/tutorials/the-web/common-terms-on-the-web",
+    "moduleNumber": 1
+  },
+  {
+    "name": "URLs",
+    "number": 4,
+    "href": "/tutorials/the-web/urls",
+    "moduleNumber": 1
+  }
+]
