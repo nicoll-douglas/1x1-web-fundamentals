@@ -1,7 +1,6 @@
 <?php
 
 use App\Controllers\MessageController;
-use App\Controllers\WebhookController;
 use App\Controllers\UserController;
 use App\Controllers\TutorialCompletionController;
 
@@ -16,15 +15,6 @@ $router->set(
     $msgController = new MessageController();
     $view = $msgController->create();
     $view->show();
-  }
-);
-
-$router->set(
-  "POST",
-  "/api/webhooks/github/push",
-  function () {
-    $whController = new WebhookController();
-    $whController->githubSync();
   }
 );
 
