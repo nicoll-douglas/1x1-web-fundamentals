@@ -3,8 +3,20 @@
     "google/apiclient": "^2.18"
   },
   "scripts": {
-    "flush-cache": [
-      "php scripts/flushCache.php"
+    "cache:clear": [
+      "php scripts/cache/clear.php"
+    ],
+    "db:setup": [
+      "php scripts/db/setup.php"
+    ],
+    "migration:start": [
+      "php scripts/migration/start.php"
+    ],
+    "migration:rollback": [
+      "php scripts/migration/rollback.php"
+    ],
+    "migration:new": [
+      "php scripts/migration/new.php"
     ]
   },
   "autoload": {
