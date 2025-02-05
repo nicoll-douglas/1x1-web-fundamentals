@@ -2,6 +2,8 @@
 
 require_once __DIR__ . "/../../../config/env.php";
 
+putenv("COMPOSER_HOME=/var/www/.composer");
+
 $secret = getenv("GITHUB_WEBHOOK_SECRET");
 $signature = $_SERVER['HTTP_X_HUB_SIGNATURE'];
 
