@@ -60,14 +60,12 @@ GITHUB_WEBHOOK_SECRET= # something secure
 
 In the secrets folder you will also be needing a Google OAuth client secret to put there once you set up your OAuth credentials. Name it `google_oauth_client_secret.json`.
 
-### 3. Services 📡
+### 3. Database 📊
 
-You will also need to set up the database. In `config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
+Run the following command to set up the database as well run the migrations:
 
-Log in to MySQL, and for each of the files run the following command using their absolute filenames:
-
-```
-source <filename>;
+```bash
+composer run db:setup
 ```
 
 Finally, make sure the repository is accessible to your web server in order to serve the content. Enjoy 👍.
