@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . "/../helpers/connectDb.php";
-require_once __DIR__ . "/../helpers/migrationsDir.php";
-require_once __DIR__ . "/../helpers/getMigrationClassName.php";
-require_once __DIR__ . "/../../config/env.php";
+require_once __DIR__ . "/../../helpers/connectDb.php";
+require_once __DIR__ . "/../../helpers/migrationsDir.php";
+require_once __DIR__ . "/../../helpers/getMigrationClassName.php";
+require_once __DIR__ . "/../../../config/env.php";
 
 if (!isset($pdo)) {
   $pdo = connectDb();

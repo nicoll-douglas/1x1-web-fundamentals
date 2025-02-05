@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/../../config/env.php";
-require_once __DIR__ . "/../helpers/connectDb.php";
+require_once __DIR__ . "/../../../config/env.php";
+require_once __DIR__ . "/../../helpers/connectDb.php";
 
 $dbName = getenv("DB_NAME");
 $pdo = connectDb(false);

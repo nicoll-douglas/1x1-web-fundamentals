@@ -4,19 +4,19 @@
   },
   "scripts": {
     "cache:clear": [
-      "php scripts/cache/clear.php"
+      "php scripts/php/cache/clear.php"
     ],
     "db:setup": [
-      "php scripts/db/setup.php"
+      "php scripts/php/db/setup.php"
     ],
     "migration:start": [
-      "php scripts/migration/start.php"
+      "php scripts/php/migration/start.php"
     ],
     "migration:rollback": [
-      "php scripts/migration/rollback.php"
+      "php scripts/php/migration/rollback.php"
     ],
     "migration:new": [
-      "php scripts/migration/new.php"
+      "php scripts/php/migration/new.php"
     ]
   },
   "autoload": {

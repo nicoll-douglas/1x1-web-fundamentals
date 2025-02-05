@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . "/../helpers/migrationsDir.php";
+require_once __DIR__ . "/../../helpers/migrationsDir.php";
 
 if ($argc < 2) {
   echo "Usage: composer run migration:new <migration_name>\n";
