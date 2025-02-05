@@ -36,9 +36,9 @@ If for whatever reason you wish to run this project locally, basic instructions 
 Run Installation script:
 
 ```bash
-  git clone git@github.com:nicoll-douglas/jiggys-web-fundamentals.git
-  cd jiggys-web-fundamentals
-  composer install
+git clone git@github.com:nicoll-douglas/jiggys-web-fundamentals.git
+cd jiggys-web-fundamentals
+composer install
 ```
 
 ### 2. Environment 🛠️
