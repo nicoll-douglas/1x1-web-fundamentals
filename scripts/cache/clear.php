@@ -24,7 +24,7 @@ function deleteRecursively($dir)
   }
 }
 
-$cache_dir = __DIR__ . "/../cache";
+$cache_dir = __DIR__ . "/../../cache";
 if (!file_exists($cache_dir)) {
   echo "Cache folder doesn't exist. Nothing to clear.\n";
   echo "Exiting...\n";
