@@ -62,13 +62,13 @@ In the secrets folder you will also be needing a Google OAuth client secret to p
 
 ### 3. Database 📊
 
-Run the following command to set up the MySQL database as well run the migrations:
+Run the following command which sets up the MySQL database, runs the migrations and seeds the database:
 
 ```bash
 composer run db:setup
 ```
 
-Finally, make sure the repository is accessible to your Apache server in order to serve the content. Enjoy 👍.
+Finally, make sure the project directory is accessible to your Apache server in order to serve the content. Enjoy 👍.
 
 ## License
 
