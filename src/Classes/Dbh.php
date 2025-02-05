@@ -17,7 +17,7 @@ class Dbh
   /**
    * Loads database environment variables into the class.
    */
-  protected function __construct()
+  public function __construct()
   {
     $this->dbHost = getenv("DB_HOST");
     $this->dbName = getenv("DB_NAME");

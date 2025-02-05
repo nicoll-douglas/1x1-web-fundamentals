@@ -20,7 +20,6 @@ require_once __DIR__ . "/../src/router.php";
 require_once $routes . "/static.php";
 require_once $routes . "/auth.php";
 require_once $routes . "/api.php";
-require_once $routes . "/tutorials/index.php";
-require_once $routes . "/tutorials/theWeb.php";
+require_once $routes . "/tutorials.php";
 
 $router->handleRequest();
