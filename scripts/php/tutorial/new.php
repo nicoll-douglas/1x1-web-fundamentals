@@ -78,6 +78,12 @@ $tutorials[] = [
 file_put_contents($tutorialsFile, json_encode($tutorials, JSON_PRETTY_PRINT));
 echo "Successfully updated tutorial data file.\n";
 
+$moduleViewsFolder = __DIR__ . "/../../../src/views/tutorials/$moduleNameSegment";
+if (!file_exists($moduleViewsFolder)) {
+  mkdir($moduleViewsFolder);
+  chgrp($moduleViewsFolder, "www-data");
+  chmod($moduleViewsFolder, 0770);
+}
 $viewFilename = "$href.php";
 $viewFile = __DIR__ . "/../../../src/views/$viewFilename";
 
