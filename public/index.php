@@ -4,7 +4,7 @@
 // error_reporting(E_ALL);
 
 require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../src/config/env.php";
+require_once __DIR__ . "/../config/env.php";
 
 use App\Exceptions\ExceptionHandler;
 use App\Middleware\Session;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 // super basic script to load .env variables
 
-$envFile = __DIR__ . "/../../secrets/.env";
+$envFile = __DIR__ . "/../secrets/.env";
 
 if (file_exists($envFile)) {
   $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);

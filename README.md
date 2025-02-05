@@ -62,7 +62,7 @@ In the secrets folder you will also be needing a Google OAuth client secret to p
 
 ### 3. Services 📡
 
-You will also need to set up the database. In `src/config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
+You will also need to set up the database. In `config/db` there are 3 SQL scripts to do this: `db.sql`, `tutorial_modules.sql` and `tutorials.sql`.
 
 Log in to MySQL, and for each of the files run the following command using their absolute filenames:
 
