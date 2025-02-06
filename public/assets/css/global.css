@@ -1,12 +1,14 @@
 @font-face {
   font-family: Source Code Pro;
   src: url(/assets/fonts/source-code-pro-variable.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Code Pro;
   src: url(/assets/fonts/source-code-pro-italic-variable.ttf);
   font-style: italic;
+  font-display: swap;
 }
 
 :root {
