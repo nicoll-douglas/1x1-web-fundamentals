@@ -48,7 +48,7 @@
 
     <section>
       <h2 id="what-is-a-website">What is a Website?</h2>
-      <p>A website is a collection of webapges grouped into a single resource/entity (as well as the pages' associated resources like images and videos). A website is usually named after its domain name. So something like "youtube.com" is a website. The webpages that are part of a website often contain <strong>links</strong> connecting to each other that allow you to easily browse the site.</p>
+      <p>A website is a collection of webapges grouped into a single resource/entity (as well as the pages' associated resources like images and videos). A website is usually named after its domain name. So something like <em>youtube.com</em> is a website. The webpages that are part of a website often contain <strong>links</strong> connecting to each other that allow you to easily browse the site.</p>
 
       <p>When you type out a domain name or IP address into your web browser and press enter, typically if there is an associated web server, it will send back the home page of the website which provides you a starting point for your browsing. This is what we did with the <a href="/tutorials/the-web/how-the-web-works#accessing-the-web">Google example</a> in the first tutorial.</p>
     </section>

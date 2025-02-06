@@ -88,7 +88,7 @@
       <h2 id="accessing-the-web">Accessing The Web</h2>
       <p>Ok so on the Web we have clients and web servers, but if I'm sitting here with my web browser (client) open, how do I request data from a web server?</p>
 
-      <p>Well, every computer on the internet has a unique address that identifies it called an <em>Internet Protocol address</em> (IP Address), kind of like a house address. It is an address typically made of four numbers separated by dots, for example: "142.250.190.78". We can type these addresses into our web browser and press enter, and if the address corresponds to a <em>web server</em>, it may send some data back that it has for the browser to interpret. So imagine, this process is kind of like opening Google Maps and navigating to a house address we want to visit, and then knocking on the door to see who opens up.</p>
+      <p>Well, every computer on the internet has a unique address that identifies it called an <strong>Internet Protocol address</strong> (IP Address), kind of like a house address. It is an address typically made of four numbers separated by dots, for example: <code>142.250.190.78</code>. We can type these addresses into our web browser and press enter, and if the address corresponds to a <em>web server</em>, it may send some data back that it has for the browser to interpret. So imagine, this process is kind of like opening Google Maps and navigating to a house address we want to visit, and then knocking on the door to see who opens up.</p>
 
       <p>But speaking of Google, for example, if we type the example IP address into our web browser's address bar:</p>
 

@@ -37,11 +37,11 @@
         <li>A <strong>label</strong></li>
       </ol>
 
-      <p><strong>TLD</strong> stands for <em>top-level domain</em> and it tells users the general purpose of the service behind the domain name. Some generic TLDs don't require a web server's content to meet a specific criteria (e.g .com, .net, .org). But more specialised TLDs have special requirements; ".gov" for example, is only allowed to be used by governments.</p>
+      <p><strong>TLD</strong> stands for <em>top-level domain</em> and it tells users the general purpose of the service behind the domain name. Some generic TLDs don't require a web server's content to meet a specific criteria (e.g <em>.com</em>, <em>.net</em>, <em>.org</em>). But more specialised TLDs have special requirements; <em>.gov</em> for example, is only allowed to be used by governments.</p>
 
       <p><strong>Labels</strong> are components of the domain name that come after the TLD. Domain names can have multiple labels, for example, <a href="https://informatics.ed.ac.uk/" target="_blank">informatics.ed.ac.uk</a> is a valid domain name. A label located directly after the TLD is also called a <em>secondary-level domain</em> (SLD).</p>
 
-      <p>So for example, Google controls the <em>google.com</em> domain. The TLD in this case is ".com" and it contains a label "google" which is also the secondary-level domain. Someone who controls a domain can also create "subdomains" that add more labels after the secondary-level domain. This is typically done to host different kinds of content located at each (e.g books.google.com, images.google.com) and these subdomains can have many labels.</p>
+      <p>So for example, Google controls the <em>google.com</em> domain. The TLD in this case is <em>.com</em> and it contains a label <em>google</em> which is also the secondary-level domain. Someone who controls a domain can also create "subdomains" that add more labels after the secondary-level domain. This is typically done to host different kinds of content located at each (e.g <em>books.google.com</em>, <em>images.google.com</em>) and these subdomains can have many labels.</p>
     </section>
 
     <section>
