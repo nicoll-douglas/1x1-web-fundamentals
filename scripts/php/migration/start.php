@@ -8,7 +8,7 @@ require_once __DIR__ . "/../../helpers/getMigrationClassName.php";
 require_once __DIR__ . "/../../../config/env.php";
 
 if (!isset($pdo)) {
-  $pdo = connectDb(false);
+  $pdo = connectDb();
 } else {
   $dbName = getenv("DB_NAME");
   $pdo->exec("CREATE DATABASE IF NOT EXISTS $dbName");
