@@ -41,7 +41,7 @@ $view->style("/home.css");
       If you wish to get started, check out the first tutorial
       <a href="/tutorials/the-web/how-the-web-works">here</a>.
     </p>
-    <p>Otherwise, happy learning!</p>
+    <p>Otherwise, happy learning.</p>
   </section>
 </main>
 
