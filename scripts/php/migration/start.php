@@ -11,16 +11,8 @@ if (!isset($pdo)) {
   $pdo = connectDb();
 } else {
   $dbName = getenv("DB_NAME");
-  $pdo->exec("CREATE DATABASE IF NOT EXISTS $dbName");
   $pdo->exec("USE $dbName");
 }
-
-$sql = "CREATE TABLE IF NOT EXISTS migrations (
-id INT PRIMARY KEY AUTO_INCREMENT,
-migration VARCHAR(255) NOT NULL,
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)";
-$pdo->exec($sql);
 
 echo "Getting applied migrations...\n";
 $stmt = $pdo->query("SELECT migration FROM migrations");
