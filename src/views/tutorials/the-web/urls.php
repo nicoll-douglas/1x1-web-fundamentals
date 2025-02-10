@@ -52,7 +52,7 @@
       <p>Websites consist of webpages that often have <strong>links</strong> to each other and other resources on the website. Links are small elements of a webpage that will navigate us to a new webpage or resource when we click them (you have used them to navigate you to this page). But before we can talk about links in more detail (the next tutorial), we have to talk about <strong>URLs</strong> which is what allows links to function.
       </p>
 
-      <p>URL stands for <strong>Uniform Resource Locator</strong> and it is what allows both us and web browsers to uniquely identify a resource on the Web. When we are on a webpage, a URL is what we see in the address bar of our web browser. For example, the URL of this page is: <code>https://jwf.nicolldouglas.dev/tutorials/the-web/urls</code>.</p>
+      <p>URL stands for <strong>Uniform Resource Locator</strong> and it is what allows both us and web browsers to uniquely identify a resource on the Web. When we are on a webpage, a URL is what we see in the address bar of our web browser. For example, the URL of this page is: <code>https://1x1.nicolldouglas.dev/tutorials/the-web/urls</code>.</p>
 
       <p>This URL uniquely identifies this webpage as a resource on the Web. So if you type this into the address bar of any web browser, it will know to request this webpage and it is what you will see. The structure of a URL consists of some of the components in the example URL as well as others. Let's try to unpack the structure of a URL below.</p>
     </section>
@@ -110,7 +110,7 @@
       <p>There are a few types of relative URLs, so I will go over the key ones below:</p>
 
       <ul>
-        <li><strong>Scheme-relative URL</strong>: <code>//jwf.nicolldouglas.dev/tutorials</code> — only the scheme is missing, so the browser will use the same protocol used to load the document the URL is in.</li>
+        <li><strong>Scheme-relative URL</strong>: <code>//1x1.nicolldouglas.dev/tutorials</code> — only the scheme is missing, so the browser will use the same protocol used to load the document the URL is in.</li>
 
         <li><strong>Domain-relative URL</strong>: <code>/tutorials</code> — the scheme and the domain are missing, so the browser will use the same protocol and domain used to load the document the URL is in. So for example, any page on this website with a link containing URL <code>/tutorials</code>, would take you to the tutorials page.</li>
 

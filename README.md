@@ -2,7 +2,7 @@
 
 A website where I regularly post informational tutorials about web development fundamentals.
 
-[![Link](https://img.shields.io/badge/Live_At-https://jwf.nicolldouglas.dev-3d56a0)](https://jwf.nicolldouglas.dev)
+[![Link](https://img.shields.io/badge/Live_At-https://1x1.nicolldouglas.dev-3d56a0)](https://1x1.nicolldouglas.dev)
 
 ## Features
 

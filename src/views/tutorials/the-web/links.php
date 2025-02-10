@@ -40,7 +40,7 @@
       <p>In the last tutorial we talked about URLs and their structure, and how URLs uniquely identify resources on the Web, for example webpages (HTML documents), images, and so on. We also mentioned a little bit about what links are. Links, short for <strong>hyperlinks</strong>, are simply just small navigation components on a webpage. Those components usually are made up of text and a URL (which we don't see and is usually hidden to us). The text might often be blue and underlined to indicate that it is a link, and it typically describes what the resource linked is. The URL in a link can be an absolute URL or one of the types of relative URLs.</p>
 
       <p>
-        For example, this is a link: <a href="/tutorials">Tutorial Index</a>; the text is <em>Tutorial Index</em> and the URL (which we don't see) is <code>https://jwf.nicolldouglas.dev/tutorials</code>. The text describes that it is a link to the tutorial index of this website, and that is indeed what the URL points to. And so what happens when you click a link is that, the browser will use the hidden URL to request that new webpage or resource, and then display it to you in place of the current webpage that you are on.
+        For example, this is a link: <a href="/tutorials">Tutorial Index</a>; the text is <em>Tutorial Index</em> and the URL (which we don't see) is <code>https://1x1.nicolldouglas.dev/tutorials</code>. The text describes that it is a link to the tutorial index of this website, and that is indeed what the URL points to. And so what happens when you click a link is that, the browser will use the hidden URL to request that new webpage or resource, and then display it to you in place of the current webpage that you are on.
       </p>
     </section>
     <section>
