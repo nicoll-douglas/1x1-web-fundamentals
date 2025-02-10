@@ -24,8 +24,8 @@ $view->setTitle("Contact");
   <section>
     <h2>Contributing</h2>
     <p>If you wish to contribute to this project I&apos;ll leave a link to the GitHub repo down below.</p>
-    <a href="https://github.com/nicoll-douglas/jiggys-web-fundamentals" target="_blank">
-      Jiggy&apos;s Web Fundamentals Repo
+    <a href="https://github.com/nicoll-douglas/1x1-web-fundamentals" target="_blank">
+      1x1 Web Fundamentals Repo
     </a>
   </section>
 </main>

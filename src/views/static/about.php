@@ -10,12 +10,12 @@ $view->setTitle("About");
 
 <main>
   <article>
-    <h1>About Jiggy&apos;s Web Fundamentals</h1>
+    <h1>About 1x1 Web Fundamentals</h1>
     <section>
       <h2 id="background">Background</h2>
-      <p>Jiggy&apos;s Web Fundamentals is a project created by me, <a href="https://nicolldouglas.dev/" target="_blank">Nicoll Douglas</a>, or as people on the internet know me: Jiggy. I&apos;m a self-taught programmer who has been learning web development since late 2023.</p>
+      <p>1x1 Web Fundamentals is a project created by me, <a href="https://nicolldouglas.dev/" target="_blank">Nicoll Douglas</a>,. I&apos;m a self-taught programmer who has been learning web development since late 2023.</p>
       <p>
-        So far in my journey I&apos;ve watched countless tutorials, spent countless days reading documentation, building projects, and all the other 101 things you go through on the self-taught programming path. I&apos;ve made it quite far, and Jiggy&apos;s Web Fundamentals is my attempt at compiling the most essential and practical knowledge I&apos;ve learnt, as well as the resource I would&apos;ve wished to have early on as I was learning.
+        So far in my journey I&apos;ve watched countless tutorials, spent countless days reading documentation, building projects, and all the other 101 things you go through on the self-taught programming path. I&apos;ve made it quite far, and 1x1 Web Fundamentals is my attempt at compiling the most essential and practical knowledge I&apos;ve learnt, as well as the resource I would&apos;ve wished to have early on as I was learning.
       </p>
       <p>The tutorials I provide help you learn the fundamentals that are necessary and beneficial for building on the web. These include frontend technologies such as HTML, CSS and JavaScript; backend technologies such as PHP and MySQL; and other fundamental topics suchs as Git, web security, and how the internet works. The last item is perhaps one of the more important. If you have a grasp of what the hell the web is and does, you will have a better grasp of what it is <strong>you</strong> as a web developer are trying to do.</p>
     </section>
@@ -26,7 +26,7 @@ $view->setTitle("About");
         What this means is that if you are someone trying to get into web dev, you will find a lot of conflicting and opinionated views about how to do so, or whether you should get into it at all. The aim here is not to dispute those views with my own take, but rather provide some basic sense for those that want a start in web dev.
       </p>
       <p>
-        A strong understanding of these fundamentals and building with elementary web tools means you will have a core understanding of how any complex website or web app works under the hood and be able to build almost anything you can imagine. One of the goals of Jiggy&apos;s Web Fundamentals is to simplify the daunting scope of modern web development and help you realise, the scope is not that scary, and under the hood it&apos;s not as complicated as the echoes from the community will have you think.
+        A strong understanding of these fundamentals and building with elementary web tools means you will have a core understanding of how any complex website or web app works under the hood and be able to build almost anything you can imagine. One of the goals of 1x1 Web Fundamentals is to simplify the daunting scope of modern web development and help you realise, the scope is not that scary, and under the hood it&apos;s not as complicated as the echoes from the community will have you think.
       </p>
       <p>
         You will also understand why the web dev ecosystem has evolved the way it has, the changing attitudes, and what problems newer developments are trying to solve.

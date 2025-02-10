@@ -7,7 +7,7 @@ $data = $view->getData();
 ?>
 
 <header>
-  <a href="/" id="wordmark">Jiggy&apos;s Web Fundamentals</a>
+  <a href="/" id="wordmark">1x1 Web Fundamentals</a>
   <nav id="site-nav" aria-label="Site">
     <ul>
       <?php

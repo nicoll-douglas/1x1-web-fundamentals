@@ -1,4 +1,4 @@
-# Jiggy's Web Fundamentals
+# 1x1 Web Fundamentals
 
 A website where I regularly post informational tutorials about web development fundamentals.
 
@@ -36,8 +36,8 @@ If for whatever reason you wish to run this project locally, basic instructions 
 Run Installation script:
 
 ```bash
-git clone git@github.com:nicoll-douglas/jiggys-web-fundamentals.git
-cd jiggys-web-fundamentals
+git clone git@github.com:nicoll-douglas/1x1-web-fundamentals.git
+cd 1x1-web-fundamentals
 composer install
 ```
 
