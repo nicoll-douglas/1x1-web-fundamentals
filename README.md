@@ -19,14 +19,6 @@ This project is built with the LAMP stack and has little to no usage of packages
 
 [![Stack](https://skillicons.dev/icons?i=html,css,js,php,mysql,ubuntu)](https://skillicons.dev)
 
-## Demo
-
-Coming soon
-
-## Documentation
-
-Coming soon
-
 ## Run Locally
 
 If for whatever reason you wish to run this project locally, basic instructions are below. This project runs best on a LAMP setup with PHP 8, MySQL 8, and composer installed.
