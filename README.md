@@ -1,6 +1,6 @@
 # 1x1 Web Fundamentals
 
-A website where I regularly post informational tutorials about web development fundamentals.
+A simple website where I regularly post informational tutorials about web development fundamentals.
 
 [![Link](https://img.shields.io/badge/Live_At-https://1x1.nicolldouglas.dev-3d56a0)](https://1x1.nicolldouglas.dev)
 
@@ -13,55 +13,65 @@ A website where I regularly post informational tutorials about web development f
 
 ## Technologies
 
-This project is built with the LAMP stack and has little to no usage of packages and frameworks.
+This project is built with the LAMP stack + Docker and has little to no usage of packages and frameworks.
 
 ### Stack
 
-[![Stack](https://skillicons.dev/icons?i=html,css,js,php,mysql,ubuntu)](https://skillicons.dev)
+[![Stack](https://skillicons.dev/icons?i=html,css,js,php,mysql,ubuntu,docker)](https://skillicons.dev)
+
+## Prerequisites
+
+In order to run this project locally for development, make sure you have the following installed:
+
+- [Docker Engine](https://docs.docker.com/engine/) or [Docker Desktop](https://docs.docker.com/desktop/)
+- [GNU Make](https://www.gnu.org/software/make/)
+- [Composer](https://getcomposer.org/)
+- Google OAuth Credentials set up in the [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
 
 ## Run Locally
 
-If for whatever reason you wish to run this project locally, basic instructions are below. This project runs best on a LAMP setup with PHP 8, MySQL 8, and composer installed.
-
 ### 1. Installation 📦
 
-Run Installation script:
+Run the following:
 
 ```bash
-git clone git@github.com:nicoll-douglas/1x1-web-fundamentals.git
+git clone https://github.com/nicoll-douglas/1x1-web-fundamentals.git
 cd 1x1-web-fundamentals
 composer install
 ```
 
 ### 2. Environment 🛠️
 
-You will also be needing some environment variables; there is a `.env.example` in the `secrets` directory. Instructions also below:
+You will also be needing some environment variables; there is a `.env.example` in the `secrets` directory which you can clone in there and then rename it to `.env`. Instructions also below:
 
 ```
 APP_ENV= # development or production
-DB_HOST= # your MySQL host name
-DB_USER= # your database user
-DB_NAME= # a database name
-DB_PASS= # your user's password
+SESSION_COOKIE_DOMAIN= # domain for session cookies, (localhost or custom domain)
 
-# for this you will need to set up some OAuth credentials for a Google Cloud Platform project
+MYSQL_USER= # the name for your MySQL user
+MYSQL_PASSWORD= # the password for the user
+MYSQL_ROOT_PASSWORD= # password for the root user
+
 GOOGLE_AUTH_REDIRECT_URI= # your Google OAuth redirect URI
-
-# this is just for me to sync my production deployment with this remote repo
-GITHUB_WEBHOOK_SECRET= # something secure
 ```
 
-In the secrets folder you will also be needing a Google OAuth client secret to put there once you set up your OAuth credentials. Name it `google_oauth_client_secret.json`.
+In the secrets folder you will also need to put your Google OAuth client secret once you set up your OAuth credentials. It is a JSON file that you can download from the Google Cloud console. Name it `google_oauth_client_secret.json`.
 
-### 3. Database 📊
+### 3. Get up and running 🛠️
 
-Run the following command which sets up the MySQL database, runs the migrations and seeds the database:
+Run the following command to build the Docker images and run the containers:
 
 ```bash
-composer run db:setup
+make dev-up
 ```
 
-Finally, make sure the project directory is accessible to your Apache server and that it allows overrides in order to serve the content. Enjoy 👍.
+Then, run the following command which sets up the database tables inside the MySQL container:
+
+```bash
+make setup-db
+```
+
+Finally, navigate to [http://localhost:8001](http://localhost:8000) or the appropriate location where the project should be accessible and you should be good to go!
 
 ## License
 

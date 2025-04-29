@@ -12,15 +12,11 @@ $view = new View(
     ]
   ]
 );
-?>
-
-<?php $view->startBuffering(); ?>
-
-<?php
+$view->startBuffering();
 require_once __DIR__ . "/../../partials/feedback.php";
 ?>
 <a href="/">
   Back to home
 </a>
-
-<?php $view->stopBuffering(); ?>
+<?php
+$view->stopBuffering();

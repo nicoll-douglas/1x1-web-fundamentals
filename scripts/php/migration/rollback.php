@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . "/../../helpers/connectDb.php";
-require_once __DIR__ .  "/../../helpers/migrationsDir.php";
+require_once __DIR__ .  "/../../helpers/getMigrationsDir.php";
 require_once __DIR__ . "/../../helpers/getMigrationClassName.php";
 
 $pdo = connectDb();
@@ -18,7 +18,7 @@ if (!$lastMigration) {
 }
 
 
-$filePath = $migrationsDir . DIRECTORY_SEPARATOR . $lastMigration;
+$filePath = getMigrationsDir() . DIRECTORY_SEPARATOR . $lastMigration;
 $className = getMigrationClassName($filePath);
 require_once $filePath;
 $migration = new $className($pdo);

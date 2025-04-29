@@ -27,7 +27,7 @@ class Session
   {
     if (session_status() == PHP_SESSION_ACTIVE) return false;
 
-    $domain = getenv("APP_ENV") === "development" ? "localhost" : $_SERVER["HTTP_HOST"];
+    $domain = getenv("SESSION_COOKIE_DOMAIN");
     $lifetime = 60 * 60 * 24 * 7;
 
     ini_set("session.use_only_cookies", 1);

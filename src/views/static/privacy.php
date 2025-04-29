@@ -4,10 +4,8 @@ use App\Classes\View;
 
 $view = new View();
 $view->setTitle("Privacy");
+$view->startBuffering();
 ?>
-
-<?php $view->startBuffering(); ?>
-
 <main>
   <h1>Privacy</h1>
   <p>I do not sell your data or collect analytics. Below is a quick rundown of how your data is used for the site to function.</p>
@@ -43,5 +41,5 @@ $view->setTitle("Privacy");
     <?php endif; ?>
   </section>
 </main>
-
-<?php $view->stopBuffering(); ?>
+<?php
+$view->stopBuffering();

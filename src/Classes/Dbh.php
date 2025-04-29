@@ -19,10 +19,10 @@ class Dbh
    */
   public function __construct()
   {
-    $this->dbHost = getenv("DB_HOST");
-    $this->dbName = getenv("DB_NAME");
-    $this->dbUser = getenv("DB_USER");
-    $this->dbPass = getenv("DB_PASS");
+    $this->dbHost = getenv("MYSQL_HOST");
+    $this->dbName = getenv("MYSQL_DATABASE");
+    $this->dbUser = getenv("MYSQL_USER");
+    $this->dbPass = getenv("MYSQL_PASSWORD");
   }
 
   /**

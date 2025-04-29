@@ -7,9 +7,6 @@ require_once __DIR__ . "/../../seeders/ImportTutorialModulesSeeder.php";
 
 if (!isset($pdo)) {
   $pdo = connectDb();
-} else {
-  $dbName = getenv("DB_NAME");
-  $pdo->exec("USE $dbName");
 }
 
 $seeder = new ImportTutorialModulesSeeder($pdo);

@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 1x1_app
+    ports:
+      - "127.0.0.1:8000:80"
+    depends_on:
+      - mysql
+    volumes:
+      - .:/var/www/html
+
+  mysql:
+    image: mysql:8.0
+    container_name: 1x1_mysql
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - 1x1_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_DATABASE=1x1_web_fundamentals
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+volumes:
+  1x1_mysql_data:

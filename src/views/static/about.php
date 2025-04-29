@@ -4,10 +4,8 @@ use App\Classes\View;
 
 $view = new View();
 $view->setTitle("About");
+$view->startBuffering();
 ?>
-
-<?php $view->startBuffering(); ?>
-
 <main>
   <article>
     <h1>About 1x1 Web Fundamentals</h1>
@@ -40,5 +38,5 @@ $view->setTitle("About");
     </section>
   </article>
 </main>
-
-<?php $view->stopBuffering(); ?>
+<?php
+$view->stopBuffering();

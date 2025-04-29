@@ -5,10 +5,8 @@ use App\Classes\View;
 $view = new View();
 $view->setTitle("1x1 Web Fundamentals");
 $view->style("/home.css");
+$view->startBuffering();
 ?>
-
-<?php $view->startBuffering(); ?>
-
 <main>
   <pre id="ascii-heading" aria-hidden="true">
  __     __  __          __  _                                     
@@ -44,5 +42,5 @@ $view->style("/home.css");
     <p>Otherwise, happy learning.</p>
   </section>
 </main>
-
-<?php $view->stopBuffering(); ?>
+<?php
+$view->stopBuffering();

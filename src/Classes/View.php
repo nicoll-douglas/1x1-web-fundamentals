@@ -150,6 +150,7 @@ class View
     if (isset($meta)) {
       return $meta["title"];
     }
+    return null;
   }
 
   /**

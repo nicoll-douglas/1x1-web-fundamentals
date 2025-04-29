@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  web:
+    image: ${DOCKERHUB_IMAGE}
+    container_name: 1x1_app
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    networks:
+      - nginx-proxy
+      - 1x1_internal
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    container_name: 1x1_mysql
+    restart: always
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - 1x1_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_DATABASE=1x1_web_fundamentals
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+networks:
+  nginx-proxy:
+    external: true
+  1x1_internal:
+    driver: bridge
+
+volumes:
+  1x1_mysql_data:

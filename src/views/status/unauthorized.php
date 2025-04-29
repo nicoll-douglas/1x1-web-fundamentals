@@ -13,15 +13,11 @@ $view = new View(
     ]
   ]
 );
-?>
-
-<?php $view->startBuffering(); ?>
-
-<?php
+$view->startBuffering();
 require_once __DIR__ . "/../../partials/feedback.php";
 ?>
 <a href="/auth/sign-in">
   Sign in
 </a>
-
-<?php $view->stopBuffering(); ?>
+<?php
+$view->stopBuffering();

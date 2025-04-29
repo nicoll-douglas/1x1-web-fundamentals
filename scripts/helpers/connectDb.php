@@ -6,22 +6,20 @@ require_once __DIR__ . "/../../config/env.php";
 
 /**
  * Connects to the database host.
- * @param bool $useName True to connect to the specific database, false otherwise.
  * @return \PDO The database connection.
  */
-function connectDb(bool $useName = true): \PDO
+function connectDb(): \PDO
 {
   echo "Connecting to database...\n";
 
-  $dbHost = getenv("DB_HOST");
-  $dbName = getenv("DB_NAME");
-  $dbUser = getenv("DB_USER");
-  $dbPass = getenv("DB_PASS");
-  $socket = '/var/run/mysqld/mysqld.sock';
+  $dbHost = getenv("MYSQL_HOST");
+  $dbName = getenv("MYSQL_DATABASE");
+  $dbUser = getenv("MYSQL_USER");
+  $dbPass = getenv("MYSQL_PASSWORD");
 
   try {
     $pdo = new \PDO(
-      "mysql:host=$dbHost;unix_socket=$socket" . ($useName ? ";dbname=$dbName" : ""),
+      "mysql:host=$dbHost;dbname=$dbName",
       $dbUser,
       $dbPass
     );
