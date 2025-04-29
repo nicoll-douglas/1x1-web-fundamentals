@@ -12,7 +12,7 @@ services:
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
     networks:
-      - nginx-proxy
+      - nginx-proxy-network
       - 1x1_internal
     restart: unless-stopped
 
@@ -32,7 +32,7 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
 networks:
-  nginx-proxy:
+  nginx-proxy-network:
     external: true
   1x1_internal:
     driver: bridge
