@@ -4,10 +4,8 @@ use App\Classes\View;
 
 $view = new View();
 $view->setTitle("Contact");
+$view->startBuffering();
 ?>
-
-<?php $view->startBuffering(); ?>
-
 <main>
   <h1>Contact</h1>
   <section>
@@ -29,5 +27,5 @@ $view->setTitle("Contact");
     </a>
   </section>
 </main>
-
-<?php $view->stopBuffering(); ?>
+<?php
+$view->stopBuffering();
