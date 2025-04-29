@@ -12,7 +12,8 @@ services:
       - nginx-proxy-network
       - 1x1_internal
     restart: unless-stopped
-
+    depends_on:
+      - mysql
   mysql:
     image: mysql:8.0
     container_name: 1x1_mysql
@@ -27,6 +28,8 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - 1x1_internal
 
 networks:
   nginx-proxy-network:
