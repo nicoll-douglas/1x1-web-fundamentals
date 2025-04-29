@@ -1,16 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../../../config/env.php";
 require_once __DIR__ . "/../../helpers/connectDb.php";
 
-$dbName = getenv("DB_NAME");
-$pdo = connectDb(false);
-
-$pdo->exec("CREATE DATABASE IF NOT EXISTS $dbName");
-echo "Created database $dbName.\n";
-
-$pdo->exec("USE $dbName");
-echo "Using database $dbName.\n";
+$pdo = connectDb();
 
 $sql = "CREATE TABLE IF NOT EXISTS migrations (
 id INT AUTO_INCREMENT PRIMARY KEY,

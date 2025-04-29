@@ -3,16 +3,14 @@
 declare(strict_types=1);
 
 require_once __DIR__ . "/../../helpers/connectDb.php";
-require_once __DIR__ . "/../../helpers/migrationsDir.php";
+require_once __DIR__ . "/../../helpers/getMigrationsDir.php";
 require_once __DIR__ . "/../../helpers/getMigrationClassName.php";
-require_once __DIR__ . "/../../../config/env.php";
 
 if (!isset($pdo)) {
   $pdo = connectDb();
-} else {
-  $dbName = getenv("DB_NAME");
-  $pdo->exec("USE $dbName");
 }
+
+$migrationsDir = getMigrationsDir();
 
 echo "Getting applied migrations...\n";
 $stmt = $pdo->query("SELECT migration FROM migrations");

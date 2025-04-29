@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . "/../../helpers/migrationsDir.php";
+require_once __DIR__ . "/../../helpers/getMigrationsDir.php";
 
 if ($argc < 2) {
   echo "Usage: composer run migration:new <migration_name>\n";
@@ -12,7 +12,7 @@ if ($argc < 2) {
 $migrationName = $argv[1];
 $timestamp = date('YmdHis');
 $filename = "{$timestamp}_{$migrationName}.php";
-$filePath = $migrationsDir . DIRECTORY_SEPARATOR . $filename;
+$filePath = getMigrationsDir() . DIRECTORY_SEPARATOR . $filename;
 
 $template = <<<PHP
 <?php
