@@ -4,9 +4,6 @@ services:
   web:
     image: ${DOCKERHUB_IMAGE}
     container_name: 1x1_app
-    ports:
-      - "80:80"
-      - "443:443"
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
