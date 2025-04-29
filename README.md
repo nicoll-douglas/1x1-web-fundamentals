@@ -48,10 +48,8 @@ You will also be needing some environment variables; there is a `.env.example` i
 APP_ENV= # development or production
 SESSION_COOKIE_DOMAIN= # domain for session cookies, (localhost or custom domain)
 
-MYSQL_HOST=mysql # has to match service name in docker compose
 MYSQL_USER= # the name for your MySQL user
 MYSQL_PASSWORD= # the password for the user
-MYSQL_DATABASE= # the name for the database
 MYSQL_ROOT_PASSWORD= # password for the root user
 
 GOOGLE_AUTH_REDIRECT_URI= # your Google OAuth redirect URI
@@ -73,7 +71,7 @@ Then, run the following command which sets up the database tables inside the MyS
 make setup-db
 ```
 
-Finally, navigate to [http://localhost:8001](http://localhost:8001) or the appropriate location where the project should be accessible and you should be good to go!
+Finally, navigate to [http://localhost:8001](http://localhost:8000) or the appropriate location where the project should be accessible and you should be good to go!
 
 ## License
 
