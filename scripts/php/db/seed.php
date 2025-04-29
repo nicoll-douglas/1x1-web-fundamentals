@@ -1,6 +1,5 @@
 <?php
 
-require_once __DIR__ . "/../../../config/env.php";
 require_once __DIR__ . "/../../helpers/connectDb.php";
 require_once __DIR__ . "/../../seeders/ImportTutorialsSeeder.php";
 require_once __DIR__ . "/../../seeders/ImportTutorialModulesSeeder.php";

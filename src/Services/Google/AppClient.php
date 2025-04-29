@@ -15,8 +15,20 @@ class AppClient extends \Google\Client
   public function __construct()
   {
     parent::__construct();
-    $this->setAuthConfig(__DIR__ . "/../../../secrets/google_oauth_client_secret.json");
-    $this->setRedirectUri(getenv("GOOGLE_AUTH_REDIRECT_URI"));
+    $config = [
+      "web" => [
+        "client_id" => getenv("GOOGLE_CLIENT_ID"),
+        "project_id" => getenv("GOOGLE_PROJECT_ID"),
+        "auth_uri" => getenv("GOOGLE_AUTH_URI"),
+        "token_uri" => getenv("GOOGLE_TOKEN_URI"),
+        "auth_provider_x509_cert_url" => getenv("GOOGLE_AUTH_PROVIDER_X509_CERT_URL"),
+        "client_secret" => getenv("GOOGLE_CLIENT_SECRET"),
+        "redirect_uris" => [getenv("GOOGLE_REDIRECT_URI")],
+        "javascript_origins" => [getenv("GOOGLE_JAVASCRIPT_ORIGIN")]
+      ]
+    ];
+    $this->setAuthConfig($config);
+    $this->setRedirectUri(getenv("GOOGLE_REDIRECT_URI"));
     $this->setAccessType("offline");
     $this->addScope("profile");
   }

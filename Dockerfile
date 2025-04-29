@@ -27,10 +27,8 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Copy application files needed for production
-COPY --chown=www-data:www-data config/ config/
 COPY --chown=www-data:www-data data/ data/
 COPY --chown=www-data:www-data public/ public/
-COPY --chown=www-data:www-data secrets/ secrets/
 COPY --chown=www-data:www-data src/ src/
 COPY --chown=www-data:www-data scripts/ scripts/
 COPY --chown=www-data:www-data migrations/ migrations/

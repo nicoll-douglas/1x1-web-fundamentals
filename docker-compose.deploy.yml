@@ -3,31 +3,25 @@ version: "3"
 services:
   web:
     image: ${DOCKERHUB_IMAGE}
-    container_name: 1x1_app
-    environment:
-      - VIRTUAL_HOST=${VIRTUAL_HOST}
-      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
-      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    container_name: ${APP_CONTAINER_NAME}
     networks:
       - nginx-proxy-network
       - 1x1_internal
     restart: unless-stopped
     depends_on:
       - mysql
+    env_file:
+      - .env.production
   mysql:
     image: mysql:8.0
     container_name: 1x1_mysql
-    restart: always
+    restart: unless-stopped
     ports:
       - "127.0.0.1:3306:3306"
     volumes:
       - 1x1_mysql_data:/var/lib/mysql
-    environment:
-      - MYSQL_HOST=${MYSQL_HOST}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    env_file:
+      - .env.production
     networks:
       - 1x1_internal
 

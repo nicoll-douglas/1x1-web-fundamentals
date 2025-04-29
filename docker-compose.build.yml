@@ -5,5 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: 1x1_app
+    container_name: ${APP_CONTAINER_NAME}
     image: ${DOCKERHUB_IMAGE}
