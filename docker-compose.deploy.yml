@@ -22,8 +22,8 @@ services:
     volumes:
       - 1x1_mysql_data:/var/lib/mysql
     environment:
-      - MYSQL_HOST=mysql
-      - MYSQL_DATABASE=1x1_web_fundamentals
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}

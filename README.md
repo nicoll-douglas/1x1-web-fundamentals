@@ -48,6 +48,8 @@ You will also be needing some environment variables; there is a `.env.example` i
 APP_ENV= # development or production
 SESSION_COOKIE_DOMAIN= # domain for session cookies, (localhost or custom domain)
 
+MYSQL_HOST=mysql # has to match the service name in docker compose file
+MYSQL_DATABASE= # the name for your MySQL database
 MYSQL_USER= # the name for your MySQL user
 MYSQL_PASSWORD= # the password for the user
 MYSQL_ROOT_PASSWORD= # password for the root user
