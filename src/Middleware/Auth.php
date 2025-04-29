@@ -22,8 +22,8 @@ class Auth
   public static function verify(): false|array
   {
     // check for session
+    if (!isset($_SESSION["user"])) return false;
     $sessionUser = $_SESSION["user"];
-    if (!isset($sessionUser)) return false;
 
     // try to retrieve user
     try {
