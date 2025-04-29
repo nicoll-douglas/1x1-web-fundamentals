@@ -26,4 +26,4 @@ deploy-pull:
 
 # start production containers
 deploy-up:
-	$(DC_DEPLOY) up
+	$(DC_DEPLOY) up -d
