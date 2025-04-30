@@ -8,7 +8,7 @@ A simple website where I regularly post informational tutorials about web develo
 
 - Simple, informational, and easy to follow tutorials ☀️.
 - Securely authenticate with OAuth 🛡️.
-- Save, update and keep track of tutorial progress ✏️.
+- CRUD functionality to manage tutorial progress 📝.
 - Responsive and accessible UI 📱.
 
 ## Technologies
@@ -42,22 +42,28 @@ composer install
 
 ### 2. Environment 🛠️
 
-You will also be needing some environment variables; there is a `.env.example` in the `secrets` directory which you can clone in there and then rename it to `.env`. Instructions also below:
+You will also be needing some environment variables; there is a `.env.example` file which you can clone, rename to `.env`, and then set appropriately. Instructions also below on how to set the variables:
 
 ```
 APP_ENV= # development or production
 SESSION_COOKIE_DOMAIN= # domain for session cookies, (localhost or custom domain)
+APP_CONTAINER_NAME= # a name for the app container
+
+# Set these according to your Google OAuth client secret
+GOOGLE_CLIENT_ID= # your google client id
+GOOGLE_PROJECT_ID= # your google project id
+GOOGLE_AUTH_URI= # your google auth uri
+GOOGLE_TOKEN_URI= # your google token uri
+GOOGLE_CLIENT_SECRET= # your google client secret
+GOOGLE_REDIRECT_URI= # your google redirect uri
+GOOGLE_JAVASCRIPT_ORIGIN= # your google javascript origin
 
 MYSQL_HOST=mysql # has to match the service name in docker compose file
 MYSQL_DATABASE= # the name for your MySQL database
 MYSQL_USER= # the name for your MySQL user
 MYSQL_PASSWORD= # the password for the user
 MYSQL_ROOT_PASSWORD= # password for the root user
-
-GOOGLE_AUTH_REDIRECT_URI= # your Google OAuth redirect URI
 ```
-
-In the secrets folder you will also need to put your Google OAuth client secret once you set up your OAuth credentials. It is a JSON file that you can download from the Google Cloud console. Name it `google_oauth_client_secret.json`.
 
 ### 3. Get up and running 🛠️
 
@@ -73,7 +79,7 @@ Then, run the following command which sets up the database tables inside the MyS
 make setup-db
 ```
 
-Finally, navigate to [http://localhost:8001](http://localhost:8000) or the appropriate location where the project should be accessible and you should be good to go!
+Finally, navigate to [http://localhost:3000](http://localhost:3000) or the appropriate location where the project should be accessible and you should be good to go!
 
 ## License
 
